@@ -47,7 +47,7 @@ var app = Sammy('#content', function() {
         $('#main h2').text(page).after(markdown.toHTML(data.data));
         current_sidemenu(page.replace(/\s/g, '-'));
         scrollToTop(ref || 'top');
-        $('a.back-to-top').attr('href', '#/wiki/' + page);
+        $('a.back-to-top').attr('href', '#/wiki/' + g_wiki_page);
       });
     });
   });
