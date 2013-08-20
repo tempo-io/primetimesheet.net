@@ -64,9 +64,9 @@ var app = Sammy('#content', function() {
 	      VK.Widgets.Like(e.id, {type: "button", height: 22, pageUrl: $(e).attr('data-href')});
 	    });
       }
+      $('a.back-to-top').attr('href', '#' + page);
     });
     scrollToTop('top');
-    $('a.back-to-top').attr('href', '#' + page);
   });
 
   // <any>.html, #, #/
