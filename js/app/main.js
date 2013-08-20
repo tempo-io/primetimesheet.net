@@ -54,7 +54,7 @@ var app = Sammy('#content', function() {
 
   this.get('#/:page', function(context) {
     var page = this.params.page;
-    this.title(page.charAt(0).toUpperCase());
+    this.title(page.charAt(0).toUpperCase() + page.slice(1));
     current_menu(page);
     this.load('templates/' + page + '.html', {loading: loading}).swap(function() {
       if (typeof gapi == 'object' && page == 'roadmap') { // if loaded
