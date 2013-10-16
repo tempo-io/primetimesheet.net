@@ -40,6 +40,18 @@ var app = Sammy('#content', function() {
     }
   }
 
+  this.preloadImages(
+    // Home
+    "images/slider/timesheet-plugin-banner.png",
+    // wiki/Overview
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Overview/timesheet_report.png",
+    //"http://bitbucket.org/azhdanov/jiratimesheet/wiki/Overview/pivot_report.png",
+    // wiki/Multiple Time Zones
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.7/Worklog-admin.png",
+    // Unified Plugin Views
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/timesheet-options.png"
+  );
+
   this.get(/#\/wiki\/([^\/]+)\/?(.*)/, function(context) {
     current_menu('wiki');
     g_wiki_page = this.params.splat[0];
@@ -79,9 +91,6 @@ var app = Sammy('#content', function() {
 
   // <any>.html, #, #/
   this.get('/(.*\.html)?(#/)?$', function(context) {
-    this.app.preloadImages(
-      "images/slider/timesheet-plugin-banner.png"
-    );
     this.title();
     current_menu('home');
     this.load('templates/main.html', {loading: loading}).swap(function() {
