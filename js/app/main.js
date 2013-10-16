@@ -32,6 +32,14 @@ var app = Sammy('#content', function() {
     current('.sidemenu ul li', id)
   }
 
+  this.preloadImages = function() {
+    var images = new Array();
+    for (i = 0; i < arguments.length; i++) {
+      images[i] = new Image()
+      images[i].src = arguments[i]
+    }
+  }
+
   this.get(/#\/wiki\/([^\/]+)\/?(.*)/, function(context) {
     current_menu('wiki');
     g_wiki_page = this.params.splat[0];
@@ -71,6 +79,9 @@ var app = Sammy('#content', function() {
 
   // <any>.html, #, #/
   this.get('/(.*\.html)?(#/)?$', function(context) {
+    this.app.preloadImages(
+      "images/slider/timesheet-plugin-banner.png"
+    );
     this.title();
     current_menu('home');
     this.load('templates/main.html', {loading: loading}).swap(function() {
