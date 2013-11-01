@@ -179,3 +179,10 @@ a.anchor > span:before {
 .sidemenu ul li a {
 	text-decoration: none;
 }
+/* ------------------------------------------------------------------------------
+  C U S T O M
+--------------------------------------------------------------------------------- */
+.navbar-inverse .navbar-inner {
+  background-image: -moz-linear-gradient(center top , #04498C, #04498C);
+  box-shadow: none
+}
