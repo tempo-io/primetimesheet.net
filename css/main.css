@@ -184,5 +184,11 @@ a.anchor > span:before {
 --------------------------------------------------------------------------------- */
 .navbar-inverse .navbar-inner {
   background-image: -moz-linear-gradient(center top , #04498C, #04498C);
-  box-shadow: none
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#04498c),to(#04498C));
+  background-image: -webkit-linear-gradient(top,#04498c,#04498C);
+  background-image: -o-linear-gradient(top,#04498c,#04498C);
+  background-image: linear-gradient(to bottom,#04498c,#04498C);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
