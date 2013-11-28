@@ -48,7 +48,12 @@ header {
 .sidemenu ul li a {
     text-transform: uppercase;
 }
-
+.sidemenu img {
+  -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
+  -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
+  box-shadow: 0px 1px 5px 0px #4a4a4a;
+  border: 1px solid #aaa;
+}
 /* ------------------------------------------------------------------------------
   P O S T
 --------------------------------------------------------------------------------- */
