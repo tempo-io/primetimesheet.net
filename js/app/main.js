@@ -83,6 +83,37 @@ var app = Sammy('#content', function() {
         $('.vk-like').each(function(i, e) {
 	      VK.Widgets.Like(e.id, {type: "button", height: 22, pageUrl: $(e).attr('data-href')});
 	    });
+      } else if (page == 'license') {
+		    var submitted = false;
+		    var $form = $('#demoLicense form');
+		    $form.validate({
+		        submitHandler: function(form) {
+		            if (submitted) {
+		                return;
+		            }
+		            submitted = true;
+                    $.ajax({
+                        url: form.action,
+                        cache: false,
+                        type: 'POST',
+                        data: $form.serialize(),
+                        dataType: "jsonp",
+                        timeout: 1000,
+                        crossDomain: true,
+                        success: function (data, status) {
+                            if (data == 'OK') {
+                                $form.parent().html("You should recieve license to specified email shortly.")
+                            } else {
+                                $form.parent().html("Error: " + data);
+                            }
+                        },
+                        error: function (xOptions, textStatus) {
+                            submitted = false;
+                            console.log(textStatus);
+                        },
+                    });
+		        }
+		     });
       }
       $('a.back-to-top').attr('href', '#' + page);
     });

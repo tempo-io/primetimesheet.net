@@ -4,8 +4,8 @@
     <div class="row-fluid">
       <div class="span9">
         <h2>License</h2>
-        <p>You can request license here to enable new features, like Timesheet Configuration, Timesheet Holidays, Timesheet Email and Worked Time Chart in <b>JIRA OnDemand</b>.</p>
-        <p>This is temporary solution until Atlassian enables licensing for plugin for JIRA OnDemand. It has no variation by number of users in JIRA, so price is the same for all size companies. And only payments via PayPal are supported with no any kind of invoice beside standard PayPal confirmation are possible.</p>
+        <p>You can purchase commercial license here or request demonstration license below to enable new features, like Timesheet Configuration, Timesheet Holidays, Timesheet Email and Worked Time Chart in <b>JIRA OnDemand</b></p>
+        <p>Note, this is temporary solution until Atlassian enables licensing for plugin for JIRA OnDemand. It has no variation by number of users in JIRA, so price is the same for all size companies. And only payments via PayPal are supported with no any kind of invoice beside standard PayPal confirmation are possible.</p>
         <p>Once you pay chosen amount, you will shortly receive license code to email address you use for PayPal payment.</p>
         <p>Please, chose period of license validity, specify name of your Organisation (will be displayed in License) and click <code>Pay Now</code> below to be redirected to payment page. Should you have any questions, please do not hesitate to write an <a href="mailto:azhdanov@gmail.com">email</a>.
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -23,6 +23,26 @@
             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
         </p>
+        <p>To request <b>demonstration license</b>, please fill in email and organisation name, and click 'Send'.
+	    <div id="demoLicense">
+            <form action="http://localhost:8888/digisell" method="post" target="_top">
+	        <input type="hidden" name="item_number" value="1">
+            <input type="hidden" name="license-type" value="DEMONSTRATION">
+            <input type="hidden" name="option_selection1" value="Month">
+            <table>
+	            <tr><td><label for="payer_email">Email:</label></td></tr>
+		        <tr><td><input type="email" name="payer_email" required></td></tr>
+	            <tr><td><label for="option_selection1">Organisation Name:</label></td></tr>
+		        <tr><td><input type="text" name="option_selection2" required></td></tr>
+            </table>
+            <input type="submit" name="submit" alt="Request demonstration license" value="Send">
+	        </form>
+	        <scrypt type="application/javascript">
+		    <!--
+		    -->
+		    </script>
+	    </div>
+	    </p>
         <p>Thank you for using Timesheet Reports and Gadgets Add-On for JIRA.</p> 
       </div>
       <div class="span3 sidemenu">
