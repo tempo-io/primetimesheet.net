@@ -98,7 +98,7 @@ var app = Sammy('#content', function() {
                         type: 'POST',
                         data: $form.serialize(),
                         dataType: "jsonp",
-                        timeout: 1000,
+                        //timeout: 1000,
                         crossDomain: true,
                         success: function (data, status) {
                             if (data == 'OK') {
