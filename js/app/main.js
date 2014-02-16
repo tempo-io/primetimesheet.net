@@ -92,6 +92,7 @@ var app = Sammy('#content', function() {
 		                return;
 		            }
 		            submitted = true;
+		            loading(true);
                     $.ajax({
                         url: form.action,
                         cache: false,
@@ -111,6 +112,9 @@ var app = Sammy('#content', function() {
                             submitted = false;
                             console.log(textStatus);
                         },
+                        complete: function() {
+                            loading(false);
+                        }
                     });
 		        }
 		     });
