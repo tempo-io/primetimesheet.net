@@ -70,7 +70,7 @@ var app = Sammy('#content', function() {
       wiki.then(function(html) {
         context.swap(html);
         $('#main h2').text(page).after(markdown.toHTML(data.data));
-        current_sidemenu(page.replace(/\s/g, '-'));
+        current_sidemenu(page.replace(/[\s.]/g, '-'));
         scrollToTop(ref || 'top');
         $('a.back-to-top').attr('href', '#/wiki/' + g_wiki_page);
       });
