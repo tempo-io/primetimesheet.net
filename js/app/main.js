@@ -49,7 +49,12 @@ var app = Sammy('#content', function() {
     // wiki/Multiple Time Zones
     "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.7/Worklog-admin.png",
     // Unified Plugin Views
-    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/timesheet-options.png"
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/timesheet-options.png",
+    // Timesheet Email
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Email_Time_Sheet_Report/timesheet_subscriptions.png",
+    // Timesheet Holidays
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Timesheet_Holidays/holidays_calendar.png",
+    "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Timesheet_Holidays/import_holidays.png"
   );
 
   this.get(/#\/wiki\/([^\/]+)\/?(.*)/, function(context) {
