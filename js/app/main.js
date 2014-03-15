@@ -111,6 +111,7 @@ var app = Sammy('#content', function() {
                                 $form.parent().css('color', '#317eac').html("You should recieve license to specified email shortly.")
                             } else {
                                 $form.parent().css('color', '#d14').html("Error: " + data);
+                            }
                         },
                         error: function (xOptions, textStatus) {
                             submitted = false;
