@@ -108,10 +108,9 @@ var app = Sammy('#content', function() {
                         crossDomain: true,
                         success: function (data, status) {
                             if (data == 'OK') {
-                                $form.parent().html("You should recieve license to specified email shortly.")
+                                $form.parent().css('color', '#317eac').html("You should recieve license to specified email shortly.")
                             } else {
-                                $form.parent().html("Error: " + data);
-                            }
+                                $form.parent().css('color', '#d14').html("Error: " + data);
                         },
                         error: function (xOptions, textStatus) {
                             submitted = false;
