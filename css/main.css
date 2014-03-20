@@ -1,8 +1,5 @@
 /* Large desktop */
 @media (min-width: 980px) { 
-  body {
-   padding-top: 80px;
-  }
  .linediv-l {
    border-right: 1px white solid;
   }
@@ -13,9 +10,6 @@
 
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-  body {
-   padding-top: 40px;
-  }
  .copy {
    padding: 2.5% 10%;
  }
@@ -30,20 +24,20 @@
   H E A D E R
 --------------------------------------------------------------------------------- */
 header {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 /* ------------------------------------------------------------------------------
   S I D E B A R
 --------------------------------------------------------------------------------- */
 .sidemenu ul {
-	list-style: none;
-	margin: 20px 0 24px 0;
-	border-top:  1px  solid #E5E5E5;
+    list-style: none;
+    margin: 20px 0 24px 0;
+    border-top:  1px  solid #E5E5E5;
 }
 .sidemenu ul li {
-	margin: 0;
-	padding: 10px 5px;
-	border-bottom:  1px  solid #E5E5E5;
+    margin: 0;
+    padding: 10px 5px;
+    border-bottom:  1px  solid #E5E5E5;
 }
 .sidemenu ul li a {
     text-transform: uppercase;
@@ -53,6 +47,25 @@ header {
   -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
   box-shadow: 0px 1px 5px 0px #4a4a4a;
   border: 1px solid #aaa;
+}
+.sidemenu form {
+  margin: 0;
+}
+ul.search {
+  margin: 0;
+  border-top: 0;
+}
+.sidemenu input {
+  background: #f5f5f5 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAb0lEQVR42p2RMQ7AIAhFWXsG1h7Gtffo6urqyJGpwyetomnwJ38BH/wgfZSaS7PABbVOqkqm3Fzx6IQTatlDb5PJi21YBy1iuNgjJIgzFXqyCcXj1Z1DXNGTiw01aP252DCCgH7Fk41h8KaAGMDxADnaOPucd/m3AAAAAElFTkSuQmCC') no-repeat 7px 6px;
+  padding: 2px 10px 2px 25px;
+  width: 86%;
+}
+ul.search li {
+    padding: 5px 5px;
+    border-bottom: 0;
+}
+ul.search li a {
+    text-transform: none;
 }
 /* ------------------------------------------------------------------------------
   P O S T
@@ -66,7 +79,7 @@ header {
     border-bottom: none;
 }
 .post-meta {
-	margin: 0;
+    margin: 0;
 }
 .post-meta ul {
     list-style: none;
@@ -74,16 +87,16 @@ header {
     margin: 0;
 }
 .post-meta ul li {
-	padding: 4px 0;
+    padding: 4px 0;
     border-bottom: 1px solid #E5E5E5;
     text-align: right;
     display: block;
 }
 .icon-user:before {
-	float: left;
+    float: left;
 }
 .icon-time:before {
-	float: left;
+    float: left;
 }
 /* ------------------------------------------------------------------------------
   F O O T E R
@@ -97,11 +110,37 @@ header {
   background-color: #f5f5f5;
 }
 .footer-list ul {
-	list-style: none;
-	margin: 0;
+    list-style: none;
+    margin: 0;
 }
 .footer-list ul li {
-	line-height: 25px;
+    line-height: 25px;
+}
+/* ------------------------------------------------------------------------------
+  A D D T H I S
+--------------------------------------------------------------------------------- */
+.at-share-open-control-left {
+  position: fixed;
+  top: 20%;
+  z-index: 100020;
+  left: 0;
+  width: 22px;
+}
+div.at4-arrow {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAoCAYAAABpYH0BAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAV1JREFUeNrsmesOgyAMhQfxwfrofTM3E10ME2i5Oeppwr9a5OMUCrh1XV+wcvNAAIAA+BiAzrmtUWln27dbjEcC3AdODfo0BdEPhmcO4nIDvDNELi2jggk4/k8dT7skfeKzWIEd4VUpMQKvNB7X+OZSmAZkATWC1xvipbpnLmOosbJZC08CkAeA4E6qFUEMwLAGnlSBPCE8lW8CYnZTcimH2HoT7kSFOx5HBmCnDhTIu1p5s98G+QZrxGPhZVMY1vgyAQaAAAiAAAgDQACcBOD+BvJtBWfRy7NpJK5tBe4FNzXokywV734wPHMQlxvgnSGyNoUP/2ACjv/7iSeYKO3YWKzAjvCqlBiBVxqPa3ynexNJwOsN8TJbzL6JNIYYXWpMv4lIIAZgWANPqkCeEJ7KNwExu8lpLlSpAVQarO77TyKdBsyRPuwV0h0gmoGnTWFYzVkYBoAA+I/2FmAAt6+b5XM9mFkAAAAASUVORK5CYII=);
+  background-image: url(/images/arrows.gif);
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-indent: -9999em;
+  text-align: left;
+  cursor: pointer;
+}
+div.at4-arrow.at-right {
+  background-position: -20px 0;
 }
 /* ------------------------------------------------------------------------------
   L O A D I N G
@@ -112,7 +151,7 @@ header {
   top: 0px;
   left: 0px;
   position: fixed;
-  display: block;
+  display: none;
   z-index: 99;
   text-align: center;
 }
@@ -135,7 +174,7 @@ header {
   M I S C
 --------------------------------------------------------------------------------- */
 [class^="icon-"] {
-	padding: 0 10px;
+    padding: 0 10px;
 }
 .atss {
     top: 220px;
@@ -176,13 +215,13 @@ a.anchor > span:before {
     margin-left: -20px;
 }
 .sidemenu ul li:hover {
-	background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
 .sidemenu ul li.active {
-	background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
 .sidemenu ul li a {
-	text-decoration: none;
+    text-decoration: none;
 }
 /* ------------------------------------------------------------------------------
   C U S T O M

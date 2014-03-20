@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="JIRA Timesheet Plugin for Atlassian JIRA extends time tracking means with pivot and timesheet reports
+     and gadgets for JIRA dashboard or confluence. ">
+    <meta name="author" content="Andriy Zhdanov">
+    <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
+        timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unified Plugin Views | JIRA Timesheet Plugin</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1395268112000.css"> 
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="/js/all-1395265885000.js"></script> 
+
+    <script src="/js/sammy/sammy-0.7.2.js"></script>
+    <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
+    <script src="/js/sammy/plugins/sammy.googleanalytics-0.7.2.js"></script>
+    <script src="/js/app/main.js"></script>
+    <script src="/js/app/markdown.js"></script>
+
+    <script src="/js/searchApp.js"><script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30916140-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <!-- see site.js for dynamic loading
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5206946308988819"></script>
+    <script type="text/javascript">
+      addthis.layers({
+        'theme' : 'transparent',
+        'share' : {
+          'position' : 'left',
+          'numPreferredServices' : 5
+        }   
+      });
+    </script>
+    -->
+    <!-- AddThis Smart Layers END -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      {parsetags: 'explicit'}
+    </script>
+    <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+</head>
+
+<body id="top">
+
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+        <button type="button" class="btn btn-navbar"
+                data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <a class="brand" href="#">JIRA Timesheet</a>
+        <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li id="home" ><a href="/">Home</a><span></span></li>
+          <li id="wiki" class="active"><a href="/wiki/Overview.html">Documentation</a><span></span></li>
+          <li id="roadmap" ><a href="/roadmap.html">Roadmap</a><span></span></li>
+          <li id="support" ><a href="/support.html">Support</a><span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  
+  <header>
+    <div class="row-fluid">
+      <div class="span12">
+        <h1>JIRA Timesheet Reports and Gadgets</h1>
+        <p class="lead">Extended JIRA time tracking means</p>
+      </div>
+    </div>
+  </header>
+
+  <div id="content">
+
+  <section>
+    <div class="row-fluid">
+      <div class="span9">
+        <h2>Unified Plugin Views</h2>
+        <p>Version 2.3.6 brings number of new features, see below, but also deprecates old Timesheet and Group Timesheet gadgets and adds new Timesheet gadget. You will definitely notice it if you use any Timesheet gadget. Even though they still should work, and even have some features added, it is recommended to delete them from dashboards and add new Timesheet gadget with corresponding configuration.</p>
+
+<p>See also short (3 minutes) video for quick journey to the new features on <a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=W7GGPCXM5-g">YouTube</a>.</p>
+
+<h3><a id="New_features" class="anchor" href="/wiki/Unified_Plugin_Views.html#New_features"><span></span></a>New features!</h3>
+
+<ul><li>issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/271">#271</a>: Support for Roles selector in all plugin assets</li><li>issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/273">#273</a>: Sum SubTasks for all plugin assets</li><li>issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/255">#255</a>: Unify gadgets, so no there are totally 5 in 2 gadgets</li><li>issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/234">#234</a>: Monthly view - by week for Timesheet gadgets.</li><li>issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/223">#223</a>: Sliding interval for Timesheet gadgets</li></ul>
+
+<p>Please see screen shots also:</p>
+
+<p><img alt="Timesheet Gadget Options" class="markdown" src="http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/timesheet-options.png"/></p>
+
+<p><img alt="Timesheet Gadget Slider" class="markdown" src="http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/timesheet-slider.png"/></p>
+
+<p><img alt="Pivot Gadget Options" class="markdown" src="http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/pivot-options.png"/></p>
+
+<p><img alt="Pivot Gadgets" class="markdown" src="http://bitbucket.org/azhdanov/jiratimesheet/wiki/Version%202.3.6/pivot-gadgets.png"/></p>
+        <p class="pull-right">
+          <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
+        </p>
+      </div>
+      <div class="span3 sidemenu">
+        <ul>
+          <li ><a href="/wiki/Overview.html">Overivew</a></li>
+          <li ><a href="/wiki/Frequent_Questions.html">Frequent Questions</a></li>
+          <li ><a href="/wiki/Plugin_Configuration.html">Plugin Configuration</a></li>
+          <li ><a href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a></li>
+          <li ><a href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a></li>
+          <li ><a href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a></li>
+          <li ><a href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a></li>
+          <li ><a href="/wiki/RESTful_endpoint.html">RESTful endpoint<a></li>
+          <li class="active"><a href="/wiki/Unified_Plugin_Views".html>Unified plugin views</a></li>
+          <li ><a href="/wiki/Commercial.html">Commercial</a></li>
+          <!-- CAUTION: add to rest_content_handler.js#getContentPaths also -->
+        </ul>
+        <div ng-app="searchApp" ng-controller="SearchResultCtrl">
+        <form id="quick-search" method="get" action="index.html">
+          <fieldset class="search">
+             <input type="text" title="Start typing" ng-model="query"/>
+          </fieldset>
+        </form>
+        <ul class="search">
+          <li ng-repeat="content in contents | matchesQuery:query">
+            <a ng-href="{[{content.href}]}.html">{[{content.title}]}</a> 
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span3">
+        <h3>Contact Info</h3>
+        <div class="footer-list">
+        <ul>
+            <li><strong>Address: </strong>Prague, Czech Republic</li>
+            <li><strong>E-mail: </strong><a href="mailto:azhdanov@gmail.com">azhdanov@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="span3">
+        <h3>Links</h3>
+        <div class="footer-list">
+          <ul>
+            <li><a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
+            <li><a href="https://answers.atlassian.com/tags/addon-jira-timesheet-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
+          </ul>
+        </div>
+      </div>
+    <div class="span3">
+        <h3>Site</h3>
+        <div class="footer-list">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/wiki/Overview.html">Documentation</a></li>
+            <li><a href="/roadmap.html">Roadmap</a></li>
+            <li><a href="/support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span3">
+        <h3>Copyright</h3>
+        <p class="footer-list">&copy; Andriy Zhdanov 2012-2014</p>
+      </div>
+    </div>
+    <hr/>
+    <div class="row-fluid">
+    <div class="span12">
+        <p class="pull-right">
+      <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
+    </p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div id="at4-soc" class="atss at-share-open-control-left ats-transparent animated slideInLeft at4-show">
+  <div class="at4-arrow at-right" title="Show">Show</div>
+</div>
+
+<div id="loading">
+  <img id="loading-image" src="/images/loading.gif" alt="Loading..." />
+</div>
+
+<div id="fb-root"></div>
+
+</body>
+</html>

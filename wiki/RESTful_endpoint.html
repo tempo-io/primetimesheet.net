@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="JIRA Timesheet Plugin for Atlassian JIRA extends time tracking means with pivot and timesheet reports
+     and gadgets for JIRA dashboard or confluence. ">
+    <meta name="author" content="Andriy Zhdanov">
+    <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
+        timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RESTful endpoint | JIRA Timesheet Plugin</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1395268112000.css"> 
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="/js/all-1395265885000.js"></script> 
+
+    <script src="/js/sammy/sammy-0.7.2.js"></script>
+    <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
+    <script src="/js/sammy/plugins/sammy.googleanalytics-0.7.2.js"></script>
+    <script src="/js/app/main.js"></script>
+    <script src="/js/app/markdown.js"></script>
+
+    <script src="/js/searchApp.js"><script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30916140-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <!-- AddThis Smart Layers BEGIN -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <!-- see site.js for dynamic loading
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5206946308988819"></script>
+    <script type="text/javascript">
+      addthis.layers({
+        'theme' : 'transparent',
+        'share' : {
+          'position' : 'left',
+          'numPreferredServices' : 5
+        }   
+      });
+    </script>
+    -->
+    <!-- AddThis Smart Layers END -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      {parsetags: 'explicit'}
+    </script>
+    <script type="text/javascript" src="//connect.facebook.net/en_US/all.js"></script>
+</head>
+
+<body id="top">
+
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+        <button type="button" class="btn btn-navbar"
+                data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <a class="brand" href="#">JIRA Timesheet</a>
+        <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li id="home" ><a href="/">Home</a><span></span></li>
+          <li id="wiki" class="active"><a href="/wiki/Overview.html">Documentation</a><span></span></li>
+          <li id="roadmap" ><a href="/roadmap.html">Roadmap</a><span></span></li>
+          <li id="support" ><a href="/support.html">Support</a><span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  
+  <header>
+    <div class="row-fluid">
+      <div class="span12">
+        <h1>JIRA Timesheet Reports and Gadgets</h1>
+        <p class="lead">Extended JIRA time tracking means</p>
+      </div>
+    </div>
+  </header>
+
+  <div id="content">
+
+  <section>
+    <div class="row-fluid">
+      <div class="span9">
+        <h2>RESTful endpoint</h2>
+        <p>With timesheet plugin installed, it is possibile to get raw timetracking data in json fromat.
+With the url /rest/timesheet-gadget/1.0/raw-timesheet.json, it wil return, e.g.:</p>
+
+<pre><code>{ &quot;worklog&quot; : [ { &quot;entries&quot; : [ { &quot;author&quot; : &quot;admin&quot;,
+          &quot;authorFullName&quot; : &quot;admin&quot;,
+          &quot;comment&quot; : &quot;test&quot;,
+          &quot;created&quot; : 1340870920388,
+          &quot;startDate&quot; : 1340870880000,
+          &quot;timeSpent&quot; : 3600,
+          &quot;updateAuthor&quot; : &quot;admin&quot;,
+          &quot;updateAuthorFullName&quot; : &quot;admin&quot;,
+          &quot;updated&quot; : 1340870920388
+        } ],
+    &quot;key&quot; : &quot;TP-1&quot;,
+    &quot;summary&quot; : &quot;Some Problem&quot;
+  } ]
+}</code></pre>
+
+<p>It accepts the following parameters</p>
+
+<ul><li>targetUser - optional userId,</li><li>targetGroup - optional group name, e.g. jira-users,</li><li>startDate - optional begin date in Jira date picker format, e.g. 01/Jun/2012, or in ISO date format, e.g. 2012-06-01,</li><li>endDate - optional end date, format is the same,</li><li>projectid - optional, e.g. 10001 (not project key!),</li><li>filterId - optional.</li></ul>
+
+<p>If nothing is specified it behaves like report, displays data a week before current day for currently logged in user.</p>
+
+<p>Dates in response are UNIX time - milliseconds since 01/01/1970; timesSpent is in seconds.</p>
+
+<p>See also <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">issue#269</a></p>
+
+<h3><a id="Worklogs_with_JQL_search" class="anchor" href="/wiki/RESTful_endpoint.html#Worklogs_with_JQL_search"><span></span></a>Worklogs with JQL search</h3>
+
+<p>Additionally, since version 2.6 you can use <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">jql search REST api</a> with &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, then you get all issue details, and you may include  worklogs for each issue in result, so you can do what ever you want.</p>
+
+<p>E.g. <code>http://localhost:2990/jira/rest/api/2/search?jql=key in workedIssues(&quot;2013/10/14&quot;,&quot;2013/10/14&quot;,&quot;jira-developers&quot;)&amp;fields=worklog</code>, and result JSON is:</p>
+
+<pre><code>{ &quot;expand&quot; : &quot;schema,names&quot;,
+  &quot;issues&quot; : [{ &quot;expand&quot; : &quot;editmeta,renderedFields,transitions,changelog,operations&quot;,
+        &quot;fields&quot; : { &quot;worklog&quot; : { &quot;maxResults&quot; : 2,
+                &quot;startAt&quot; : 0,
+                &quot;total&quot; : 2,
+                &quot;worklogs&quot; : [ { &quot;author&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;comment&quot; : &quot;test&quot;,
+                      &quot;created&quot; : &quot;2013-10-16T17:56:32.887+0200&quot;,
+                      &quot;id&quot; : &quot;10012&quot;,
+                      &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/issue/10001/worklog/10012&quot;,
+                      &quot;started&quot; : &quot;2013-10-19T00:00:00.000+0200&quot;,
+                      &quot;timeSpent&quot; : &quot;1h&quot;,
+                      &quot;timeSpentSeconds&quot; : 3600,
+                      &quot;updateAuthor&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;updated&quot; : &quot;2013-10-16T17:56:32.887+0200&quot;
+                    },
+                    { &quot;author&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;comment&quot; : &quot;test&quot;,
+                      &quot;created&quot; : &quot;2013-10-16T17:56:33.075+0200&quot;,
+                      &quot;id&quot; : &quot;10013&quot;,
+                      &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/issue/10001/worklog/10013&quot;,
+                      &quot;started&quot; : &quot;2013-10-14T00:00:00.000+0200&quot;,
+                      &quot;timeSpent&quot; : &quot;4h&quot;,
+                      &quot;timeSpentSeconds&quot; : 14400,
+                      &quot;updateAuthor&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;updated&quot; : &quot;2013-10-16T17:56:33.075+0200&quot;
+                    }
+                  ]
+              } },
+        &quot;id&quot; : &quot;10001&quot;,
+        &quot;key&quot; : &quot;TIME-2&quot;,
+        &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/issue/10001&quot;
+      }
+    ],
+  &quot;maxResults&quot; : 50,
+  &quot;startAt&quot; : 0,
+  &quot;total&quot; : 1
+}</code></pre>
+        <p class="pull-right">
+          <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
+        </p>
+      </div>
+      <div class="span3 sidemenu">
+        <ul>
+          <li ><a href="/wiki/Overview.html">Overivew</a></li>
+          <li ><a href="/wiki/Frequent_Questions.html">Frequent Questions</a></li>
+          <li ><a href="/wiki/Plugin_Configuration.html">Plugin Configuration</a></li>
+          <li ><a href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a></li>
+          <li ><a href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a></li>
+          <li ><a href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a></li>
+          <li ><a href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a></li>
+          <li class="active"><a href="/wiki/RESTful_endpoint.html">RESTful endpoint<a></li>
+          <li ><a href="/wiki/Unified_Plugin_Views".html>Unified plugin views</a></li>
+          <li ><a href="/wiki/Commercial.html">Commercial</a></li>
+          <!-- CAUTION: add to rest_content_handler.js#getContentPaths also -->
+        </ul>
+        <div ng-app="searchApp" ng-controller="SearchResultCtrl">
+        <form id="quick-search" method="get" action="index.html">
+          <fieldset class="search">
+             <input type="text" title="Start typing" ng-model="query"/>
+          </fieldset>
+        </form>
+        <ul class="search">
+          <li ng-repeat="content in contents | matchesQuery:query">
+            <a ng-href="{[{content.href}]}.html">{[{content.title}]}</a> 
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span3">
+        <h3>Contact Info</h3>
+        <div class="footer-list">
+        <ul>
+            <li><strong>Address: </strong>Prague, Czech Republic</li>
+            <li><strong>E-mail: </strong><a href="mailto:azhdanov@gmail.com">azhdanov@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="span3">
+        <h3>Links</h3>
+        <div class="footer-list">
+          <ul>
+            <li><a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
+            <li><a href="https://answers.atlassian.com/tags/addon-jira-timesheet-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
+          </ul>
+        </div>
+      </div>
+    <div class="span3">
+        <h3>Site</h3>
+        <div class="footer-list">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/wiki/Overview.html">Documentation</a></li>
+            <li><a href="/roadmap.html">Roadmap</a></li>
+            <li><a href="/support.html">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span3">
+        <h3>Copyright</h3>
+        <p class="footer-list">&copy; Andriy Zhdanov 2012-2014</p>
+      </div>
+    </div>
+    <hr/>
+    <div class="row-fluid">
+    <div class="span12">
+        <p class="pull-right">
+      <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
+    </p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div id="at4-soc" class="atss at-share-open-control-left ats-transparent animated slideInLeft at4-show">
+  <div class="at4-arrow at-right" title="Show">Show</div>
+</div>
+
+<div id="loading">
+  <img id="loading-image" src="/images/loading.gif" alt="Loading..." />
+</div>
+
+<div id="fb-root"></div>
+
+</body>
+</html>

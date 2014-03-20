@@ -129,22 +129,6 @@ var app = Sammy('#content', function() {
     scrollToTop('top');
   });
 
-  // <any>.html, #, #/
-  this.get('/(.*\.html)?(#/)?$', function(context) {
-    this.title();
-    current_menu('home');
-    this.load('templates/main.html', {loading: loading}).swap(function() {
-      $('#slider').nivoSlider();
-    });
-    scrollToTop('top');
-    $('a.back-to-top').attr('href', '#');
-  });
-
-  // AMKT-4682 (not used, see sammy-0.7.2.js#_checkLocation)
-  this.get('#wiki', function (context) {
-	context.redirect('#/wiki/Overview');
-  });
-
 });
 
 $(function () {
