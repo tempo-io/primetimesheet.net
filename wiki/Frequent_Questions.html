@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1395384108000.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1396259551000.css"> 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -26,7 +26,7 @@
     <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-    <script src="/js/all-1395265885000.js"></script> 
+    <script src="/js/all-1396259551000.js"></script> 
 
     <script src="/js/sammy/sammy-0.7.2.js"></script>
     <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
@@ -164,7 +164,7 @@
 
 <p>For some reason the timesheet always shows the current week, regardless what has been selected in report configuration page. Report displays current week start and end dates.</p>
 
-<p>This might be because of misconfigured UI and backend date format, please check <a href="https://confluence.atlassian.com/display/JIRA/Customising+the+Look+and+Feel#CustomisingtheLookandFeel-datepickerformatsConfiguringdatepickerformats">Customising the Look and Feel</a> and make sure your settings are correct.</p>
+<p>This might be because of misconfigured UI and backend date format, please check <a href="https://confluence.atlassian.com/display/JIRA/Customizing+the+Look+and+Feel#CustomizingtheLookandFeel-Date/TimeFormats">Customising the Look and Feel</a> and make sure your settings are correct.</p>
 
 <h3><a id="Problem_Group_Timesheet_does_not_show_data" class="anchor" href="/wiki/Frequent_Questions.html#Problem_Group_Timesheet_does_not_show_data"><span></span></a>Problem? Group Timesheet does not show data</h3>
 
@@ -176,7 +176,7 @@
 
 <h3><a id="Problem_Timesheet_does_not_show_anything" class="anchor" href="/wiki/Frequent_Questions.html#Problem_Timesheet_does_not_show_anything"><span></span></a>Problem? Timesheet does not show anything</h3>
 
-<p>There might be unexpected issues within worked time collecting algorithms, which may be easier to solve with debug logging enabled for plugin. Edit &lt;JIRA_HOME&gt;/WEB-INF/classes/log4j.properties, add the following at the very bottom, restart JIRA, collect logs and send with your email request for help or attach to bug you create:</p>
+<p>There might be unexpected issues within worked time collecting algorithms, which may be easier to solve with debug logging enabled for plugin. You may edit &lt;JIRA_HOME&gt;/WEB-INF/classes/log4j.properties or use temporary logging as described <a href="https://confluence.atlassian.com/display/JIRA/Logging+and+Profiling#LoggingandProfiling-logging_temp">here</a>, add the following categories (restart JIRA if you edit log4.properties), collect logs and send with your email request for help or attach to bug you create:</p>
 
 <pre><code>log4j.logger.com.fdu.jira.plugin = DEBUG, console, filelog
 log4j.additivity.com.fdu.jira.plugin = false
