@@ -176,7 +176,7 @@
 
 <h3><a id="Problem_Timesheet_does_not_show_anything" class="anchor" href="/wiki/Frequent_Questions.html#Problem_Timesheet_does_not_show_anything"><span></span></a>Problem? Timesheet does not show anything</h3>
 
-<p>There might be unexpected issues within worked time collecting algorithms, which may be easier to solve with debug logging enabled for plugin. You may edit &lt;JIRA_HOME&gt;/WEB-INF/classes/log4j.properties or use temporary logging as described <a href="https://confluence.atlassian.com/display/JIRA/Logging+and+Profiling#LoggingandProfiling-logging_temp">here</a>, add the following categories (restart JIRA if you edit log4.properties), collect logs and send with your email request for help or attach to bug you create:</p>
+<p>There might be unexpected issues within worked time collecting algorithms, which may be easier to solve with debug logging enabled for plugin. You may edit &lt;JIRA_HOME&gt;/WEB-INF/classes/log4j.properties or use temporary logging as described <a href="https://confluence.atlassian.com/display/JIRA/Logging+and+Profiling#LoggingandProfiling-logging_temp">here</a>. Add the following categories, just emit <code>log4.logger.</code> if you use temporary logging, or restart JIRA if you edit log4.properties; perform relevant scenario, retrieve logs and send them with your email request for help or attach to bug you create:</p>
 
 <pre><code>log4j.logger.com.fdu.jira.plugin = DEBUG, console, filelog
 log4j.additivity.com.fdu.jira.plugin = false
