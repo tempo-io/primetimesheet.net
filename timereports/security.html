@@ -10,7 +10,7 @@
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>License for JIRA OnDemand | JIRA Timesheet Plugin</title>
+    <title>Security Statement | </title>
 
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
@@ -80,13 +80,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a class="brand" href="#">JIRA Timesheet</a>
+      <a class="brand" href="#">Time Reports</a>
         <div class="nav-collapse collapse">
         <ul class="nav">
-          <li id="home" ><a href="/">Home</a><span></span></li>
-          <li id="wiki" ><a href="/wiki/Overview.html">Documentation</a><span></span></li>
-          <li id="roadmap" ><a href="/roadmap.html">Roadmap</a><span></span></li>
-          <li id="support" ><a href="/support.html">Support</a><span></span></li>
+          <li id="home" ><a href="#">Home</a><span></span></li>
         </ul>
       </div>
     </div>
@@ -98,8 +95,8 @@
   <header>
     <div class="row-fluid">
       <div class="span12">
-        <h1>JIRA Timesheet Reports and Gadgets</h1>
-        <p class="lead">Extended JIRA time tracking means</p>
+        <h1>Time Reports for JIRA OnDemand</h1>
+        <p class="lead">Flexible view for JIRA issues time tracking data</p>
       </div>
     </div>
   </header>
@@ -107,27 +104,43 @@
   <div id="content">
 
 
-<!-- main -->
-<div id="main">
-  <section>
-    <div class="row-fluid">
-      <div class="span9">
-        <h2>Thank you!</h2>
-        <p>Thank you for buying Timesheet Reports and Gadgets Add-On for JIRA OnDemand.</p>
-        <p>You will shortly receive license code to email address you have used for PayPal payment.</p>
+  <div id="main">
+    <section>
+      <div class="row-fluid">
+          <div class="span9">
+            <h2 id="security-statement">Security Statement</h2>
+<p>Time Reports for JIRA OnDemand is <a href="https://developer.atlassian.com/static/connect/docs/">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS) hosted on <a href="https://www.heroku.com">Heroku</a> cloud platform. </p>
+<h3 id="data-security">Data Security</h3>
+<p>The Add-On only persists JIRA host details (i.e., client key, host public key and host base url) required for interoperability with JIRA. I.e. no client details passed or no end user details are persisted.</p>
+<p>E.g. of information that is passed (but not persisted as it is) to Add-On:</p>
+<pre><code>GET /timereports?tz=Europe%2FBerlin&amp;loc=en-US&amp;user_id=admin&amp;user_key=admin&amp;xdm_e=http%3A%2F%2Flocalhost%3A2990&amp;xdm_c=channel-timereports&amp;cp=%2Fjira&amp;lic=none&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjEzOTY5NjcyMjYsInN1YiI6ImFkbWluIiwiaXNzIjoiamlyYTpkODc5Y2M3Zi0yOTBhLTQ2NDctODM5Zi05MmJlNTI4NTc2NGEiLCJxc2giOiIzMWQ4YzZhMjUwZTA5MTY4ODNjNzMxZjRmN2UyZTdmNjdkMzNhMjBlMWUxMDM2YmM0ODg2OWNmMzU1ODgzNGQ4IiwiaWF0IjoxMzk2OTY3MDQ2fQ.egC3xw1Ul7Zx9uJ5KrxLMZ8ggSRCj5pMBcxKq9HRq_E 200 12ms
+</code></pre><p>No further communication is happening between Add-On host and JIRA host.</p>
+<p>Therafter all data (specicially Time Tracking data) is requested and processed by add-on client side code in End User Browser and is not passed anywhere else.</p>
+<p>Here is the list of JIRA REST API used:</p>
+<ul>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2438">/rest/api/2/search</a> - issues and time tracking data.</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e3764">/rest/api/2/user</a> - user data for timezone (not used at the moment).</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1283">/rest/api/2/filter/favourite</a> - filters for Filter reports&#39; option.</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e131">/rest/api/2/field</a> - fields for Field reports&#39; option.</li>
+<li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e3922">/rest/api/2/user/picker</a> - users search for User reports&#39; option.</li>
+</ul>
+<p>Note, Add-On declares READ <a href="https://developer.atlassian.com/static/connect/docs/scopes/scopes.html">scope</a> to access data as just described.</p>
+<h3 id="refernces">Refernces</h3>
+<ul>
+<li><a href="https://www.heroku.com/policy/security">Heroku Security</a></li>
+<li><a href="https://www.atlassian.com/hosted/security">Atlassian OnDemand Security</a></li>
+</ul>
+
       </div>
       <div class="span3 sidemenu">
         <ul>
-          <li><a href="#/wiki/Overview">Documentation</a></li>
-          <li><a href="#/wiki/Frequent_Questions">Frequent Questions</a></li>
-          <li><a href="https://answers.atlassian.com/tags/addon-jira-timesheet-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open" target="blank">Issues</a><i class="icon-external-link"></i></li>
+          <li><a href="https://marketplace.atlassian.com/plugins/timereports" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
+          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open&component=Time%20Reports" target="blank">Issues</a><i class="icon-external-link"></i></li>
         </ul>
       </div>
-    </div>
   </section>
-<!-- /main -->
 </div>
+<!-- /main -->
 
   </div>
 
