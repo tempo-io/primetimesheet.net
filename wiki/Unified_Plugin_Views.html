@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1397160421000.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1397302155000.css"> 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
     <script src="/js/all-1395265885000.js"></script> 
 
     <script src="/js/sammy/sammy-0.7.2.js"></script>
@@ -145,8 +145,8 @@
           <li ><a href="/wiki/Commercial.html">Commercial</a></li>
           <!-- CAUTION: add to rest_content_handler.js#getContentPaths also -->
         </ul>
-        <div ng-app="searchApp" ng-controller="SearchResultCtrl">
-        <form id="quick-search" method="get" action="index.html">
+        <div ng-app="searchApp" ng-controller="SearchWikiCtrl">
+        <form>
           <fieldset class="search">
              <input type="text" title="Start typing" ng-model="query"/>
           </fieldset>

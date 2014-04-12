@@ -42,7 +42,7 @@ var app = Sammy('#content', function() {
 
   this.preloadImages(
     // Home
-    "images/slider/timesheet-plugin-banner.png",
+    "/images/slider/timesheet-plugin-banner.png",
     // wiki/Overview
     "http://bitbucket.org/azhdanov/jiratimesheet/wiki/Overview/timesheet_report.png",
     //"http://bitbucket.org/azhdanov/jiratimesheet/wiki/Overview/pivot_report.png",
@@ -128,6 +128,10 @@ var app = Sammy('#content', function() {
     });
     scrollToTop('top');
   });
+ 
+ this._checkFormSubmission = function() {
+     return false;
+ };
 
 });
 
