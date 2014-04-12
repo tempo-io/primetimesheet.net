@@ -56,7 +56,6 @@ angular.module('searchApp',[]).filter('matchesQuery', function(){
         $http.jsonp('https://bitbucket.org/api/1.0/repositories/azhdanov/jiratimesheet/issues?callback=JSON_CALLBACK&search='
             + encodeURIComponent($scope.query)).success(function(data) {
           $scope.issues = data.issues;
-          console.log(data);
         });
 
     }
