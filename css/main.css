@@ -226,7 +226,7 @@ a.anchor > span:before {
 .sidemenu ul li.active {
     background-color: #f5f5f5;
 }
-.sidemenu ul li a {
+.sidemenu ul li a, .search a {
     text-decoration: none;
 }
 /* ------------------------------------------------------------------------------

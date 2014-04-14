@@ -15,7 +15,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1397302155000.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/nivo-slider.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/css/nivo-slider-themes/default/default.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css"> 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -26,7 +28,9 @@
     <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-    <script src="/js/all-1395265885000.js"></script> 
+    <script src="/js/jquery.nivo.slider.pack.js"></script>
+<script src="/js/jquery.validate-1.11.1.min.js"></script>
+<script src="/js/site.js"></script> 
 
     <script src="/js/sammy/sammy-0.7.2.js"></script>
     <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
@@ -127,15 +131,18 @@ or <a href="https://bitbucket.org/azhdanov/jiratimesheet/issues">Issue Tracker</
     </li>
   </ul>
   <ul class="search">
-    <h4 ng-if="answers">Atlassian Answers</h4>
+    <a ng-if="answers" ng-href="https://answers.atlassian.com/search/?t=question&q=%5Baddon-jira-timesheet-plugin%5D+{[{query | encodeURIComponent}]}&sort=active" target="_blank">
+      <h4>Atlassian Answers<i class="icon-external-link"></i></h4></a>
     <li ng-repeat="answer in answers">
-      <a ng-href="{[{answer.uri}]}" title="{[{answer.summary}]}">{[{answer.title}]}</a> 
+      <a ng-href="{[{answer.uri}]}" title="{[{answer.summary}]}" target="_blank">{[{answer.title}]}<i class="icon-external-link"></i></a> 
     </li>
   </ul>
   <ul class="search">
-    <h4 ng-if="issues">Issues</h4>
+    <a ng-if="issues" ng-href="https://bitbucket.org/azhdanov/jiratimesheet/issues?q={[{query | encodeURIComponent}]}" target="_blank">
+      <h4>Issues<i class="icon-external-link"></i></h4></a>
     <li ng-repeat="issue in issues">
-      <a ng-href="https://bitbucket.org/azhdanov/jiratimesheet/issue/{[{issue.local_id}]}" title="{[{issue.content}]}">{[{issue.title}]}</a> 
+      <a ng-href="https://bitbucket.org/azhdanov/jiratimesheet/issue/{[{issue.local_id}]}" title="{[{issue.content}]}" target="_blank">
+        {[{issue.title}]}<i class="icon-external-link"></i></a> 
     </li>
   </ul>
 </form>

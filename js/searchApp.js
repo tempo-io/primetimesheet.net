@@ -60,4 +60,6 @@ angular.module('searchApp',[]).filter('matchesQuery', function(){
 
     }
   }
+}).filter('encodeURIComponent', function() {
+  return window.encodeURIComponent;
 });
