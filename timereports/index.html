@@ -15,7 +15,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1397507776000.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/nivo-slider.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/css/nivo-slider-themes/default/default.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css"> 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -26,7 +28,9 @@
     <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
-    <script src="/js/all-1395265885000.js"></script> 
+    <script src="/js/jquery.nivo.slider.pack.js"></script>
+<script src="/js/jquery.validate-1.11.1.min.js"></script>
+<script src="/js/site.js"></script> 
 
     <script src="/js/sammy/sammy-0.7.2.js"></script>
     <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
@@ -80,10 +84,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <a class="brand" href="#">Time Reports</a>
+      <a class="brand" href="/timereports">Time Reports</a>
         <div class="nav-collapse collapse">
         <ul class="nav">
-          <li id="home" ><a href="#">Home</a><span></span></li>
+          <li id="home" ><a href="/timereports">Home</a><span></span></li>
         </ul>
       </div>
     </div>
@@ -122,7 +126,7 @@
         <a href="https://marketplace.atlassian.com/plugins/timereports"><img src="/images/marketplace_available_light_180x80.png" title="Available on the Atlassian Marketplace" alt="Available on the Atlassian Marketplace"/></a>
         <ul>
           <li><a href="/timereports/security.html">Security Statement</a></li>
-          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open" target="blank">Issues</a><i class="icon-external-link"></i></li>
+          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open&component=Time%20Reports" target="blank">Issues</a><i class="icon-external-link"></i></li>
         </ul>
       </div>
       <!-- /sidebar -->
@@ -144,7 +148,7 @@
 	  <div class="span9">
 	    <h2>Overview</h2>
 	    <p>Time Reports Add-On is a modern and yet immature version of Timesheet Reports and Gadgets Add-On. It is intended to provide flexible and extensible solution. It is designed to evolve faster and is built specifically for JIRA OnDemand.</p>
-<p>Install</p>
+<h2 id="install">Install</h2>
 <p>Just go to Administration - Plugins - Install in your JIRA, search for &#39;timerports&#39;, see &#39;Time Reports Add-On for JIRA OnDemand&#39; and click install.</p>
 <p>When installed Time Reports Add-On adds Issues - Time Reports menu item under Timesheet menu section. It gives access to three report types at the moment:</p>
 <ul>
