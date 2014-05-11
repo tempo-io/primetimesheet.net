@@ -130,7 +130,7 @@ var app = Sammy('#content', function() {
   });
  
  this._checkFormSubmission = function() {
-     return false;
+     return true;
  };
 
 });
