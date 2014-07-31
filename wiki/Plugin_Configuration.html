@@ -139,7 +139,11 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>To quickly add worklog for the issues currently in work, see this option to make Timesheet gadget for yourself show <code>In Progress</code> issues in current week. It is necessary to specify JQL query, e.g. <code>assignee = currentUser() and status = &#39;In Progress&#39;</code>.</p>
 
-<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/475/show-issues-without-a-current-worklog">#475</a>.</p>
+<p>If you want more flexibility, consider using labels for this, e.g. JQL: <code>labels in (stick_in_timesheet)</code>. So if you want to make some issue appear in timesheet regardless previous worklogs, just add <code>stick_in_timesheet</code> label to it.</p>
+
+<p>Or there is super flexible trick, e.g. JQL: <code>filter = &quot;Sticky Issues for Timesheet&quot;</code>. So everyone can create a filter with this name, to whatever he or she wants. If filter does not exist for a user, nothing happens. Also you can share filters with certain users or groups to simplify their lives.</p>
+
+<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/475/show-issues-without-a-current-worklog">#475</a>, and issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/537/allow-issues-to-be-displayed-regardless-of">#537</a>.</p>
 
 <p>Note before version <code>2.7.6</code>, option uses JQL Clause, e.g. <code>status = &#39;In Progress&#39;</code>. The clause is prepended with <code>assignee = currentUser() and</code>.</p>
 
