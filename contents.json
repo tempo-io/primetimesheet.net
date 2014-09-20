@@ -23,7 +23,7 @@
     {
       "title": "Timesheet Holidays",
       "href": "Timesheet_Holidays",
-      "text": "Since version 2.6 it is possible to define variable or fixed holidays in Administration - Add Ons - Timesheet Holidays.\n\n## Holidays Calendar\n\nYou may use Holidays calendar to specify holidays manually.\n\n![Holidays Calendar](http://bitbucket.org/azhdanov/jiratimesheet/wiki/Timesheet_Holidays/holidays_calendar.png)\n\n## Import Holidays\n\nOr you may import .ics with corporate or state holidays. See [calendarlabs.com](http://www.calendarlabs.com/ical-calendar-holidays.php) for example\n\n![Holidays Calendar](http://bitbucket.org/azhdanov/jiratimesheet/wiki/Timesheet_Holidays/import_holidays.png)\n\nSee also [Issue#297](https://bitbucket.org/azhdanov/jiratimesheet/issue/297/time-297-holidays-calendar)\n"
+      "text": "Since version 2.6 it is possible to define variable or fixed holidays in Administration - Add Ons - Timesheet Holidays.\n\nSuch holidays then appear as days off in Time Sheet gadget and report.\n\n## Holidays Calendar\n\nYou may use Holidays calendar to specify holidays manually.\n\n![Holidays Calendar](http://bitbucket.org/azhdanov/jiratimesheet/wiki/Timesheet_Holidays/holidays_calendar.png)\n\n## Import Holidays\n\nOr you may import .ics with corporate or state holidays. See [calendarlabs.com](http://www.calendarlabs.com/ical-calendar-holidays.php) for example\n\n![Holidays Calendar](http://bitbucket.org/azhdanov/jiratimesheet/wiki/Timesheet_Holidays/import_holidays.png)\n\nSee also [Issue#297](https://bitbucket.org/azhdanov/jiratimesheet/issue/297/time-297-holidays-calendar)\n"
     },
     {
       "title": "Email Time Sheet Report",
