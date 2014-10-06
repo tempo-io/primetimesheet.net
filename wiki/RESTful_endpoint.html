@@ -137,7 +137,7 @@ With the url /rest/timesheet-gadget/1.0/raw-timesheet.json, it wil return, e.g.:
 
 <h3><a id="Worklogs_with_JQL_search" class="anchor" href="/wiki/RESTful_endpoint.html#Worklogs_with_JQL_search"><span></span></a>Worklogs with JQL search</h3>
 
-<p>Additionally, since version 2.6 you can use <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">jql search REST api</a> with &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, then you get all issue details, and you may include  worklogs for each issue in result, so you can do what ever you want.</p>
+<p>Additionally, since version 2.6 you can use <a href="https://developer.atlassian.com/static/rest/jira/6.1.html">jql search REST api</a> with &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, then you get all issue details, and you may include  worklogs for each issue in result, so you can do what ever you want.</p>
 
 <p>E.g. <code>http://localhost:2990/jira/rest/api/2/search?jql=key in workedIssues(&quot;2013/10/14&quot;,&quot;2013/10/14&quot;,&quot;jira-developers&quot;)&amp;fields=worklog</code>, and result JSON is:</p>
 
