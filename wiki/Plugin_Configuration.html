@@ -126,13 +126,17 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <h3><a id="Composition_Issue_Link" class="anchor" href="/wiki/Plugin_Configuration.html#Composition_Issue_Link"><span></span></a>Composition Issue Link</h3>
 
-<p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses JIRA built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from JIRA Agile, since version 2.7.</p>
+<p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses JIRA built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from JIRA Agile, since version 2.7, if <code>Parrent Issue Field</code> option is configured, see below.</p>
 
 <p>Note, this option is backed up with the following property in jira-config.properties. Sample usage:</p>
 
 <pre><code>jira.timesheet.plugin.composeIssueLink = Compose</code></pre>
 
 <p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/301/time-301-ability-to-aggregate-time">#301</a></p>
+
+<h3><a id="Parent_Issue_Field" class="anchor" href="/wiki/Plugin_Configuration.html#Parent_Issue_Field"><span></span></a>Parent Issue Field</h3>
+
+<p>Allows to aggregate hours into JIRA Agile Epic issue, when using <code>Sum subtasks</code> report or gadget configuration option. </p>
 
 <h3><a id="In_Progress_issues" class="anchor" href="/wiki/Plugin_Configuration.html#In_Progress_issues"><span></span></a>In Progress issues</h3>
 
