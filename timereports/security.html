@@ -116,14 +116,20 @@
 <pre><code>GET /timereports?tz=Europe%2FBerlin&amp;loc=en-US&amp;user_id=admin&amp;user_key=admin&amp;xdm_e=http%3A%2F%2Flocalhost%3A2990&amp;xdm_c=channel-timereports&amp;cp=%2Fjira&amp;lic=none&amp;jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjEzOTY5NjcyMjYsInN1YiI6ImFkbWluIiwiaXNzIjoiamlyYTpkODc5Y2M3Zi0yOTBhLTQ2NDctODM5Zi05MmJlNTI4NTc2NGEiLCJxc2giOiIzMWQ4YzZhMjUwZTA5MTY4ODNjNzMxZjRmN2UyZTdmNjdkMzNhMjBlMWUxMDM2YmM0ODg2OWNmMzU1ODgzNGQ4IiwiaWF0IjoxMzk2OTY3MDQ2fQ.egC3xw1Ul7Zx9uJ5KrxLMZ8ggSRCj5pMBcxKq9HRq_E 200 12ms
 </code></pre><p>No further communication is happening between Add-On host and JIRA host.</p>
 <p>Thereafter all data (specifically Time Tracking data) is requested and processed by add-on client side code in End User Browser and is not passed anywhere else.</p>
-<p>Here is the list of JIRA REST API used:</p>
+<p>Here is the list of JIRA REST API used clientside:</p>
 <ul>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2438">/rest/api/2/search</a> - issues and time tracking data.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e3764">/rest/api/2/user</a> - user data for timezone (not used at the moment).</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1698">/rest/api/2/issue/{issueIdOrKey}</a> - to load complete issue for Sum Sub-Tasks.</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2176">/rest/api/2/issue/{issueIdOrKey}/worklog</a> - to load complete issue worklog.</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e3764">/rest/api/2/user</a> - to get details (display name, groups, timezone) of logged in user or user selected in menu.</li>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1283">/rest/api/2/filter/favourite</a> - filters for Filter reports&#39; option.</li>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e131">/rest/api/2/field</a> - fields for Field reports&#39; option.</li>
+<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1368">/rest/api/2/mypermissions</a> - to check whether current user has Administrator priveleges to configure add-on</li>
 <li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e3922">/rest/api/2/user/picker</a> - users search for User reports&#39; option.</li>
+<li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e4866">/rest/api/2/groups/picker</a> - groups search for Timesheet Auditors Groups configuration</li>
+<li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e284">/rest/api/2/issueLinkType</a> - issue link types for Composition Issue Link configuraiton</li>
 </ul>
+<p>Note, group names, link type or field selected in add-on configuration is persisted in add-on DB.</p>
 <p>Note, Add-On declares READ <a href="https://developer.atlassian.com/static/connect/docs/scopes/scopes.html">scope</a> to access data as just described.</p>
 <h3 id="refernces">Refernces</h3>
 <ul>
