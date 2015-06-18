@@ -38,6 +38,7 @@ angular.module('searchApp',[]).filter('matchesQuery', function(){
         $scope.contents = $filter('matchesQuery')($scope.allContents, $scope.query);
 
         var params = {
+            type: "question",
             query: $scope.query,
             tags: 'addon-jira-timesheet-plugin',
             sort: "active"
@@ -46,16 +47,20 @@ angular.module('searchApp',[]).filter('matchesQuery', function(){
           return key + '=' + encodeURIComponent(params[key]);
         }).join('&');
         $scope.loading = true;
-        $http.get('https://developer.atlassian.com/rest/answers/1.0/search?' + query).success(function(data) {
+        /* FIXME: tags/topics query param is ignored
+        var resource = 'https://answers.atlassian.com/rest/questions/1.0/search/?' + query;
+        $http.jsonp('http://localhost:5000?callback=JSON_CALLBACK&resource=' + encodeURIComponent(resource)).success(function(data) {
           $scope.answers = data;
           $scope.loading = false
         }).error(function() {
           $scope.loading = false
         });
+        */
 
         $http.jsonp('https://bitbucket.org/api/1.0/repositories/azhdanov/jiratimesheet/issues?callback=JSON_CALLBACK&search='
             + encodeURIComponent($scope.query)).success(function(data) {
           $scope.issues = data.issues;
+          $scope.loading = false
         });
 
     }

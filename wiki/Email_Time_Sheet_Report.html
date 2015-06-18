@@ -109,9 +109,9 @@
         <h2>Email Time Sheet Report</h2>
         <p>Available since Version 2.5.</p>
 
-<p>See &#39;Subscribe&#39; link on Time Sheet Report, it should change to &#39;Unsubscribe&#39; when clicked.</p>
+<p>See &#39;Subscribe&#39; link on Time Sheet Report (and Pivot Report since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b997">2.8.3.2</a>, it should change to &#39;Unsubscribe&#39; when clicked.</p>
 
-<p>If so, Timesheet Email, is scheduled weekly on the next day to the End Date day of the report at 8 a.m. All report parameters should be remembered. You can see them and also be able to change the schedule in Issues - Timesheet/Subscriptions menu. There, Subscriptions list shows only currently logged in user subscriptions with different report parameters.</p>
+<p>If so, Report Email, is scheduled weekly on the next day to the End Date day of the report at 8 a.m. All report parameters should be remembered. You can see them and also be able to change the schedule in Issues - Timesheet/Subscriptions menu. There, Subscriptions list shows only currently logged in user subscriptions with different report parameters.</p>
 
 <h3><a id="Timesheet_Subscriptions" class="anchor" href="/wiki/Email_Time_Sheet_Report.html#Timesheet_Subscriptions"><span></span></a>Timesheet Subscriptions</h3>
 
@@ -119,13 +119,11 @@
 
 <p>Subscription is based on End Date, and number of weeks is derived from displayed report. End Date is used as Reporting Day, similarly to Timesheet Gadget, to show worked hours before Reporting Day.</p>
 
-<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b823">2.8.1</a> it is now possible to send user group a copy of Timesheet Email that you&#39;re subscribed to.</p>
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b823">2.8.1</a> it is now possible to send user group a copy of Timesheet Email that you&#39;re subscribed to. In menu Issues - Timesheet Subscriptions, click Schedule for relevant subscription and see <code>CC Users in Group</code> option.</p>
 
-<p>Additionally, it allows to remind group members if there is incomplete day in the timesheet. See Schedule option in menu Issues - Timesheet Subscriptions, and there see <code>CC Users in Group</code> and <code>Remind Users in Group</code> options.</p>
+<p>Additionally, it allows to remind group members if there is incomplete day in the timesheet. See <code>Remind Users in Group</code> option. Reminder email will have a notice in report body, if any working day has 0 reported hours, or less than value specified in <code>Highlight Hours</code> configuration option in <a href="Plugin_Configuration.html">Plugin Configuration</a>.</p>
 
-<p>Reminder email will have a notice in report body, if any working day has 0 reported hours, or less than value specified in <code>Highlight Hours</code> configuration option in <a href="Plugin_Configuration.html">Plugin Configuration</a>.</p>
-
-<p>Additionally, it is possible to manage all Timesheet Subscriptions in Administration - Add-Ons - Timesheet Subscriptions. Where administrators can remove any orphan or undesired subscriptions.</p>
+<p>Finally, it is possible to manage all Timesheet Subscriptions in Administration - Add-Ons - Timesheet Subscriptions. Where administrators can remove any orphan or undesired subscriptions.</p>
         <p class="pull-right">
           <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
         </p>

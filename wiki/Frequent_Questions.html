@@ -111,7 +111,7 @@
 
 <h3><a id="Timesheet_plugin_License_for_JIRA_Cloud" class="anchor" href="/wiki/Frequent_Questions.html#Timesheet_plugin_License_for_JIRA_Cloud"><span></span></a>Timesheet plugin License for JIRA Cloud</h3>
 
-<p>Timesheet Reports and Gadgets for JIRA add-on is free and pre-installed on JIRA Cloud instance. However some new features require license. You don&#39;t need license unless you need additional features like <a href="Plugin_Configuration.html">Timesheet Configuration</a>, <a href="Timesheet_Holidays.html">Timesheet Holidays</a>, <a href="Email_Time_Sheet_Report.html">Timesheet Email</a> and <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/416">Worked Time Chart</a> in JIRA Cloud. You will be redirected to license management page once you access these features.</p>
+<p>Timesheet Reports and Gadgets for JIRA add-on is free and pre-installed on JIRA Cloud instance. However some new features require license. You don&#39;t need license unless you need additional features like <a href="Plugin_Configuration.html">Timesheet Configuration</a>, <a href="Timesheet_Holidays.html">Timesheet Holidays</a>, <a href="Email_Time_Sheet_Report.html">Timesheet Email Subscriptions</a> and <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/416">Worked Time Chart</a> in JIRA Cloud. You will be redirected to license management page once you access these features.</p>
 
 <p>License can be obtained <a href="http://www.jiratimesheet.com/license.html">here</a>, please see there for more information about license for Timesheet plugin for JIRA Cloud.</p>
 
@@ -181,7 +181,10 @@
 log4j.additivity.com.fdu.jira.plugin = false
 
 log4j.logger.jira.plugin = DEBUG, console, filelog
-log4j.additivity.jira.plugin = false</code></pre>
+log4j.additivity.jira.plugin = false
+
+log4j.logger.jira.timesheet.plugin = DEBUG, console, filelog
+log4j.additivity.jira.timesheet.plugin = false</code></pre>
 
 <h3><a id="We_are_getting_excessive_warnings_in_the_log_how_is_it_possible_to_prevent_this_to_spam_our_Log" class="anchor" href="/wiki/Frequent_Questions.html#We_are_getting_excessive_warnings_in_the_log_how_is_it_possible_to_prevent_this_to_spam_our_Log"><span></span></a>We are getting excessive warnings in the log, how is it possible to prevent this to spam our Log?</h3>
 
