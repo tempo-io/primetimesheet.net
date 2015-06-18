@@ -157,6 +157,14 @@
 
 <p>Since version 2.3.15 it is possible to add Role as additional field into Timesheet report (see in the very bottom of Additional fields, as it is pseudo field), or use it for grouping, also in Timesheet gadget.</p>
 
+<h3><a id="Accumulate_hours_over_issues" class="anchor" href="/wiki/Tips_and_Tricks.html#Accumulate_hours_over_issues"><span></span></a>Accumulate hours over issues</h3>
+
+<p>Sum SubTasks report configuration option makes reports to aggregate logged hours and any numeric Aditional Fields into parent task, using native JIRA SubTasks feature, and optionally JIRA Agile Epic Links, and optionally custom Issue Linking, see corresponding options in <a href="Plugin_Configuration.html">Plugin Configuration</a>.</p>
+
+<p>Alternatively, using Group By report option,reports aggregate logged hours and any numeric Additional Field for the grouped issues, and display in corresponding report section. Also using Collapse groups option, it&#39;s possible to get overall total.</p>
+
+<p>Finally, report total section beside summing up logged hours, aggregates any numeric Additional Fields too.</p>
+
 <h3><a id="Leaves" class="anchor" href="/wiki/Tips_and_Tricks.html#Leaves"><span></span></a>Leaves</h3>
 
 <p>Plugin has support for public holidays, see <a href="Timesheet_Holidays.html">Timesheet Holidays</a>. But for personal holidays or sick leaves, it does not have special support, but there is a workaround - create separate project (say Internal) and a few issues for different kind of leaves, and let users log hours on it.</p>
