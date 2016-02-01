@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1397507776000.css"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1454323261000.css"> 
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -26,7 +26,7 @@
     <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-    <script src="/js/all-1399832936000.js"></script> 
+    <script src="/js/all-1454323261000.js"></script> 
 
     <script src="/js/sammy/sammy-0.7.2.js"></script>
     <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
@@ -139,7 +139,11 @@
 
 <p>If you don&#39;t specify Start/End dates, you may bookmark report URL and get time data for last week, up to the current date.</p>
 
-<p>Also since version 2.8.0.2 it is possible to add hidden <code>reportingDay</code> parameter, to make report behave like gadget, i.e. show time spent for the current week, up to next Monday, or any other day you specify. E.g. <code>reportingDay=1</code> for Monday.</p>
+<p>Also since version 2.8.0.2 it is possible to add <code>reportingDay</code> url parameter, to make report behave like gadget, i.e. show time spent for the current week, up to next Monday, or any other day you specify. E.g. <code>reportingDay=1</code> for Monday.</p>
+
+<p>Since version 2.9.3 there is support for numOfWeeks, offset and monthView url parameters for time period in reports also, thus different date ranges than a week are possible.</p>
+
+<p>Note, the easiest way to compose correct report url is to click Details link in corresponding gadget, when it shows time window you&#39;d like to get in the report.</p>
 
 <h3><a id="Billable_vs_nonbillable_time" class="anchor" href="/wiki/Tips_and_Tricks.html#Billable_vs_nonbillable_time"><span></span></a>Billable vs. non-billable time</h3>
 
