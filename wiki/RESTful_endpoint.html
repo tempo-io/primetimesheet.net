@@ -107,39 +107,19 @@
     <div class="row-fluid">
       <div class="span9">
         <h2>RESTful endpoint</h2>
-        <p>Since version 2.3.10, with timesheet plugin installed, it is possibile to get raw timetracking data in json fromat.
-With the url /rest/timesheet-gadget/1.0/raw-timesheet.json, it wil return, e.g.:</p>
+        <p>JIRA has native support for loading worklogs via REST, e.g. by searching for issues using JQL and including <code>worklog</code> field in <code>fields</code> request param, see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/search">/api/2/search</a>.</p>
 
-<pre><code>{ &quot;worklog&quot; : [ { &quot;entries&quot; : [ { &quot;author&quot; : &quot;admin&quot;,
-          &quot;authorFullName&quot; : &quot;admin&quot;,
-          &quot;comment&quot; : &quot;test&quot;,
-          &quot;created&quot; : 1340870920388,
-          &quot;startDate&quot; : 1340870880000,
-          &quot;timeSpent&quot; : 3600,
-          &quot;updateAuthor&quot; : &quot;admin&quot;,
-          &quot;updateAuthorFullName&quot; : &quot;admin&quot;,
-          &quot;updated&quot; : 1340870920388
-        } ],
-    &quot;key&quot; : &quot;TP-1&quot;,
-    &quot;summary&quot; : &quot;Some Problem&quot;
-  } ]
-}</code></pre>
+<p>Since JIRA 6.4 there are two JQL clauses to limit result set to issues that have relevant worklogs: <code>worklogDate</code> and <code>worlkogAuthor</code>. See <a href="https://confluence.atlassian.com/jira/advanced-searching-fields-reference-433395081.html">Advanced Searching - Fields reference</a>, when <a href="https://jira.atlassian.com/browse/JRA-44902">JRA-44902</a> is fixed.</p>
 
-<p>It accepts the following parameters</p>
+<p>For <code>worklogDate</code> valid formats include: <code>&#39;YYYY/MM/DD&#39;</code>, <code>&#39;YYYY-MM-DD&#39;</code>, or a period format e.g. <code>&#39;-5d&#39;</code>, <code>&#39;4w 2d&#39;</code>, or date function, e.g. <code>endOfDay()</code> for <code>Today</code>.</p>
 
-<ul><li>targetUser - optional userId,</li><li>targetGroup - optional group name, e.g. jira-users,</li><li>startDate - optional begin date in Jira date picker format, e.g. 01/Jun/2012, or in ISO date format, e.g. 2012-06-01,</li><li>endDate - optional end date, format is the same,</li><li>projectid - optional, e.g. 10001 (not project key!),</li><li>filterid - optional.</li></ul>
+<p>For <code>worklogAuthor</code> username or <code>membersOf()</code> can be used.</p>
 
-<p>If nothing is specified it behaves like report, displays data a week before current day for currently logged in user.</p>
+<p>So, request can look like the following:</p>
 
-<p>Dates in response are UNIX time - milliseconds since 01/01/1970; timesSpent is in seconds.</p>
+<pre><code>GET /rest/api/2/search?fields=*all&amp;jql=filter=10001 and worklogDate &gt; &#39;2016-03-01&#39; and worklogDate &lt; endOfDay() and worklogAuthor in membersOf(&quot;jira-developers&quot;)</code></pre>
 
-<p>See also <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">issue#269</a></p>
-
-<h3><a id="Worklogs_with_JQL_search" class="anchor" href="/wiki/RESTful_endpoint.html#Worklogs_with_JQL_search"><span></span></a>Worklogs with JQL search</h3>
-
-<p>Additionally, since version 2.6 you can use <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">jql search REST api</a> with &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, then you get all issue details, and you may include  worklogs for each issue in result, so you can do what ever you want.</p>
-
-<p>E.g. <code>http://localhost:2990/jira/rest/api/2/search?jql=key in workedIssues(&quot;2013/10/14&quot;,&quot;2013/10/14&quot;,&quot;jira-developers&quot;)&amp;fields=worklog</code>, and result JSON is:</p>
+<p>Then response JSON can look like:</p>
 
 <pre><code>{ &quot;expand&quot; : &quot;schema,names&quot;,
   &quot;issues&quot; : [{ &quot;expand&quot; : &quot;editmeta,renderedFields,transitions,changelog,operations&quot;,
@@ -211,6 +191,49 @@ With the url /rest/timesheet-gadget/1.0/raw-timesheet.json, it wil return, e.g.:
   &quot;startAt&quot; : 0,
   &quot;total&quot; : 1
 }</code></pre>
+
+<p>Caution, worklog returned contains only first 20 worklogs per issue, and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries. It is your responsibility to load all worklogs per issue, using <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/issue-getIssueWorklog">/rest/api/2/issue/{issueIdOrKey}/worklog</a> endpoint, and filter out worklogs that do not match your criteria.</p>
+
+<p>Note, alternatively you can see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/worklog">/api/2/worklog</a> for massive loading worklog without issues data.</p>
+
+<h3><a id="Before_JIRA_64" class="anchor" href="/wiki/RESTful_endpoint.html#Before_JIRA_64"><span></span></a>Before JIRA 6.4</h3>
+
+<p>Since plugin version 2.6 you can use the same <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">JQL search REST api</a> but with <code>workedIssues()</code> JQL function provided by the plugin, e.g. &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, to limit result set to issues with relevant worklogs only.</p>
+
+<p>E.g. <code>http://localhost:2990/jira/rest/api/2/search?jql=key in workedIssues(&quot;2013/10/14&quot;,&quot;2013/10/14&quot;,&quot;jira-developers&quot;)&amp;fields=worklog</code></p>
+
+<p>Caution, as above, worklog returned contains only first 20 worklogs per issue, and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries.</p>
+
+<h3><a id="Plugin_REST_endpoint" class="anchor" href="/wiki/RESTful_endpoint.html#Plugin_REST_endpoint"><span></span></a>Plugin REST endpoint</h3>
+
+<p>Since plugin version 2.3.10, with timesheet plugin installed, it is possible to get worklogs in json format including minimum issue data.</p>
+
+<p>E.g. with the url /rest/timesheet-gadget/1.0/raw-timesheet.json, it will return:</p>
+
+<pre><code>{ &quot;worklog&quot; : [ { &quot;entries&quot; : [ { &quot;author&quot; : &quot;admin&quot;,
+          &quot;authorFullName&quot; : &quot;admin&quot;,
+          &quot;comment&quot; : &quot;test&quot;,
+          &quot;created&quot; : 1340870920388,
+          &quot;startDate&quot; : 1340870880000,
+          &quot;timeSpent&quot; : 3600,
+          &quot;updateAuthor&quot; : &quot;admin&quot;,
+          &quot;updateAuthorFullName&quot; : &quot;admin&quot;,
+          &quot;updated&quot; : 1340870920388
+        } ],
+    &quot;key&quot; : &quot;TP-1&quot;,
+    &quot;summary&quot; : &quot;Some Problem&quot;
+  } ]
+}</code></pre>
+
+<p>It accepts the following parameters</p>
+
+<ul><li><code>targetUser</code> - optional userId,</li><li><code>targetGroup</code> - optional group name, e.g. jira-users,</li><li><code>startDate</code> - optional begin date in Jira date picker format, e.g. <code>01/Jun/2012</code>, or in ISO date format, e.g. <code>2012-06-01</code>,</li><li><code>endDate</code> - optional end date, format is the same,</li><li><code>projectid</code> - optional, e.g. 10001 (not project key!),</li><li><code>filterid</code> - optional.</li></ul>
+
+<p>If nothing is specified it behaves like report, displays data a week before current day for currently logged in user.</p>
+
+<p>Dates in response are UNIX time - milliseconds since <code>01/01/1970</code>; timesSpent is in seconds.</p>
+
+<p>See also <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">issue#269</a></p>
         <p class="pull-right">
           <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
         </p>
