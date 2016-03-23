@@ -208,26 +208,43 @@
 
 <p>Since plugin version 2.3.10, with timesheet plugin installed, it is possible to get worklogs in json format including minimum issue data.</p>
 
-<p>E.g. with the url /rest/timesheet-gadget/1.0/raw-timesheet.json, it will return:</p>
+<p>E.g. with the url /rest/timesheet-gadget/1.0/raw-timesheet.json?moreFields=creator&amp;moreFields=created, it will return:</p>
 
-<pre><code>{ &quot;worklog&quot; : [ { &quot;entries&quot; : [ { &quot;author&quot; : &quot;admin&quot;,
-          &quot;authorFullName&quot; : &quot;admin&quot;,
-          &quot;comment&quot; : &quot;test&quot;,
-          &quot;created&quot; : 1340870920388,
-          &quot;startDate&quot; : 1340870880000,
-          &quot;timeSpent&quot; : 3600,
-          &quot;updateAuthor&quot; : &quot;admin&quot;,
-          &quot;updateAuthorFullName&quot; : &quot;admin&quot;,
-          &quot;updated&quot; : 1340870920388
-        } ],
-    &quot;key&quot; : &quot;TP-1&quot;,
-    &quot;summary&quot; : &quot;Some Problem&quot;
-  } ]
+<pre><code>{
+  &quot;worklog&quot;: [
+    {
+      &quot;key&quot;: &quot;TIME-1&quot;,
+      &quot;summary&quot;: &quot;Hocus Focus Problem&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: 10014,
+          &quot;comment&quot;: &quot;test&quot;,
+          &quot;timeSpent&quot;: 21600,
+          &quot;author&quot;: &quot;admin&quot;,
+          &quot;authorFullName&quot;: &quot;admin&quot;,
+          &quot;created&quot;: 1458477642089,
+          &quot;startDate&quot;: 1457910000000,
+          &quot;updateAuthor&quot;: &quot;admin&quot;,
+          &quot;updateAuthorFullName&quot;: &quot;admin&quot;,
+          &quot;updated&quot;: 1458477642089
+        }
+      ],
+      &quot;fields&quot;: [
+        {
+          &quot;label&quot;: &quot;2013-03-12T09:45:35+0100&quot;,
+          &quot;value&quot;: &quot;created&quot;
+        },
+        {
+          &quot;label&quot;: &quot;admin&quot;,
+          &quot;value&quot;: &quot;creator&quot;
+        }
+      ]
+    }
 }</code></pre>
 
 <p>It accepts the following parameters</p>
 
-<ul><li><code>targetUser</code> - optional userId,</li><li><code>targetGroup</code> - optional group name, e.g. jira-users,</li><li><code>startDate</code> - optional begin date in Jira date picker format, e.g. <code>01/Jun/2012</code>, or in ISO date format, e.g. <code>2012-06-01</code>,</li><li><code>endDate</code> - optional end date, format is the same,</li><li><code>projectid</code> - optional, e.g. 10001 (not project key!),</li><li><code>filterid</code> - optional.</li></ul>
+<ul><li><code>targetUser</code> - optional userId,</li><li><code>targetGroup</code> - optional group name, e.g. jira-users,</li><li><code>startDate</code> - optional begin date in Jira date picker format, e.g. <code>01/Jun/2012</code>, or in ISO date format, e.g. <code>2012-06-01</code>,</li><li><code>endDate</code> - optional end date, format is the same,</li><li><code>projectid</code> - optional, e.g. 10001 (not project key!),</li><li><code>filterid</code> - optional,</li><li><code>moreFields</code> - optional.</li></ul>
 
 <p>If nothing is specified it behaves like report, displays data a week before current day for currently logged in user.</p>
 
