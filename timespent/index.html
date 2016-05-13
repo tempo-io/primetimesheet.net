@@ -3,13 +3,13 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
-    <meta name="description" content="Time Reports add-on for Atlasian Bitbucket enables time tracking and provides timesheet reports. ">
+    <meta name="description" content="Time Spent add-on for Atlassian JIRA extends time tracking means with pivot and timesheet reports.">
     <meta name="author" content="Andriy Zhdanov">
     <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
-        timetraking, time tracking, time report, time reporting, timesheet system, project management">
+        timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management, time spent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Time Reports for JIRA Cloud</title>
+    <title>Time Spent add-on</title>
 
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
@@ -53,11 +53,11 @@
           <span class="icon-bar"></span>
         </button>
         <a class="brand" href="/">JIRA Server</a>
-        <a class="brand active" href="/timereports/">JIRA Cloud</a>
-        <!--a class="brand" href="/timespent/">Bitbucket</a-->
+        <a class="brand" href="/timereports/">JIRA Cloud</a>
+        <a class="brand active" href="/timespent/">Bitbucket</a>
         <div class="nav-collapse collapse">
         <ul class="nav">
-          <li id="home" class="active"><a href="/timereports">Home</a><span></span></li>
+          <li id="home" class="active"><a href="/timespent">Home</a><span></span></li>
         </ul>
       </div>
     </div>
@@ -69,8 +69,8 @@
   <header>
     <div class="row-fluid">
       <div class="span12">
-        <h1>Time Reports for JIRA Cloud</h1>
-        <p class="lead">Flexible view for JIRA issues time tracking data</p>
+        <h1>Time Spent add-on</h1>
+        <p class="lead">Flexible time tracking for Bitbucket</p>
       </div>
     </div>
   </header>
@@ -84,23 +84,17 @@
 
         <div class="slider-wrapper theme-default">
           <div id="slider" class="nivoSlider">
-            <img src="/images/timereports-slider/timereports-timesheet.png" data-thumb="images/timereports-slider/timereports-timesheet.png" alt="Timesheet View"/>
-            <img src="/images/timereports-slider/timereports-pivot.png" data-thumb="images/timereports-slider/timereports-pivot.png" alt="Pivot By Users View"/>
-            <img src="/images/timereports-slider/timereports-pivot-status.png" data-thumb="images/timereports-slider/timereports-planned-pivot-status.png" alt="Pivot by Status View" />
-            <img src="/images/timereports-slider/timereports-timetracking.png" data-thumb="images/timereports-slider/timereports-timetracking.png" alt="Time Tracking view" />
-            <img src="/images/timereports-slider/timereports-piechart.png" data-thumb="images/timereports-slider/timereports-piechart.png" alt="Pie Chart view" />
+            <img src="/images/timespent-slider/timespent.png" data-thumb="/images/timespent-slider/timespent.png" alt="Timespent"/>
             </div>
         </div>
       </div>
 
       <!-- sidebar -->
       <div class="span3 sidemenu">
-        <a href="https://marketplace.atlassian.com/plugins/timereports"><img src="/images/marketplace_available_light_180x80.png" title="Available on the Atlassian Marketplace" alt="Available on the Atlassian Marketplace"/></a>
+        <!--a href="https://marketplace.atlassian.com/plugins/timereports"><img src="/images/marketplace_available_light_180x80.png" title="Available on the Atlassian Marketplace" alt="Available on the Atlassian Marketplace"/></a-->
         <ul>
-          <li><a href="faq.html">Frequent Questions</a></li>
-          <li><a href="https://answers.atlassian.com/tags/addon-timereports-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open&component=Time%20Reports" target="blank">Issues</a><i class="icon-external-link"></i></li>
-          <li><a href="/timereports/security.html">Security Statement</a></li>
+          <li><a href="https://bitbucket.org/azhdanov/timespent/issues?status=new&status=open" target="blank">Issues</a><i class="icon-external-link"></i></li>
+          <li><a href="/timespent/security.html">Security Statement</a></li>
         </ul>
       </div>
       <!-- /sidebar -->
@@ -111,7 +105,7 @@
   <section>
     <div class="row-fluid">
         <div class="hero-unit">
-          Flexible view for JIRA issues time tracking data.
+            Flexible time tracking for BitBucket.
         </div>
    </div>
   </section>
@@ -121,16 +115,9 @@
     <div class="row-fluid">
 	  <div class="span9">
 	    <h2></h2>
-	    <p>Time Reports Add-On is a modern and yet immature version of Timesheet Reports and Gadgets Add-On. It is intended to provide flexible and extensible solution. It is designed to evolve faster and is built specifically for JIRA Cloud.</p>
+	    <p>Time Spent Add-On is a modern and yet immature version of Timesheet Reports and Gadgets Add-On. It is intended to provide flexible and extensible solution. It is designed to evolve faster and is built specifically for Atlassian Add-on.</p>
 <h2 id="install">Install</h2>
-<p>Just go to Administration - Plugins - Install in your JIRA, search for &#39;timerports&#39;, see &#39;Time Reports Add-On for JIRA Cloud&#39; and click install.</p>
-<p>When installed Time Reports Add-On adds Issues - Time Reports menu item under Timesheet menu section. It gives access to three report types at the moment:</p>
-<ul>
-<li>Time spent on Issues by Days - old time sheet view.</li>
-<li>Time spent on Issues by Users - old project pivot view.</li>
-<li>Time estimate vs actual - example of straightforward extension to Time Reports model.</li>
-</ul>
-<p>More reports may be added upon interest.</p>
+<p>Just go to Profile - Add-ons - search for &#39;timespent&#39;, and click Add.</p>
 
 	    <p class="pull-right">
 	      <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
@@ -162,8 +149,7 @@
         <h3>Links</h3>
         <div class="footer-list">
           <ul>
-            <li><a href="https://marketplace.atlassian.com/plugins/timereports" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
-            <li><a href="https://answers.atlassian.com/tags/addon-timereports-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
+            <li><a href="https://marketplace.atlassian.com/plugins/" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
           </ul>
         </div>
       </div>
@@ -171,13 +157,13 @@
         <h3>Site</h3>
         <div class="footer-list">
           <ul>
-            <li><a href="/timereports/">Home</a></li>
+            <li><a href="/timespent/">Home</a></li>
           </ul>
         </div>
       </div>
       <div class="span3">
         <h3>Copyright</h3>
-        <p class="footer-list">&copy; Andriy Zhdanov 2015-2016</p>
+        <p class="footer-list">&copy; Easysecrets 2016</p>
       </div>
     </div>
     <hr/>

@@ -9,7 +9,7 @@
         timetraking, time tracking, time report, time reporting, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Time Reports for JIRA Cloud</title>
+    <title>Frequent Questions | Time Reports for JIRA Cloud</title>
 
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
@@ -57,7 +57,7 @@
         <!--a class="brand" href="/timespent/">Bitbucket</a-->
         <div class="nav-collapse collapse">
         <ul class="nav">
-          <li id="home" class="active"><a href="/timereports">Home</a><span></span></li>
+          <li id="home" ><a href="/timereports">Home</a><span></span></li>
         </ul>
       </div>
     </div>
@@ -77,68 +77,38 @@
 
   <div id="content">
 
-<div id="main">
-  <section>
-    <div class="row-fluid">
-      <div class="span9">
 
-        <div class="slider-wrapper theme-default">
-          <div id="slider" class="nivoSlider">
-            <img src="/images/timereports-slider/timereports-timesheet.png" data-thumb="images/timereports-slider/timereports-timesheet.png" alt="Timesheet View"/>
-            <img src="/images/timereports-slider/timereports-pivot.png" data-thumb="images/timereports-slider/timereports-pivot.png" alt="Pivot By Users View"/>
-            <img src="/images/timereports-slider/timereports-pivot-status.png" data-thumb="images/timereports-slider/timereports-planned-pivot-status.png" alt="Pivot by Status View" />
-            <img src="/images/timereports-slider/timereports-timetracking.png" data-thumb="images/timereports-slider/timereports-timetracking.png" alt="Time Tracking view" />
-            <img src="/images/timereports-slider/timereports-piechart.png" data-thumb="images/timereports-slider/timereports-piechart.png" alt="Pie Chart view" />
-            </div>
+  <div id="main">
+    <section>
+      <div class="row-fluid">
+        <div class="span9">
+          <h2 id="frequent-questions">Frequent Questions</h2>
+<p>If you have not found your answer here or in <a href="https://answers.atlassian.com/tags/addon-timereports-plugin/">Atlassian Answers</a>, do not hesitate to write me an email in English, Russian or Czech language at your convenience.</p>
+<h3 id="hours-logged-per-user-per-day-">Hours logged per user per day?</h3>
+<p>You just need to Group by: Worked User.</p>
+<h3 id="where-is-time-reports-menu-">Where is Time Reports menu?</h3>
+<p>Time Reports report is accessible via menu Projects - some project - Reports tab - Other category.</p>
+<p>It can be also open from dashboard using arrow icon in top right corner of the Time Reports gadget.</p>
+<p>Additionally you can add quick link with <a href="https://confluence.atlassian.com/jira/creating-links-in-the-application-navigator-346948276.html">Application Navigator</a> - it allows to set its links to be viewable just by the specified groups in a really straight-forward manner.</p>
+<h3 id="timesheet-report-missing-">Timesheet Report missing?</h3>
+<p>It&#39;s replaced with Time Reports, please see <a href="https://confluence.atlassian.com/jirakb/jira-timesheet-reports-and-gadgets-removal-from-jira-cloud-792504481.html">announcment</a> for more details.</p>
+<h3 id="missing-features-">Missing features?</h3>
+<p>Collapse Field Groups option - should be added soon.</p>
+<p>Holidays is likely to be added later.</p>
+<p>Support for Timesheet Email may not be added soon. It requires significant rework, and storing worklogs server-side, that is out of add-on goals.</p>
+<p>REST endpoint for raw worklogs - please use JIRA native REST api, as described <a href="/wiki/RESTful_endpoint.html">here</a>.</p>
+
+        </div>
+        <div class="span3 sidemenu">
+          <ul>
+            <li class="active"><a href="faq.html">Frequent Questions</a></li>
+            <li><a href="https://answers.atlassian.com/tags/addon-timereports-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
+            <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open&component=Time%20Reports" target="blank">Issues</a><i class="icon-external-link"></i></li>
+            <li ><a href="/timereports/security.html">Security Statement</a></li>
+          </ul>
         </div>
       </div>
-
-      <!-- sidebar -->
-      <div class="span3 sidemenu">
-        <a href="https://marketplace.atlassian.com/plugins/timereports"><img src="/images/marketplace_available_light_180x80.png" title="Available on the Atlassian Marketplace" alt="Available on the Atlassian Marketplace"/></a>
-        <ul>
-          <li><a href="faq.html">Frequent Questions</a></li>
-          <li><a href="https://answers.atlassian.com/tags/addon-timereports-plugin/" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open&component=Time%20Reports" target="blank">Issues</a><i class="icon-external-link"></i></li>
-          <li><a href="/timereports/security.html">Security Statement</a></li>
-        </ul>
-      </div>
-      <!-- /sidebar -->
-
-    </div>
   </section>
-
-  <section>
-    <div class="row-fluid">
-        <div class="hero-unit">
-          Flexible view for JIRA issues time tracking data.
-        </div>
-   </div>
-  </section>
-
-
-  <section>
-    <div class="row-fluid">
-	  <div class="span9">
-	    <h2></h2>
-	    <p>Time Reports Add-On is a modern and yet immature version of Timesheet Reports and Gadgets Add-On. It is intended to provide flexible and extensible solution. It is designed to evolve faster and is built specifically for JIRA Cloud.</p>
-<h2 id="install">Install</h2>
-<p>Just go to Administration - Plugins - Install in your JIRA, search for &#39;timerports&#39;, see &#39;Time Reports Add-On for JIRA Cloud&#39; and click install.</p>
-<p>When installed Time Reports Add-On adds Issues - Time Reports menu item under Timesheet menu section. It gives access to three report types at the moment:</p>
-<ul>
-<li>Time spent on Issues by Days - old time sheet view.</li>
-<li>Time spent on Issues by Users - old project pivot view.</li>
-<li>Time estimate vs actual - example of straightforward extension to Time Reports model.</li>
-</ul>
-<p>More reports may be added upon interest.</p>
-
-	    <p class="pull-right">
-	      <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
-	    </p>
-	  </div>
-    </div>
-  </section>
-
 </div>
 <!-- /main -->
 
