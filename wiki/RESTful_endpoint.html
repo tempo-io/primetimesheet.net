@@ -92,7 +92,7 @@
         <h2>RESTful endpoint</h2>
         <p>JIRA has native support for loading worklogs via REST, e.g. by searching for issues using JQL and including <code>worklog</code> field in <code>fields</code> request param, see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/search">/api/2/search</a>.</p>
 
-<p>Since JIRA 6.4 there are two JQL clauses to limit result set to issues that have relevant worklogs: <code>worklogDate</code> and <code>worlkogAuthor</code>. See <a href="https://confluence.atlassian.com/jira/advanced-searching-fields-reference-433395081.html">Advanced Searching - Fields reference</a>, when <a href="https://jira.atlassian.com/browse/JRA-44902">JRA-44902</a> is fixed.</p>
+<p>Since JIRA 6.4 there are three JQL clauses to limit result set to issues that have relevant worklogs: <code>worklogAuthor</code>, <code>worklogComment&#39; and </code>worlkogDate`. See <a href="https://confluence.atlassian.com/jira/advanced-searching-fields-reference-433395081.html#Advancedsearching-fieldsreference-WorkLogAuthorworklogAuthorWorklogauthor">Advanced Searching - Fields reference</a>.</p>
 
 <p>For <code>worklogDate</code> valid formats include: <code>&#39;YYYY/MM/DD&#39;</code>, <code>&#39;YYYY-MM-DD&#39;</code>, or a period format e.g. <code>&#39;-5d&#39;</code>, <code>&#39;4w 2d&#39;</code>, or date function, e.g. <code>endOfDay()</code> for <code>Today</code>.</p>
 
@@ -175,7 +175,7 @@
   &quot;total&quot; : 1
 }</code></pre>
 
-<p>Caution, worklog returned contains only first 20 worklogs per issue, and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries. It is your responsibility to load all worklogs per issue, using <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/issue-getIssueWorklog">/rest/api/2/issue/{issueIdOrKey}/worklog</a> endpoint, and filter out worklogs that do not match your criteria.</p>
+<p>Caution, worklog returned contains only first 20 worklogs per issue (see <a href="https://jira.atlassian.com/browse/JRA-34746">JRA-34746</a>), and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries. It is your responsibility to load all worklogs per issue, using <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/issue-getIssueWorklog">/rest/api/2/issue/{issueIdOrKey}/worklog</a> endpoint, and filter out worklogs that do not match your criteria, see <a href="https://answers.atlassian.com/questions/205807/rest-api-is-returning-only-20-worklogs-per-issue">answers</a> for help.</p>
 
 <p>Note, alternatively you can see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/worklog">/api/2/worklog</a> for massive loading worklog without issues data.</p>
 
