@@ -124,9 +124,13 @@
 
 <p>Also since version 2.8.0.2 it is possible to add <code>reportingDay</code> url parameter, to make report behave like gadget, i.e. show time spent for the current week, up to next Monday, or any other day you specify. E.g. <code>reportingDay=1</code> for Monday.</p>
 
-<p>Since version 2.9.3 there is support for numOfWeeks, offset and monthView url parameters for time period in reports also, thus different date ranges than a week are possible.</p>
+<p>Since version 2.9.3 there is support for <code>numOfWeeks</code>, <code>offset</code> and <code>monthView</code> url parameters for time period in reports also, thus different date ranges than a week are possible.</p>
 
-<p>Note, the easiest way to compose correct report url is to click Details link in corresponding gadget, when it shows time window you&#39;d like to get in the report.</p>
+<p>E.g., you&#39;d like timesheet report about whole previous month. So you need to specify offset=-1 and numOfWeeks=1 with monthView=true and keep other parameters specified normally in report configuration, so the url should be, something like the following:</p>
+
+<pre><code>ConfigureReport.jspa?offset=-1&amp;numOfWeeks=1&amp;weekends=true&amp;monthView=true&amp;reportKey=jira-timesheet-plugin%3Areport&amp;Next=Next</code></pre>
+
+<p>Note, the easiest way to compose correct report url is to click Details link in corresponding gadget, when it shows variable time window you&#39;d like to get in the report.</p>
 
 <h3><a id="Billable_vs_nonbillable_time" class="anchor" href="/wiki/Tips_and_Tricks.html#Billable_vs_nonbillable_time"><span></span></a>Billable vs. non-billable time</h3>
 
