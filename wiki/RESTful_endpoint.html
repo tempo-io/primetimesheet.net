@@ -234,6 +234,12 @@
 <p>Dates in response are UNIX time - milliseconds since <code>01/01/1970</code>; timesSpent is in seconds.</p>
 
 <p>See also <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">issue#269</a></p>
+
+<h4><a id="Export_to_CSV" class="anchor" href="/wiki/RESTful_endpoint.html#Export_to_CSV"><span></span></a>Export to CSV</h4>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1670">2.9.8.3</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1675">3.0.8.3</a> it is possible to export raw worklogs in CSV format, similarly to Excel view, by using export link from Timesheet gadget, and replacing htmlExport url parameter with csvExport, e.g.:</p>
+
+<pre><code>http://localhost:2990/jira/rest/timesheet-gadget/1.0/timesheet.json?csvExport=true&amp;weekends=true&amp;targetUser=admin&amp;showDetails=true&amp;reportingDay=2&amp;groupByField=customfield_group&amp;moreFields=reporter&amp;moreFields=status&amp;moreFields=timespent&amp;moreFields=timetracking&amp;numOfWeeks=1&amp;offset=0&amp;sum=day</code></pre>
         <p class="pull-right">
           <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
         </p>

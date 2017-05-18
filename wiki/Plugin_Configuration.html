@@ -111,6 +111,8 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses JIRA built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from JIRA Agile, since version 2.7, if <code>Parrent Issue Field</code> option is configured, see below.</p>
 
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1670">2.9.8.3</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1675">3.0.8.3</a> it is possible to switch link direction using <code>Reverse Composition</code> option for relation like Gathers/Is Gathered By.</p>
+
 <p>Note, this option is backed up with the following property in jira-config.properties. Sample usage:</p>
 
 <pre><code>jira.timesheet.plugin.composeIssueLink = Compose</code></pre>
