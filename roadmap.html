@@ -15,7 +15,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1490603793000.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/nivo-slider.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/css/nivo-slider-themes/default/default.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -26,7 +28,9 @@
     <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-    <script src="/js/all-1490603793000.js"></script>
+    <script src="/js/jquery.nivo.slider.pack.js"></script>
+<script src="/js/jquery.validate-1.11.1.min.js"></script>
+<script src="/js/site.js"></script>
 
     <script src="/js/sammy/sammy-0.7.2.js"></script>
     <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
@@ -96,16 +100,6 @@
         <p>For the long time Timesheet plugin evolves basing on your feedback and feature requests, and I also have some features in mind.
          Please vote for or comment on any or many enhancements below at corresponding bitbucket issue, if you'd like it to be implemented.</p>
         <div class="post">
-          <h4>More/Better worked time charts <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/429/stacked-column-workload-chart-in-case-of">Issue #429</a>)</h4>
-          <p>In <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/416/implement-an-workload-pie-chart-in-suit">Issue #416</a> pie chart is introduced for Worked Time, and it is used in case of 'Group By' also, but it's inconsistent with timesheet gadget, which groups values by project and then by selected field.</p>
-          <p>Stacked column chart would be more correct, e.g.
-          <img src="images/stacked.png"/></p>
-          <p>Or even better two level Doughnut Pie chart, e.g:
-          <img src="images/doughnut.png"/></p>
-          <p>Please vote on <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/429/stacked-column-workload-chart-in-case-of">Issue #429</a></a>,
-           if you'd like this feature to be implemented, and comment if as Stacked Bar or Doughnut Pie chart, or as anything else.
-        </div>
-        <div class="post">
           <h4>Sorting rows (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/426/sorting-rows-in-the-gadget">Issue #426</a>)</h4>
           <p>The usability of the gadget would be enhanced if it was possible to sort the rows by clicking on the column header. Bonus would be if the gadget remembered sort order between separate logins.</p>
           <p>Please vote on <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/426/sorting-rows-in-the-gadget">Issue #426</a></a>, if you'd like this feature to be implemented.
@@ -136,6 +130,12 @@
     <div class="row-fluid">
       <div class="span9">
         <h2>Features done</h2>
+        <div class="post">
+          <h4>More/Better worked time charts (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/429/stacked-column-workload-chart-in-case-of">Issue #429</a>)</h4>
+          <p>In <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/416/implement-an-workload-pie-chart-in-suit">Issue #416</a> pie chart is introduced for Worked Time, and it is used in case of 'Group By' also, but it's inconsistent with timesheet gadget, which groups values by project and then by selected field.</p>
+          <p>Stacked column chart in case of Group By was added in version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1466">2.9.5.9</a>
+            <img src="images/stacked.png"/></p>
+        </div>
         <div class="post">
           <h4>Sum Tasks/Stories into Epic (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/360/sum-tasks-stories-into-epic">Issue #360</a>)</h4>
           <p>Since version <a href="">2.7</a> it is possible to sum worked hours into JIRA Agile Epic issues, when using  Sum SubTasks option.</p>
