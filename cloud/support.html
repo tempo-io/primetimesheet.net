@@ -115,14 +115,14 @@ or <a href="https://bitbucket.org/azhdanov/jiratimesheet/issues">Issue Tracker</
     <label for="query">Or search existing issues:</label>
     <input class="form-control mt-2 mb-2" type="text" title="Search" ng-model="query" ng-class="{loading: loading}"/>
   </fieldset>
-  <ul class="search">
+  <ul class="search p-0">
     <a ng-if="answers" ng-href="https://answers.atlassian.com/search/?t=question&q=%5Baddon-jira-timesheet-plugin%5D+{[{query | encodeURIComponent}]}&sort=active" target="_blank">
       <h4>Atlassian Answers<i class="icon-external-link"></i></h4></a>
     <li ng-repeat="answer in answers">
       <a ng-href="{[{answer.uri}]}" title="{[{answer.summary}]}" target="_blank">{[{answer.title}]}<i class="icon-external-link"></i></a>
     </li>
   </ul>
-  <ul class="search">
+  <ul class="search p-0">
     <a ng-if="issues" ng-href="https://bitbucket.org/azhdanov/jiratimesheet/issues?q={[{query | encodeURIComponent}]}" target="_blank">
       <h4>Issues<i class="icon-external-link"></i></h4></a>
     <li ng-repeat="issue in issues">
