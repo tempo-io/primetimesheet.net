@@ -46,25 +46,25 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Time Reports for JIRA Cloud</a>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Cloud</a>
   <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
     <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for JIRA Server</a>
-    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
+    <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
     <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
   </div>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link " href="/timereports">Overview</a>
+        <a class="nav-link " href="/cloud">Overview</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="/timereports/faq.html">Frequent Questions</a>
+        <a class="nav-link " href="/cloud/faq.html">Frequent Questions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/timereports/security.html">Security Statement</a>
+        <a class="nav-link active" href="/cloud/security.html">Security Statement</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/timereports/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+        <a class="nav-link" href="/cloud/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
       </li>
     </ul>
   </div>
@@ -75,10 +75,10 @@
     <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column dropdown">
         <li class="nav-item" id="dropdownMenu">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Time Reports for JIRA Cloud <span class="sr-only">(current)</span></a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Cloud <span class="sr-only">(current)</span></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for JIRA Server</a>
-            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
+            <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
             <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
           </div>
         </li>
@@ -86,19 +86,19 @@
 
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link " href="/timereports">Overview</a>
+          <a class="nav-link " href="/cloud">Overview</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/timereports/faq.html">Frequent Questions</a>
+          <a class="nav-link " href="/cloud/faq.html">Frequent Questions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/timereports/security.html">Security Statement</a>
+          <a class="nav-link active" href="/cloud/security.html">Security Statement</a>
         </li>
       </ul>
 
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link" href="/timereports/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+          <a class="nav-link" href="/cloud/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
         </li>
       </ul>
       <span class="footer text-muted">by <a href="mailto:azhdanov@gmail.com">Andriy Zhdanov</a></span>
@@ -106,10 +106,10 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>Security Statement</h2>
-      <p>Time Reports for JIRA Cloud is <a href="https://developer.atlassian.com/static/connect/docs/">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS). </p>
+      <p>Timesheet Reports and Gadgets for JIRA Cloud is <a href="https://developer.atlassian.com/static/connect/docs/">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS).</p>
 <h3 id="data-security">Data Security</h3>
-<p>The Add-On is static, i.e. all data (specifically Time Tracking data) is requested from JIRA Cloud and processed by add-on client side in End User Browser and is not passed anywhere else.</p>
-<p>Here is the list of JIRA REST API used client side:</p>
+<p>The Add-On reads JIRA data (specifically Time Tracking data) from JIRA Cloud instance and processes it server side. Worklog is  additionally stored in Cloudant DBaaS as for persistent cache.</p>
+<p>Here is the list of JIRA REST API used:</p>
 <ul>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2438">/rest/api/2/search</a> - issues and time tracking data.</li>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1698">/rest/api/2/issue/{issueIdOrKey}</a> - to load complete issue for Sum Sub-Tasks.</li>
@@ -123,14 +123,15 @@
 <li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e284">/rest/api/2/issueLinkType</a> - issue link types for Composition Issue Link configuraiton</li>
 </ul>
 <p>Add-on persists add-on configuration (group names, link or field names selected in add-on configuration) in JIRA Cloud itself using <a href="https://developer.atlassian.com/static/connect/docs/latest/concepts/hosted-data-storage.html">Hosted Data Storage</a> service.</p>
-<p>Add-On declares READ <a href="https://developer.atlassian.com/static/connect/docs/scopes/scopes.html">scope</a> to access data as just described.</p>
+<p>Add-On declares READ and AC_AS_USER <a href="https://developer.atlassian.com/static/connect/docs/scopes/scopes.html">scopes</a> to access data as just described by add-on backend.</p>
 <p>Add-On also declares WRITE and DELETE scopes to manage (create/update/delete) worklog records from add-on report or dashboard item in JIRA Cloud.</p>
 <h3 id="privacy-policy">Privacy Policy</h3>
-<p>There is no usage data collected by the add-on, beside diagnostics logging in case of error. Add-on uses <a href="https://papertrailapp.com">Papertrail</a> logging service via <a href="https://www.heroku.com/">Heroku</a> to log execution stack trace and cause details, including user information, as passed by Atlassian Connect Framework, e.g. <code>https://timereports.github.io/timereports.html?project.key=DEMO&amp;v=2&amp;tz=Europe%2FPrague&amp;loc=en-US&amp;user_id=admin&amp;user_key=admin&amp;xdm_e=https%3A%2F%2Fjiratimesheet.atlassian.net&amp;xdm_c=channel-timereports__timereports&amp;cp=&amp;lic=active&amp;cv=1.1.91</code>. Note, there is no support team maintaining the add-on, so no one else can access the logs.</p>
+<p>Add-on may log usage details for better diagnostics in case of error. Add-on uses <a href="https://papertrailapp.com">Papertrail</a> logging service via <a href="https://www.heroku.com/">Heroku</a> to log execution stack trace and cause details, including user information, as passed by Atlassian Connect Framework, e.g. <code>https://timereports.github.io/timereports.html?project.key=DEMO&amp;v=2&amp;tz=Europe%2FPrague&amp;loc=en-US&amp;user_id=admin&amp;user_key=admin&amp;xdm_e=https%3A%2F%2Fjiratimesheet.atlassian.net&amp;xdm_c=channel-timereports__timereports&amp;cp=&amp;lic=active&amp;cv=1.1.91</code>. Note, there is no support team maintaining the add-on, so no one else can access the logs.</p>
 <h3 id="managing-security-vulnerabilities">Managing Security Vulnerabilities</h3>
 <p>Security vulnerability bugs, when found, get highest priority and are fixed in 2 days and rolled out immediately, without any notification.</p>
 <h3 id="refernces">Refernces</h3>
 <ul>
+<li><a href="https://cloudant.com/product/cloudant-features/dbaas-security/">Cloudant DBaaS Security</a></li>
 <li><a href="https://papertrailapp.com/info/terms">Papertrail Software Services Agreement</a></li>
 <li><a href="https://www.atlassian.com/hosted/security">Atlassian OnDemand Security</a></li>
 <li><a href="https://www.heroku.com/policy/privacy">Heroku Privacy Statement</a></li>

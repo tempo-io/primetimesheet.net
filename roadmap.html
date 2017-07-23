@@ -12,27 +12,21 @@
 
     <title>Roadmap | JIRA Timesheet Plugin</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1500554750000.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1500819813000.css">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-    <script src="/js/all-1490603793000.js"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
-    <script src="/js/sammy/sammy-0.7.2.js"></script>
-    <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
-    <script src="/js/sammy/plugins/sammy.googleanalytics-0.7.2.js"></script>
-    <script src="/js/app/main.js"></script>
-    <script src="/js/app/markdown.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="/js/all-1500819813000.js"></script>
 
     <script src="/js/searchApp.js"></script>
     <script>
@@ -47,190 +41,64 @@
     </script>
 </head>
 
-<body id="top">
+<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary hidden-lg-up">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Server</a>
+  <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
+    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+    <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/support.html">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/sla.html">Frequent Questions</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<div class="navbar navbar-inverse navbar-static-top">
-  <div class="navbar-inner">
-    <div class="container">
-        <button type="button" class="btn btn-navbar"
-                data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand active" href="/">JIRA Server</a>
-        <a class="brand" href="/timereports/">JIRA Cloud</a>
-        <!--a class="brand" href="/timespent/">Bitbucket</a-->
-        <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li id="home" ><a href="/">Home</a><span></span></li>
-          <li id="wiki" ><a href="/wiki/Overview.html">Documentation</a><span></span></li>
-          <li id="roadmap" class="active"><a href="/roadmap.html">Roadmap</a><span></span></li>
-          <li id="support" ><a href="/support.html">Support</a><span></span></li>
-        </ul>
-      </div>
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column dropdown">
+        <li class="nav-item" id="dropdownMenu">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Server <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+            <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link " href="/support.html">Support</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/sla.html">Support Service Level Aggreement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/wiki/Overview.html">Documentation</a>
+        </li>
+      </ul>
+
+      <span class="footer text-muted">by <a href="mailto:azhdanov@gmail.com">Andriy Zhdanov</a></span>
+    </nav>
+
+    <main class="col-lg-8 offset-lg-3 pt-3">
+      
+
+    </main>
   </div>
 </div>
-
-<div class="container">
-
-  <header>
-    <div class="row-fluid">
-      <div class="span12">
-        <h1>Timesheet Reports and Gadgets for JIRA</h1>
-        <p class="lead">Extended JIRA time tracking means</p>
-      </div>
-    </div>
-  </header>
-
-  <div id="content">
-
-<!-- main -->
-<div id="main">
-
-  <section>
-    <div class="row-fluid">
-      <div class="span9">
-        <h2>Roadmap</h2>
-        <p>For the long time Timesheet plugin evolves basing on your feedback and feature requests, and I also have some features in mind.
-         Please vote for or comment on any or many enhancements below at corresponding bitbucket issue, if you'd like it to be implemented.</p>
-        <div class="post">
-          <h4>Sorting rows (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/426/sorting-rows-in-the-gadget">Issue #426</a>)</h4>
-          <p>The usability of the gadget would be enhanced if it was possible to sort the rows by clicking on the column header. Bonus would be if the gadget remembered sort order between separate logins.</p>
-          <p>Please vote on <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/426/sorting-rows-in-the-gadget">Issue #426</a></a>, if you'd like this feature to be implemented.
-        </div>
-        <div class="post">
-          <h4>User Level Holiday Calendar (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/407/user-level-holiday-calendar">Issue #407</a>)</h4>
-          <p>It would be a great new feature to allow the group timesheet to display holidays/sickness/non-work days (potentially even part time hours) on a per user basis.</p>
-          <p>This would allow at a glance view resource capacity for a team.</p>
-          <p>Please vote on <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/407/user-level-holiday-calendar">Issue #407</a>,
-           if you'd like this feature to be implemented.
-        </div>
-        <p class="pull-right">
-          <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
-        </p>
-      </div>
-      <div class="span3 sidemenu">
-        <ul>
-          <li><a href="/wiki/Overview.html">Documentation</a></li>
-          <li><a href="/wiki/Frequent_Questions.html">Frequent Questions</a></li>
-          <li><a href="https://community.atlassian.com/t5/tag/addon-jira-timesheet-plugin/tg-p" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open" target="blank">Issues</a><i class="icon-external-link"></i></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="row-fluid">
-      <div class="span9">
-        <h2>Features done</h2>
-        <div class="post">
-          <h4>More/Better worked time charts (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/429/stacked-column-workload-chart-in-case-of">Issue #429</a>)</h4>
-          <p>In <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/416/implement-an-workload-pie-chart-in-suit">Issue #416</a> pie chart is introduced for Worked Time, and it is used in case of 'Group By' also, but it's inconsistent with timesheet gadget, which groups values by project and then by selected field.</p>
-          <p>Stacked column chart in case of Group By was added in version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1466">2.9.5.9</a>
-            <img src="images/stacked.png"/></p>
-        </div>
-        <div class="post">
-          <h4>Sum Tasks/Stories into Epic (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/360/sum-tasks-stories-into-epic">Issue #360</a>)</h4>
-          <p>Since version <a href="">2.7</a> it is possible to sum worked hours into JIRA Agile Epic issues, when using  Sum SubTasks option.</p>
-          <p>See <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/360/sum-tasks-stories-into-epic">Issue #360</a> for more details
-        </div>
-        <div class="post">
-          <h4>Holidays Calendar (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/297/time-297-holidays-calendar">Issue #297</a>)</h4>
-          <p>Since v2.6, it is possible to define days off in Administration - Add-Ons - Timesheet Holidays, or import .ics with state holidays from file or URL. I.e holidays can now  be
-          retrieved automatically from corporate calendar, e.g. <a href="http://www.atlassian.com/software/team-calendars/overview/wiki-calendar-jira-planning">Confluence Team Calendars</a>
-           or any other ical web service, e.g. <a href="http://www.calendarlabs.com/ical-calendar-holidays.php">http://www.calendarlabs.com/ical-calendar-holidays.php</a></p>
-        </div>
-        <div class="post">
-          <h4>Configurable weekends (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/14/time-14-make-marking-weekends-configurable">Issue #14</a>)</h4>
-          <p>Since 2.6, it is possible to define weekends style in Administration - Add-Ons - Timesheet Plugin Configuraiton, see Weekends configuraiton option. It supports standard (Sat-Sun), Islamic (Fri-Sat) and Indian (Sun) weekend.</p>
-        </div>
-        <div class="post">
-          <h4>Email Timesheet Report (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/316/time-316-email-timesheet-report-to-user">Issue #316</a>)</h4>
-          <p>Since version 2.5 it is possible to Subscribe to Time Sheet Report to receive it regularly by email. See more details <a href="#/wiki/Email_Time_Sheet_Report">here.</a>
-             It may be even better way to keep an eye on worklogs of your team, than Timesheet Gadget on Dashboard.</p>
-          <p>Do you like it too? Let all know!</p>
-        </div>
-        <div class="post">
-          <h4>Support for multiple time zones (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/281">Issue #281</a>)</h4>
-          <p>Version 2.3.7 introduced support for multiple timezone environment. See more details <a href="#/wiki/Multiple_Time_Zones">here.</a></p>
-        </div>
-        <div class="post">
-          <h4>RESTful endpoint (<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">Issue #269</a>)</h4>
-          <p>Since version 2.3.5 Timesheet plugin publishes RESTful access to worklogs. See <a href="#/wiki/RESTful_endpoint">here</a> for more details.</p>
-        </div>
-        <p class="pull-right">
-          <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
-        </p>
-    </div>
-  </section>
-
-<!-- /main -->
-</div>
-
-  </div>
-
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="row-fluid">
-      <div class="span3">
-        <h3>Contact Info</h3>
-        <div class="footer-list">
-        <ul>
-            <li><strong>Address: </strong>Prague, Czech Republic</li>
-            <li><strong>E-mail: </strong><a href="mailto:azhdanov@gmail.com">azhdanov@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-    <div class="span3">
-        <h3>Links</h3>
-        <div class="footer-list">
-          <ul>
-            <li><a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
-            <li><a href="https://community.atlassian.com/t5/tag/addon-jira-timesheet-plugin/tg-p" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          </ul>
-        </div>
-      </div>
-    <div class="span3">
-        <h3>Site</h3>
-        <div class="footer-list">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/wiki/Overview.html">Documentation</a></li>
-            <li><a href="/roadmap.html">Roadmap</a></li>
-            <li><a href="/support.html">Support</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="span3">
-        <h3>Copyright</h3>
-        <p class="footer-list">&copy; Andriy Zhdanov 2012-2016</p>
-      </div>
-    </div>
-    <hr/>
-    <div class="row-fluid">
-    <div class="span12">
-        <p class="pull-right">
-      <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
-    </p>
-    </div>
-  </div>
-  </div>
-</div>
-
-<div id="at4-soc" class="atss at-share-open-control-left ats-transparent animated slideInLeft at4-show">
-  <div class="at4-arrow at-right" title="Show">Show</div>
-</div>
-
-<div id="loading">
-  <img id="loading-image" src="/images/loading.gif" alt="Loading..." />
-</div>
-
-<div id="fb-root"></div>
 
 </body>
 </html>

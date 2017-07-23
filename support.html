@@ -12,27 +12,21 @@
 
     <title>Support | JIRA Timesheet Plugin</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cerulean/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1500554750000.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1500819813000.css">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')</script>
-    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-    <script src="/js/all-1490603793000.js"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
-    <script src="/js/sammy/sammy-0.7.2.js"></script>
-    <script src="/js/sammy/plugins/sammy.title-0.7.2.js"></script>
-    <script src="/js/sammy/plugins/sammy.googleanalytics-0.7.2.js"></script>
-    <script src="/js/app/main.js"></script>
-    <script src="/js/app/markdown.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="/js/all-1500819813000.js"></script>
 
     <script src="/js/searchApp.js"></script>
     <script>
@@ -47,69 +41,79 @@
     </script>
 </head>
 
-<body id="top">
-
-<div class="navbar navbar-inverse navbar-static-top">
-  <div class="navbar-inner">
-    <div class="container">
-        <button type="button" class="btn btn-navbar"
-                data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand active" href="/">JIRA Server</a>
-        <a class="brand" href="/timereports/">JIRA Cloud</a>
-        <!--a class="brand" href="/timespent/">Bitbucket</a-->
-        <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li id="home" ><a href="/">Home</a><span></span></li>
-          <li id="wiki" ><a href="/wiki/Overview.html">Documentation</a><span></span></li>
-          <li id="roadmap" ><a href="/roadmap.html">Roadmap</a><span></span></li>
-          <li id="support" class="active"><a href="/support.html">Support</a><span></span></li>
-        </ul>
-      </div>
-    </div>
+<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary hidden-lg-up">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Server</a>
+  <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
+    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+    <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
   </div>
-</div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="/support.html">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/sla.html">Frequent Questions</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column dropdown">
+        <li class="nav-item" id="dropdownMenu">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Server <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+            <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
+          </div>
+        </li>
+      </ul>
 
-  <header>
-    <div class="row-fluid">
-      <div class="span12">
-        <h1>Timesheet Reports and Gadgets for JIRA</h1>
-        <p class="lead">Extended JIRA time tracking means</p>
-      </div>
-    </div>
-  </header>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="/support.html">Support</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/sla.html">Support Service Level Aggreement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/wiki/Overview.html">Documentation</a>
+        </li>
+      </ul>
 
-  <div id="content">
+      <span class="footer text-muted">by <a href="mailto:azhdanov@gmail.com">Andriy Zhdanov</a></span>
+    </nav>
 
-  <div id="main">
-    <section>
-      <div class="row-fluid">
-        <div class="span9">
-            <h3 id="timesheet-reports-and-gadgets-for-jira-server-">Timesheet Reports and Gadgets for JIRA Server?</h3>
-<p>Check <a href="/wiki/Frequent_Questions">Frequent Questions</a> or <a href="https://answers.atlassian.com/tags/addon-jira-timesheet-plugin">Atlassian Answers</a>
+    <main class="col-lg-8 offset-lg-3 pt-3">
+      <h2 id="support">Support</h2>
+<p>Check <a href="/wiki/Frequent_Questions">Frequent Questions</a> or <a href="https://community.atlassian.com/t5/tag/addon-jira-timesheet-plugin/tg-p">Atlassian Answers</a>
 or <a href="https://bitbucket.org/azhdanov/jiratimesheet/issues">Issue Tracker</a>.</p>
 <div ng-app="searchApp" ng-controller="SearchSupportCtrl">
-<form ng-submit="search()" class="form-inline">
-  <fieldset class="search">
+<form ng-submit="search()" class="form-inline mb-2">
+  <fieldset class="search mb-2">
     <label for="query">Or search documentation or existing issues:</label>
-    <input name="query" type="text" title="Start typing" ng-model="query" ng-class="{loading: loading}"/>
+    <input class="form-control mt-2 mb-2" type="text" title="Search" ng-model="query" ng-class="{loading: loading}"/>
   </fieldset>
   <ul class="search">
     <h4 ng-if="contents">Documentation</h4>
     <li ng-repeat="content in contents">
-      <a ng-href="/wiki/{[{content.href}]}.html">{[{content.title}]}</a> 
+      <a ng-href="/wiki/{[{content.href}]}.html">{[{content.title}]}</a>
     </li>
   </ul>
   <ul class="search">
     <a ng-if="answers" ng-href="https://answers.atlassian.com/search/?t=question&q=%5Baddon-jira-timesheet-plugin%5D+{[{query | encodeURIComponent}]}&sort=active" target="_blank">
       <h4>Atlassian Answers<i class="icon-external-link"></i></h4></a>
     <li ng-repeat="answer in answers">
-      <a ng-href="{[{answer.uri}]}" title="{[{answer.summary}]}" target="_blank">{[{answer.title}]}<i class="icon-external-link"></i></a> 
+      <a ng-href="{[{answer.uri}]}" title="{[{answer.summary}]}" target="_blank">{[{answer.title}]}<i class="icon-external-link"></i></a>
     </li>
   </ul>
   <ul class="search">
@@ -117,97 +121,22 @@ or <a href="https://bitbucket.org/azhdanov/jiratimesheet/issues">Issue Tracker</
       <h4>Issues<i class="icon-external-link"></i></h4></a>
     <li ng-repeat="issue in issues">
       <a ng-href="https://bitbucket.org/azhdanov/jiratimesheet/issue/{[{issue.local_id}]}" title="{[{issue.content}]}" target="_blank">
-        {[{issue.title}]}<i class="icon-external-link"></i></a> 
+        {[{issue.title}]}<i class="icon-external-link"></i></a>
     </li>
   </ul>
 </form>
 </div>
 
 <h3 id="have-not-found-solution-">Have not found solution?</h3>
-<p>Feel free to <a href="https://answers.atlassian.com/questions/ask/?tags=addon-jira-timesheet-plugin">ask a question</a> or
-<a href="https://bitbucket.org/azhdanov/jiratimesheet/issues/new">report a problem</a>.</p>
-<p>Or even <a href="mailto:azhdanov@gmail.com">drop me an email</a>, I&#39;m always glad to hear your feedback.</p>
-<p>And you&#39;re welcome to leave a review comment on <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin#reviews">Atlassian Marketplace</a>!</p>
-<h2 id="time-reports-for-jira-cloud-">Time Reports for JIRA Cloud?</h2>
-<p>For Time Reports add-on for JIRA Cloud please see different <a href="/timereports/faq.html">Frequent Questions</a>, <a href="https://answers.atlassian.com/tags/addon-timereports">Atlassian Answers</a>
-or <a href="https://bitbucket.org/azhdanov/timereports/issues?status=new">Issue Tracker</a>.</p>
+<p>Feel free to <a href="https://community.atlassian.com/t5/forums/postpage/choose-node/true/interaction-style/qanda?add-tags=addon-jira-timesheet-plugin">ask a question</a> or
+<a href="https://bitbucket.org/azhdanov/jiratimesheet/issues/new">report a problem</a>
+or <a href="mailto:support@jiratimesheet.com">write an email</a>.</p>
+<p>You&#39;re also welcome to leave a review comment on <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin#reviews">Atlassian  Marketplace</a>!</p>
 
-        </div>
-        <div class="span3 sidemenu">
-        <ul>
-          <li><a href="/sla.html">Support Service Level Agreement</a></li>
-          <li><a href="/wiki/Overview.html">Documentation</a></li>
-          <li><a href="/wiki/Frequent_Questions.html">Frequent Questions</a></li>
-          <li><a href="https://community.atlassian.com/t5/tag/addon-jira-timesheet-plugin/tg-p" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          <li><a href="https://bitbucket.org/azhdanov/jiratimesheet/issues?status=new&status=open" target="blank">Issues</a><i class="icon-external-link"></i></li>
-        </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-  <!-- /main -->
 
-  </div>
-
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="row-fluid">
-      <div class="span3">
-        <h3>Contact Info</h3>
-        <div class="footer-list">
-        <ul>
-            <li><strong>Address: </strong>Prague, Czech Republic</li>
-            <li><strong>E-mail: </strong><a href="mailto:azhdanov@gmail.com">azhdanov@gmail.com</a></li>
-          </ul>
-        </div>
-      </div>
-    <div class="span3">
-        <h3>Links</h3>
-        <div class="footer-list">
-          <ul>
-            <li><a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin" target="blank">Atlassian Marketplace</a><i class="icon-external-link"></i></li>
-            <li><a href="https://community.atlassian.com/t5/tag/addon-jira-timesheet-plugin/tg-p" target="blank">Atlassian Answers</a><i class="icon-external-link"></i></li>
-          </ul>
-        </div>
-      </div>
-    <div class="span3">
-        <h3>Site</h3>
-        <div class="footer-list">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/wiki/Overview.html">Documentation</a></li>
-            <li><a href="/roadmap.html">Roadmap</a></li>
-            <li><a href="/support.html">Support</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="span3">
-        <h3>Copyright</h3>
-        <p class="footer-list">&copy; Andriy Zhdanov 2012-2016</p>
-      </div>
-    </div>
-    <hr/>
-    <div class="row-fluid">
-    <div class="span12">
-        <p class="pull-right">
-      <a href="#" data-href="#top" class="back-to-top">Back to Top</a>
-    </p>
-    </div>
-  </div>
+    </main>
   </div>
 </div>
-
-<div id="at4-soc" class="atss at-share-open-control-left ats-transparent animated slideInLeft at4-show">
-  <div class="at4-arrow at-right" title="Show">Show</div>
-</div>
-
-<div id="loading">
-  <img id="loading-image" src="/images/loading.gif" alt="Loading..." />
-</div>
-
-<div id="fb-root"></div>
 
 </body>
 </html>

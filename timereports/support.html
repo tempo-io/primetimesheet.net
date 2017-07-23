@@ -10,7 +10,7 @@
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Security Statement | JIRA Timesheet Plugin</title>
+    <title>Support | JIRA Timesheet Plugin</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
@@ -61,7 +61,7 @@
         <a class="nav-link " href="/timereports/faq.html">Frequent Questions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/timereports/security.html">Security Statement</a>
+        <a class="nav-link " href="/timereports/security.html">Security Statement</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/timereports/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
@@ -92,7 +92,7 @@
           <a class="nav-link " href="/timereports/faq.html">Frequent Questions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/timereports/security.html">Security Statement</a>
+          <a class="nav-link " href="/timereports/security.html">Security Statement</a>
         </li>
       </ul>
 
@@ -105,36 +105,14 @@
     </nav>
 
     <main class="col-lg-8 offset-lg-3 pt-3">
-      <h2>Security Statement</h2>
-      <p>Time Reports for JIRA Cloud is <a href="https://developer.atlassian.com/static/connect/docs/">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS). </p>
-<h3 id="data-security">Data Security</h3>
-<p>The Add-On is static, i.e. all data (specifically Time Tracking data) is requested from JIRA Cloud and processed by add-on client side in End User Browser and is not passed anywhere else.</p>
-<p>Here is the list of JIRA REST API used client side:</p>
-<ul>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2438">/rest/api/2/search</a> - issues and time tracking data.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1698">/rest/api/2/issue/{issueIdOrKey}</a> - to load complete issue for Sum Sub-Tasks.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2176">/rest/api/2/issue/{issueIdOrKey}/worklog</a> - to load complete issue worklog.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e3764">/rest/api/2/user</a> - to get details (display name, groups, timezone) of logged in user or user selected in menu.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1283">/rest/api/2/filter/favourite</a> - filters for Filter reports&#39; option.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e131">/rest/api/2/field</a> - fields for Field reports&#39; option.</li>
-<li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1368">/rest/api/2/mypermissions</a> - to check whether current user has Administrator priveleges to configure add-on</li>
-<li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e3922">/rest/api/2/user/picker</a> - users search for User reports&#39; option.</li>
-<li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e4866">/rest/api/2/groups/picker</a> - groups search for Timesheet Auditors Groups configuration</li>
-<li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e284">/rest/api/2/issueLinkType</a> - issue link types for Composition Issue Link configuraiton</li>
-</ul>
-<p>Add-on persists add-on configuration (group names, link or field names selected in add-on configuration) in JIRA Cloud itself using <a href="https://developer.atlassian.com/static/connect/docs/latest/concepts/hosted-data-storage.html">Hosted Data Storage</a> service.</p>
-<p>Add-On declares READ <a href="https://developer.atlassian.com/static/connect/docs/scopes/scopes.html">scope</a> to access data as just described.</p>
-<p>Add-On also declares WRITE and DELETE scopes to manage (create/update/delete) worklog records from add-on report or dashboard item in JIRA Cloud.</p>
-<h3 id="privacy-policy">Privacy Policy</h3>
-<p>There is no usage data collected by the add-on, beside diagnostics logging in case of error. Add-on uses <a href="https://papertrailapp.com">Papertrail</a> logging service via <a href="https://www.heroku.com/">Heroku</a> to log execution stack trace and cause details, including user information, as passed by Atlassian Connect Framework, e.g. <code>https://timereports.github.io/timereports.html?project.key=DEMO&amp;v=2&amp;tz=Europe%2FPrague&amp;loc=en-US&amp;user_id=admin&amp;user_key=admin&amp;xdm_e=https%3A%2F%2Fjiratimesheet.atlassian.net&amp;xdm_c=channel-timereports__timereports&amp;cp=&amp;lic=active&amp;cv=1.1.91</code>. Note, there is no support team maintaining the add-on, so no one else can access the logs.</p>
-<h3 id="managing-security-vulnerabilities">Managing Security Vulnerabilities</h3>
-<p>Security vulnerability bugs, when found, get highest priority and are fixed in 2 days and rolled out immediately, without any notification.</p>
-<h3 id="refernces">Refernces</h3>
-<ul>
-<li><a href="https://papertrailapp.com/info/terms">Papertrail Software Services Agreement</a></li>
-<li><a href="https://www.atlassian.com/hosted/security">Atlassian OnDemand Security</a></li>
-<li><a href="https://www.heroku.com/policy/privacy">Heroku Privacy Statement</a></li>
-</ul>
+      <h2>Support</h2>
+      <p>Check <a href="/timereports/faq.html">Frequent Questions</a>, <a href="https://community.atlassian.com/t5/tag/addon-timereports/tg-p">Atlassian Answers</a>
+or <a href="https://bitbucket.org/azhdanov/timereports/issues?status=new">Issue Tracker</a>.</p>
+<h3 id="have-not-found-solution-">Have not found solution?</h3>
+<p>Feel free to <a href="https://community.atlassian.com/t5/forums/postpage/choose-node/true/interaction-style/qanda?add-tags=addon-timereports">ask a question</a> or
+<a href="https://bitbucket.org/azhdanov/timereports/issues/new">report a problem</a>
+or <a href="mailto:support@jiratimesheet.com">write an email</a>.</p>
+<p>You&#39;re also welcome to leave a review comment on <a href="https://marketplace.atlassian.com/plugins/timereports#reviews">Atlassian Marketplace</a>!</p>
 
 
     </main>
