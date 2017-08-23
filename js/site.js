@@ -1,3 +1,6 @@
+if (window.location.host.indexOf("jiratimesheet.com") >= 0 && window.location.protocol != "https:") {
+  window.location.protocol = "https:"
+}
 $(function() {
   $('#dropdownMenu').on('show.bs.dropdown', function () {
     //https://stackoverflow.com/questions/32381746/handle-twitter-bootstrap-dropdown-clipped-issue-having-overflow-auto-on-containe
@@ -16,5 +19,5 @@ $(function() {
     el(event).hide();
   }).on('mouseenter', function(event) {
     el(event).show();
-  });  
+  });
 });
