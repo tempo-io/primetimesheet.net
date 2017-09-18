@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
-    <meta name="description" content="Timesheet Plugin for Atlassian JIRA extends time tracking means with pivot and timesheet reports
-     and gadgets for JIRA dashboard or confluence. ">
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
     <meta name="author" content="Andriy Zhdanov">
     <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
@@ -46,11 +46,11 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Server</a>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Server</a>
   <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
-    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
-    <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
-    <a class="dropdown-item" href="/timereports/index.html">Time Reports for JIRA Cloud</a>
+    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+    <a class="dropdown-item" href="/timereports/index.html">Time Reports for Jira Cloud</a>
   </div>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -96,11 +96,11 @@
     <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column dropdown">
         <li class="nav-item" id="dropdownMenu">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Server <span class="sr-only">(current)</span></a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Server <span class="sr-only">(current)</span></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
-            <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
-            <a class="dropdown-item" href="/timereports/index.html">Time Reports for JIRA Cloud</a>
+            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+            <a class="dropdown-item" href="/timereports/index.html">Time Reports for Jira Cloud</a>
           </div>
         </li>
       </ul>
@@ -158,8 +158,8 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>Plugin Configuration</h2>
-      <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b202">2.4</a> it&#39;s possible to change following plugin configuration options without JIRA restart needed. 
-Timesheet Plugin Configuration is available in Administration, Plugins menu in JIRA 5, or Add-ons tab in JIRA 6. Note, those options that were previously advanced configuration options are still backed up with jira-config.properties for backward compatibility.</p>
+      <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b202">2.4</a> it&#39;s possible to change following plugin configuration options without Jira restart needed. 
+Timesheet Plugin Configuration is available in Administration, Plugins menu in Jira 5, or Add-ons tab in Jira 6. Note, those options that were previously advanced configuration options are still backed up with jira-config.properties for backward compatibility.</p>
 
 <h3><a id="Timesheet_Auditors_Group" class="anchor" href="/wiki/Plugin_Configuration.html#Timesheet_Auditors_Group"><span></span></a>Timesheet Auditors Group</h3>
 
@@ -177,7 +177,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <h3><a id="Composition_Issue_Link" class="anchor" href="/wiki/Plugin_Configuration.html#Composition_Issue_Link"><span></span></a>Composition Issue Link</h3>
 
-<p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses JIRA built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from JIRA Agile, since version 2.7, if <code>Parrent Issue Field</code> option is configured, see below.</p>
+<p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses Jira built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from Jira Software, since version 2.7, if <code>Parrent Issue Field</code> option is configured, see below.</p>
 
 <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1670">2.9.8.3</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1675">3.0.8.3</a> it is possible to switch link direction using <code>Reverse Composition</code> option for relation like Gathers/Is Gathered By.</p>
 
@@ -189,7 +189,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <h3><a id="Parent_Issue_Field" class="anchor" href="/wiki/Plugin_Configuration.html#Parent_Issue_Field"><span></span></a>Parent Issue Field</h3>
 
-<p>Allows to aggregate hours into JIRA Agile Epic issue, when using <code>Sum subtasks</code> report or gadget configuration option. </p>
+<p>Allows to aggregate hours into Jira Software Epic issue, when using <code>Sum subtasks</code> report or gadget configuration option. </p>
 
 <h3><a id="In_Progress_issues" class="anchor" href="/wiki/Plugin_Configuration.html#In_Progress_issues"><span></span></a>In Progress issues</h3>
 
@@ -257,7 +257,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <h3><a id="Favorite_filters" class="anchor" href="/wiki/Plugin_Configuration.html#Favorite_filters"><span></span></a>Favorite filters</h3>
 
-<p>It may be not possible or convenient to show all filters, especially in case of too many filters in JIRA. So <code>Favorite filters</code> option allows to restrict Filter option in gadgets and reports to current user favorite filters.</p>
+<p>It may be not possible or convenient to show all filters, especially in case of too many filters in Jira. So <code>Favorite filters</code> option allows to restrict Filter option in gadgets and reports to current user favorite filters.</p>
 
 <h3><a id="Restrict_Group_by_Field_and_Additional_fields_selectors" class="anchor" href="/wiki/Plugin_Configuration.html#Restrict_Group_by_Field_and_Additional_fields_selectors"><span></span></a>Restrict Group by Field and Additional fields selectors</h3>
 
@@ -281,7 +281,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <h3><a id="Time_Sheet_header_Day_Format" class="anchor" href="/wiki/Plugin_Configuration.html#Time_Sheet_header_Day_Format"><span></span></a>Time Sheet header Day Format</h3>
 
-<p>Changing &quot;Date/Time Formats&quot; in JIRA (Administration-&gt;Look and Feel) influences format in tooltips (when you mouse over timesheet header). However if you&#39;d like to change date format in the timesheet header itself, you need to set <code>Day Format 1</code> and/or <code>Day Format 2</code> configuration options.</p>
+<p>Changing &quot;Date/Time Formats&quot; in Jira (Administration-&gt;Look and Feel) influences format in tooltips (when you mouse over timesheet header). However if you&#39;d like to change date format in the timesheet header itself, you need to set <code>Day Format 1</code> and/or <code>Day Format 2</code> configuration options.</p>
 
 <p>Available from version 2.6.3.</p>
 
@@ -331,7 +331,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <h3><a id="Backing_properties" class="anchor" href="/wiki/Plugin_Configuration.html#Backing_properties"><span></span></a>Backing properties</h3>
 
-<p>For more information about setting corresponding property in <code>jira-config.properties</code>, please see <a href="https://confluence.atlassian.com/display/JIRA050/Advanced+JIRA+Configuration">Advanced JIRA Configuration</a>.</p>
+<p>For more information about setting corresponding property in <code>jira-config.properties</code>, please see <a href="https://confluence.atlassian.com/display/JIRA050/Advanced+JIRA+Configuration">Advanced Jira Configuration</a>.</p>
 
     </main>
   </div>

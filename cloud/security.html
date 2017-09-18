@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
-    <meta name="description" content="Timesheet Plugin for Atlassian JIRA extends time tracking means with pivot and timesheet reports
-     and gadgets for JIRA dashboard or confluence. ">
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
     <meta name="author" content="Andriy Zhdanov">
     <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Security Statement | JIRA Timesheet Plugin</title>
+    <title>Security Statement | Timesheet for Jira</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
@@ -46,11 +46,11 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Cloud</a>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Cloud</a>
   <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
-    <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for JIRA Server</a>
-    <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
-    <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+    <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for Jira Server</a>
+    <a class="dropdown-item" href="/timereports">Time Reports for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
   </div>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -78,11 +78,11 @@
     <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column dropdown">
         <li class="nav-item" id="dropdownMenu">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Cloud <span class="sr-only">(current)</span></a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Cloud <span class="sr-only">(current)</span></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for JIRA Server</a>
-            <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
-            <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+            <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for Jira Server</a>
+            <a class="dropdown-item" href="/timereports">Time Reports for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
           </div>
         </li>
       </ul>
@@ -112,10 +112,10 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>Security Statement</h2>
-      <p>Timesheet Reports and Gadgets for JIRA Cloud is <a href="https://developer.atlassian.com/static/connect/docs/">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS).</p>
+      <p>Timesheet Reports and Gadgets for Jira Cloud is <a href="https://developer.atlassian.com/static/connect/docs/">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS).</p>
 <h3 id="data-security">Data Security</h3>
-<p>The Add-On reads JIRA data (specifically Time Tracking data) from JIRA Cloud instance and processes it server side. Worklog is  additionally stored in Cloudant DBaaS as for persistent cache.</p>
-<p>Here is the list of JIRA REST API used:</p>
+<p>The Add-On reads Jira data (specifically Time Tracking data) from Jira Cloud instance and processes it server side. Worklog is  additionally stored in Cloudant DBaaS as for persistent cache.</p>
+<p>Here is the list of Jira REST API used:</p>
 <ul>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2438">/rest/api/2/search</a> - issues and time tracking data.</li>
 <li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1698">/rest/api/2/issue/{issueIdOrKey}</a> - to load complete issue for Sum Sub-Tasks.</li>
@@ -128,9 +128,9 @@
 <li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e4866">/rest/api/2/groups/picker</a> - groups search for Timesheet Auditors Groups configuration</li>
 <li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e284">/rest/api/2/issueLinkType</a> - issue link types for Composition Issue Link configuraiton</li>
 </ul>
-<p>Add-on persists add-on configuration (group names, link or field names selected in add-on configuration) in JIRA Cloud itself using <a href="https://developer.atlassian.com/static/connect/docs/latest/concepts/hosted-data-storage.html">Hosted Data Storage</a> service.</p>
+<p>Add-on persists add-on configuration (group names, link or field names selected in add-on configuration) in Jira Cloud itself using <a href="https://developer.atlassian.com/static/connect/docs/latest/concepts/hosted-data-storage.html">Hosted Data Storage</a> service.</p>
 <p>Add-On declares READ and AC_AS_USER <a href="https://developer.atlassian.com/static/connect/docs/scopes/scopes.html">scopes</a> to access data as just described by add-on backend.</p>
-<p>Add-On also declares WRITE and DELETE scopes to manage (create/update/delete) worklog records from add-on report or dashboard item in JIRA Cloud.</p>
+<p>Add-On also declares WRITE and DELETE scopes to manage (create/update/delete) worklog records from add-on report or dashboard item in Jira Cloud.</p>
 <h3 id="privacy-policy">Privacy Policy</h3>
 <p>Add-on may log usage details for better diagnostics in case of error. Add-on uses <a href="https://papertrailapp.com">Papertrail</a> logging service via <a href="https://www.heroku.com/">Heroku</a> to log execution stack trace and cause details, including user information, as passed by Atlassian Connect Framework, e.g. <code>https://timereports.github.io/timereports.html?project.key=DEMO&amp;v=2&amp;tz=Europe%2FPrague&amp;loc=en-US&amp;user_id=admin&amp;user_key=admin&amp;xdm_e=https%3A%2F%2Fjiratimesheet.atlassian.net&amp;xdm_c=channel-timereports__timereports&amp;cp=&amp;lic=active&amp;cv=1.1.91</code>. Note, there is no support team maintaining the add-on, so no one else can access the logs.</p>
 <h3 id="managing-security-vulnerabilities">Managing Security Vulnerabilities</h3>

@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
-    <meta name="description" content="Timesheet Plugin for Atlassian JIRA extends time tracking means with pivot and timesheet reports
-     and gadgets for JIRA dashboard or confluence. ">
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
     <meta name="author" content="Andriy Zhdanov">
     <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
@@ -46,11 +46,11 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Server</a>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Server</a>
   <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
-    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
-    <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
-    <a class="dropdown-item" href="/timereports/index.html">Time Reports for JIRA Cloud</a>
+    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+    <a class="dropdown-item" href="/timereports/index.html">Time Reports for Jira Cloud</a>
   </div>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -96,11 +96,11 @@
     <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column dropdown">
         <li class="nav-item" id="dropdownMenu">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Server <span class="sr-only">(current)</span></a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Server <span class="sr-only">(current)</span></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for JIRA Cloud</a>
-            <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
-            <a class="dropdown-item" href="/timereports/index.html">Time Reports for JIRA Cloud</a>
+            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+            <a class="dropdown-item" href="/timereports/index.html">Time Reports for Jira Cloud</a>
           </div>
         </li>
       </ul>
@@ -158,9 +158,9 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>RESTful endpoint</h2>
-      <p>JIRA has native support for loading worklogs via REST, e.g. by searching for issues using JQL and including <code>worklog</code> field in <code>fields</code> request param, see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/search">/api/2/search</a>.</p>
+      <p>Jira has native support for loading worklogs via REST, e.g. by searching for issues using JQL and including <code>worklog</code> field in <code>fields</code> request param, see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/search">/api/2/search</a>.</p>
 
-<p>Since JIRA 6.4 there are three JQL clauses to limit result set to issues that have relevant worklogs: <code>worklogAuthor</code>, <code>worklogComment</code> and <code>worlkogDate</code>. See <a href="https://confluence.atlassian.com/jira/advanced-searching-fields-reference-433395081.html#Advancedsearching-fieldsreference-WorkLogAuthorworklogAuthorWorklogauthor">Advanced Searching - Fields reference</a>.</p>
+<p>Since Jira 6.4 there are three JQL clauses to limit result set to issues that have relevant worklogs: <code>worklogAuthor</code>, <code>worklogComment</code> and <code>worlkogDate</code>. See <a href="https://confluence.atlassian.com/jira/advanced-searching-fields-reference-433395081.html#Advancedsearching-fieldsreference-WorkLogAuthorworklogAuthorWorklogauthor">Advanced Searching - Fields reference</a>.</p>
 
 <p>For <code>worklogDate</code> valid formats include: <code>&#39;YYYY/MM/DD&#39;</code>, <code>&#39;YYYY-MM-DD&#39;</code>, or a period format e.g. <code>&#39;-5d&#39;</code>, <code>&#39;4w 2d&#39;</code>, or date function, e.g. <code>endOfDay()</code> for <code>Today</code>.</p>
 
@@ -247,7 +247,7 @@
 
 <p>Note, alternatively you can see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/worklog">/api/2/worklog</a> for massive loading worklog without issues data.</p>
 
-<h3><a id="Before_JIRA_64" class="anchor" href="/wiki/RESTful_endpoint.html#Before_JIRA_64"><span></span></a>Before JIRA 6.4</h3>
+<h3><a id="Before_Jira_64" class="anchor" href="/wiki/RESTful_endpoint.html#Before_Jira_64"><span></span></a>Before Jira 6.4</h3>
 
 <p>Since plugin version 2.6 you can use the same <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">JQL search REST api</a> but with <code>workedIssues()</code> JQL function provided by the plugin, e.g. &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, to limit result set to issues with relevant worklogs only.</p>
 

@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
-    <meta name="description" content="Timesheet Plugin for Atlassian JIRA extends time tracking means with pivot and timesheet reports
-     and gadgets for JIRA dashboard or confluence. ">
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
     <meta name="author" content="Andriy Zhdanov">
     <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>REST endpoint | JIRA Timesheet Plugin</title>
+    <title>REST endpoint | Timesheet for Jira</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
@@ -46,11 +46,11 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for JIRA Cloud</a>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Cloud</a>
   <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
-    <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for JIRA Server</a>
-    <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
-    <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+    <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for Jira Server</a>
+    <a class="dropdown-item" href="/timereports">Time Reports for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
   </div>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
@@ -78,11 +78,11 @@
     <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column dropdown">
         <li class="nav-item" id="dropdownMenu">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for JIRA Cloud <span class="sr-only">(current)</span></a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Cloud <span class="sr-only">(current)</span></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for JIRA Server</a>
-            <a class="dropdown-item" href="/timereports">Time Reports for JIRA Cloud</a>
-            <a class="dropdown-item" href="/timereports/server">Time Reports for JIRA Server</a>
+            <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for Jira Server</a>
+            <a class="dropdown-item" href="/timereports">Time Reports for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
           </div>
         </li>
       </ul>
@@ -112,7 +112,7 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>REST endpoint</h2>
-      <p>In addition to JIRA native support for loading worklogs via REST as described <a href="/wiki/RESTful_endpoint.html">here</a>, it is possible to get worklogs in json format including issue data using add-ond REST endpoint, as described below.</p>
+      <p>In addition to Jira native support for loading worklogs via REST as described <a href="/wiki/RESTful_endpoint.html">here</a>, it is possible to get worklogs in json format including issue data using add-ond REST endpoint, as described below.</p>
 <p>Note it requires <code>Store Worklog</code> add-on configuration option to be enabled.</p>
 <p>Supported parameters:</p>
 <ul>
@@ -138,7 +138,7 @@ https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2
       &quot;issuetype&quot;: {
         &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/issuetype/10000&quot;,
         &quot;id&quot;: &quot;10000&quot;,
-        &quot;description&quot;: &quot;Created by JIRA Agile - do not edit or delete. Issue type for a user story.&quot;,
+        &quot;description&quot;: &quot;Created by Jira Agile - do not edit or delete. Issue type for a user story.&quot;,
         &quot;iconUrl&quot;: &quot;https://jiratimesheet.atlassian.net/images/icons/issuetypes/story.svg&quot;,
         &quot;name&quot;: &quot;Story&quot;,
         &quot;subtask&quot;: false
