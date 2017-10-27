@@ -137,8 +137,10 @@ or Czech language at your convenience.</p>
 <h3 id="unexpected-error-">Unexpected error?</h3>
 <p><em>Worklog must not be null</em></p>
 <p>Please check you don&#39;t have Worklog Visibility set in the Log Work Dialog. If you see <code>Restricted to</code> in the bottom of the dialog, it might be that someone has configured <code>Default Worklog Visibility Group</code> in add-on configuration, while in Jira System Configuration <code>Comment visibility</code> is set to default <code>Project Roles only</code>, and may need to be changed to <code>Groups &amp; Project Roles</code>. Please see <a href="https://confluence.atlassian.com/adminjiracloud/configuring-jira-application-options-818578873.html">Configuring Jira application options</a> for more information.</p>
+<h3 id="hours-are-displayed-for-incorrect-person-">Hours are displayed for incorrect person.</h3>
+<p>The problem most likely is that you Group by Assignee, instead of Group by: Worked User.</p>
 <h3 id="problem-">Problem?</h3>
-<p>Collect support data to let me reproduce it locally. Enable Track Support Data option in add-on configuration, then reload report and click Download Support Zip button, and send it to me by email to <a href="support@jiratimesheet.com">support@jiratimesheet.com</a>. Note, you may need to change extension to something else to let it pass through. Or create private service request <a href="https://jiratimesheet.atlassian.net/servicedesk/customer/portal/1">here</a></p>
+<p>You can click Contact Support link in the very bottom of the report page to send email to support, possibly with Include Support Data. Or Enable Track Support Data option in add-on configuration, then reload report and click Send Support Zip button. Or create service request <a href="https://jiratimesheet.atlassian.net/servicedesk/customer/portal/1">here</a></p>
 <h3 id="missing-features-">Missing features?</h3>
 <p>Support for Timesheet Email may be added soon. It requires significant work.</p>
 <p>Support for Holidays is likely to be added later.</p>
