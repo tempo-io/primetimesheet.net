@@ -10,7 +10,7 @@
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Support | </title>
+    <title>Overview | Timesheet plugin for Jira</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
@@ -105,15 +105,46 @@
     </nav>
 
     <main class="col-lg-8 offset-lg-3 pt-3">
-      <h2>Support</h2>
-      <p>Check <a href="/timereports/faq.html">Frequent Questions</a>, <a href="https://community.atlassian.com/t5/tag/addon-timereports/tg-p">Atlassian Answers</a>
-or <a href="https://bitbucket.org/azhdanov/timereports/issues?status=new">Issue Tracker</a>.</p>
-<h3 id="have-not-found-solution-">Have not found solution?</h3>
-<p>Feel free to <a href="https://community.atlassian.com/t5/forums/postpage/choose-node/true/interaction-style/qanda?add-tags=addon-timereports">ask a question</a> or
-<a href="https://bitbucket.org/azhdanov/timereports/issues/new">report a problem</a>
-or <a href="mailto:support@jiratimesheet.com">write an email</a>.</p>
-<p>You&#39;re also welcome to leave a review comment on <a href="https://marketplace.atlassian.com/plugins/timereports#reviews">Atlassian Marketplace</a>!</p>
+      <h2>Overview</h2>
+      <p><a href="https://marketplace.atlassian.com/plugins/timereports/cloud/overview">Time Reports Add-On</a> is a modernized version of successful <a href="/wiki/Overview.html">Timesheet Reports and Gadgets Add-On</a>. It is more flexible and extensible and is designed specifically for Jira Cloud.</p>
 
+<p>Time Reports provide the following report types:</p>
+
+<p><img alt="Timesheet" class="markdown" src="https://bitbucket.org/azhdanov/timereports/wiki/Overview/timereports-timesheet.png"/></p>
+
+<p>Timesheet - provides the most extensive means to analyze users&#39; workload. It has classical sheet view by day. Also with numerous report Options it is possible to get few variants of the report.</p>
+
+<p><img alt="Pivot by User" class="markdown" src="https://bitbucket.org/azhdanov/timereports/wiki/Overview/timereports-pivot.png"/></p>
+
+<p>Pivot by Users - displays a summary of worked hours for project for certain period, where columns are project users (resources) and rows are project issues (tasks).</p>
+
+<p><img alt="Pivot by Status" class="markdown" src="https://bitbucket.org/azhdanov/timereports/wiki/Overview/timereports-pivot-status.png"/></p>
+
+<p>Pivot by Status - displays time worked on issues in each issue status. This report spreads worked hours across statuses issue had starting from work started time. It may be changed not to spread worked hours, but use only work started time, by enabling Use Work Started option in add-on configuration.</p>
+
+<p><img alt="Time Tracking" class="markdown" src="https://bitbucket.org/azhdanov/timereports/wiki/Overview/timereports-timetracking.png"/></p>
+
+<p>Time Tracking - displays Estimated Time vs Actual Time Spent per issue (no worklog).</p>
+
+<p><img alt="Pie Chart" class="markdown" src="https://bitbucket.org/azhdanov/timereports/wiki/Overview/timereports-piechart.png"/></p>
+
+<p>Pie Chart - displays a summary of worked hours for project for certain period in Pie Chart.</p>
+
+<p>All report types have various configurable parameters.</p>
+
+<h3><a id="Install" class="anchor" href="/wiki/Overview.html#Install"><span></span></a>Install</h3>
+
+<p>Just go to Administration - Plugins - Install in your Jira, search for &#39;timerports&#39;, see &#39;Time Reports for Jira Cloud&#39; and click install.</p>
+
+<h3><a id="Usage" class="anchor" href="/wiki/Overview.html#Usage"><span></span></a>Usage</h3>
+
+<p>When installed Time Reports Add-On adds Time Reports dashboard item and project report with the same name.</p>
+
+<p>Report is accessible via menu Projects - some project - Reports tab - Other category. See also <a href="https://confluence.atlassian.com/jiracorecloud/reporting-765593792.html">Jira Documentation</a> for more information.</p>
+
+<p>Dashboard item can be added to Jira Dashboard, see <a href="https://confluence.atlassian.com/adminjiracloud/configuring-the-default-dashboard-776636251.html">Jira Documentation</a> for more information.</p>
+
+<p>Time Reports underlying data (worklog) can also be exported to Excel on the report page.</p>
 
     </main>
   </div>

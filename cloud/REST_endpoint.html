@@ -10,7 +10,7 @@
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Support | </title>
+    <title>REST endpoint | Timesheet plugin for Jira</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
@@ -64,7 +64,7 @@
         <a class="nav-link " href="/cloud/REST_endpoint.html">REST endpoint</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="/cloud/Security_Statement.html">Security Statement</a>
+        <a class="nav-link " href="/cloud/Security_Statement.html">Security Statement</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/cloud/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
@@ -98,7 +98,7 @@
           <a class="nav-link " href="/cloud/REST_endpoint.html">REST endpoint</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/cloud/Security_Statement.html">Security Statement</a>
+          <a class="nav-link " href="/cloud/Security_Statement.html">Security Statement</a>
         </li>
       </ul>
 
@@ -111,8 +111,99 @@
     </nav>
 
     <main class="col-lg-8 offset-lg-3 pt-3">
-      <h2>Support</h2>
-      
+      <h2>REST endpoint</h2>
+      <p>In addition to Jira native support for loading worklogs via REST as described <a href="/wiki/RESTful_endpoint.html">here</a>, it is possible to get worklogs in json format including issue data using add-ond REST endpoint, as described below.</p>
+
+<p>Note it requires <code>Store Worklog</code> add-on configuration option to be enabled.</p>
+
+<p>Supported parameters:</p>
+
+<ul><li>start - <strong>required</strong> start date in YYYY-MM-DD format</li><li>end - <strong>required</strong> end date in YYYY-MM-DD format</li><li>user - optional user key,</li><li>groups - optional coma separated group names</li><li>projectid - optional, e.g. 10001 (not project key!),</li><li>moreFields - optional coma separated list of fields to include in issue details</li></ul>
+
+<p>E.g. request and response:</p>
+
+<pre><code>$ curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot; \
+https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2017-08-31\\&amp;user=admin\&amp;groups=administrators
+
+[
+  {
+    &quot;expand&quot;: &quot;operations,versionedRepresentations,editmeta,changelog,renderedFields&quot;,
+    &quot;id&quot;: &quot;10000&quot;,
+    &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/issue/10000&quot;,
+    &quot;key&quot;: &quot;DEMO-1&quot;,
+    &quot;fields&quot;: {
+      &quot;summary&quot;: &quot;As an Agile team, I&#39;d like to learn about Scrum &gt;&gt; Click the \&quot;DEMO-1\&quot; link at the left of this row to see detail in the Description tab on the right&quot;,
+      &quot;issuetype&quot;: {
+        &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/issuetype/10000&quot;,
+        &quot;id&quot;: &quot;10000&quot;,
+        &quot;description&quot;: &quot;Created by Jira Agile - do not edit or delete. Issue type for a user story.&quot;,
+        &quot;iconUrl&quot;: &quot;https://jiratimesheet.atlassian.net/images/icons/issuetypes/story.svg&quot;,
+        &quot;name&quot;: &quot;Story&quot;,
+        &quot;subtask&quot;: false
+      },
+      &quot;customfield_10007&quot;: null,
+      &quot;project&quot;: {
+        &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/project/10000&quot;,
+        &quot;id&quot;: &quot;10000&quot;,
+        &quot;key&quot;: &quot;DEMO&quot;,
+        &quot;name&quot;: &quot;Demonstration Project&quot;,
+        &quot;avatarUrls&quot;: {
+          &quot;48x48&quot;: &quot;https://jiratimesheet.atlassian.net/secure/projectavatar?avatarId=10324&quot;,
+          &quot;24x24&quot;: &quot;https://jiratimesheet.atlassian.net/secure/projectavatar?size=small&amp;avatarId=10324&quot;,
+          &quot;16x16&quot;: &quot;https://jiratimesheet.atlassian.net/secure/projectavatar?size=xsmall&amp;avatarId=10324&quot;,
+          &quot;32x32&quot;: &quot;https://jiratimesheet.atlassian.net/secure/projectavatar?size=medium&amp;avatarId=10324&quot;
+        },
+        &quot;projectCategory&quot;: {
+          &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/projectCategory/10000&quot;,
+          &quot;id&quot;: &quot;10000&quot;,
+          &quot;description&quot;: &quot;&quot;,
+          &quot;name&quot;: &quot;Test Category&quot;
+        }
+      },
+      &quot;issuelinks&quot;: [],
+      &quot;priority&quot;: {
+        &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/priority/3&quot;,
+        &quot;iconUrl&quot;: &quot;https://jiratimesheet.atlassian.net/images/icons/priorities/medium.svg&quot;,
+        &quot;name&quot;: &quot;Medium&quot;,
+        &quot;id&quot;: &quot;3&quot;
+      },
+      &quot;resolution&quot;: null,
+      &quot;status&quot;: {
+        &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/status/10000&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;iconUrl&quot;: &quot;https://jiratimesheet.atlassian.net/&quot;,
+        &quot;name&quot;: &quot;To Do&quot;,
+        &quot;id&quot;: &quot;10000&quot;,
+        &quot;statusCategory&quot;: {
+          &quot;self&quot;: &quot;https://jiratimesheet.atlassian.net/rest/api/2/statuscategory/2&quot;,
+          &quot;id&quot;: 2,
+          &quot;key&quot;: &quot;new&quot;,
+          &quot;colorName&quot;: &quot;blue-gray&quot;,
+          &quot;name&quot;: &quot;To Do&quot;
+        }
+      },
+      &quot;worklog&quot;: {
+        &quot;worklogs&quot;: [
+          {
+            &quot;author&quot;: &quot;admin&quot;,
+            &quot;comment&quot;: &quot;test&quot;,
+            &quot;created&quot;: &quot;2017-08-21T22:02:27.140+0200&quot;,
+            &quot;updated&quot;: &quot;2017-08-21T22:02:27.140+0200&quot;,
+            &quot;visibility&quot;: {
+              &quot;type&quot;: &quot;group&quot;,
+              &quot;value&quot;: &quot;administrators&quot;
+            },
+            &quot;started&quot;: &quot;2017-08-21T20:02:00.000Z&quot;,
+            &quot;timeSpent&quot;: &quot;1h&quot;,
+            &quot;timeSpentSeconds&quot;: 3600,
+            &quot;id&quot;: &quot;21609&quot;,
+            &quot;issueId&quot;: &quot;10000&quot;
+          }
+        ]
+      }
+    }
+  }
+]</code></pre>
 
     </main>
   </div>

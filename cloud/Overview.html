@@ -10,7 +10,7 @@
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Overview | </title>
+    <title>Overview | Timesheet plugin for Jira</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
@@ -46,19 +46,28 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Time Reports for Jira Server</a>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Cloud</a>
   <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
     <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for Jira Server</a>
-    <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for Jira Cloud</a>
-    <a class="dropdown-item" href="/timereports">Time Reports for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
   </div>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link active" href="/timereports">Overview</a>
+        <a class="nav-link " href="/cloud/Overview.html">Overview</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/timereports/server/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+        <a class="nav-link " href="/cloud/Frequent_Questions.html">Frequent Questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/cloud/REST_endpoint.html">REST endpoint</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/cloud/Security_Statement.html">Security Statement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cloud/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
       </li>
     </ul>
   </div>
@@ -69,24 +78,33 @@
     <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
       <ul class="nav nav-pills flex-column dropdown">
         <li class="nav-item" id="dropdownMenu">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Time Reports for Jira Server <span class="sr-only">(current)</span></a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Cloud <span class="sr-only">(current)</span></a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href="/wiki/Overview.html">Timesheet Reports and Gadgets for Jira Server</a>
-            <a class="dropdown-item" href="/cloud">Timesheet Reports and Gadgets for Jira Cloud</a>
-            <a class="dropdown-item" href="/timereports">Time Reports for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
           </div>
         </li>
       </ul>
 
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="/timereports">Overview</a>
+          <a class="nav-link " href="/cloud/Overview.html">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/cloud/Frequent_Questions.html">Frequent Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/cloud/REST_endpoint.html">REST endpoint</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/cloud/Security_Statement.html">Security Statement</a>
         </li>
       </ul>
 
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link" href="/timereports/server/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+          <a class="nav-link" href="/cloud/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
         </li>
       </ul>
       <span class="footer text-muted">by <a href="mailto:azhdanov@gmail.com">Andriy Zhdanov</a></span>
@@ -94,34 +112,49 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>Overview</h2>
-      <p><a href="https://marketplace.atlassian.com/plugins/timereports/server/overview">Time Reports for Jira Server</a>
-is a repackaged version of Time Reports for Jira Cloud. It is available for free,
-but it requires <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/server/overview">Timesheet Report and Gadgets for Jira</a> installed.</p>
-<p>Time Reports provide the following report types:</p>
-<p><img src="/images/timereports-slider/timereports-timesheet.png" alt="Timesheet"></p>
-<p>Timesheet - provides the most extensive means to analyze users&#39; workload. It has classical sheet view by day. Also with numerous report Options it is possible to get few variants of the report.</p>
-<p><br/></p>
-<p><img src="/images/timereports-slider/timereports-pivot.png" alt="Pivot by User"></p>
-<p>Pivot by Users - displays a summary of worked hours for project for certain period, where columns are project users (resources) and rows are project issues (tasks).</p>
-<p><br/></p>
-<p><img src="/images/timereports-slider/timereports-pivot-status.png" alt="Pivot by Status"></p>
-<p>Pivot by Status - displays time worked on issues in each issue status. This report spreads worked hours across statuses issue had starting from work started time. It may be changed not to spread worked hours, but use only work started time, by enabling Use Work Started option in add-on configuration.</p>
-<p><br/></p>
-<p><img src="/images/timereports-slider/timereports-timetracking.png" alt="Time Tracking"></p>
-<p>Time Tracking - displays Estimated Time vs Actual Time Spent per issue (no worklog).</p>
-<p><br/></p>
-<p><img src="/images/timereports-slider/timereports-piechart.png" alt="Pie Chart"></p>
-<p>Pie Chart - displays a summary of worked hours for project for certain period in Pie Chart.</p>
-<p>All report types have various configurable parameters.</p>
-<h3 id="install">Install</h3>
-<p>Just go to Administration - Plugins - Install in your Jira, search for &#39;timerports&#39;, see &#39;Time Reports for Jira Cloud&#39; and click install.</p>
-<h3 id="usage">Usage</h3>
-<p>When installed Time Reports Add-On adds Time Reports dashboard item and project report with the same name.</p>
-<p>Report is accessible via menu Projects - some project - Reports tab - Other category. See also <a href=\"https://confluence.atlassian.com/jiracorecloud/reporting-765593792.html\" target=\"_blank\">Jira Documentation</a> for more information.</p>
-<p>Dashboard item can be added to Jira Dashboard, see <a href=\"https://confluence.atlassian.com/adminJiracloud/configuring-the-default-dashboard-776636251.html\" target=\"_blank\"> Jira Documentation</a> for more information.</p>
-<p>Time Reports underlying data (worklog) can also be exported to Excel on the report page.</p>
-<p><br/></p>
+      <p><a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/cloud/overview">Timesheet Reports and Gadgets for Jira Cloud</a> add-on is non-static version of <a href="https://marketplace.atlassian.com/plugins/timereports/cloud/overview">Time Reports add-on for Jira Cloud</a>, designed to reduce Jira load for better support of larger companies and to cover features missing in Time Reports add-on because of static nature. Namely intentions is to provide reports by email, REST API and Confluence macro.</p>
 
+<p>Add-on provides the following reports (similarly to Time Reports add-on):</p>
+
+<p><img alt="Timeentry" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-timeentry.png"/></p>
+
+<p>Time Entry - provides convenient way to record working time, i.e. start, stop, resume timer, log worked done or edit previous records.</p>
+
+<p><img alt="Timesheet" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-timesheet.png"/></p>
+
+<p>Timesheet - provides the most extensive means to analyze users&#39; workload. It has classical sheet view by day. Also with numerous report Options it is possible to get few variants of the report.</p>
+
+<p><img alt="Pivot by User" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-pivot.png"/></p>
+
+<p>Pivot by Users - displays a summary of worked hours for project for certain period, where columns are project users (resources) and rows are project issues (tasks).</p>
+
+<p><img alt="Pivot by Status" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-pivot-status.png"/></p>
+
+<p>Pivot by Status - displays time worked on issues in each issue status. This report spreads worked hours across statuses issue had starting from work started time. It may be changed not to spread worked hours, but use only work started time, by enabling Use Work Started option in add-on configuration.</p>
+
+<p><img alt="Time Tracking" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-timetracking.png"/></p>
+
+<p>Time Tracking - displays Estimated Time vs Actual Time Spent per issue (no worklog).</p>
+
+<p><img alt="Pie Chart" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-piechart.png"/></p>
+
+<p>Pie Chart - displays a summary of worked hours for project for certain period in Pie Chart.</p>
+
+<p>All report types have various configurable parameters.</p>
+
+<h3><a id="Install" class="anchor" href="/wiki/Overview.html#Install"><span></span></a>Install</h3>
+
+<p>Just go to Administration - Plugins - Install in your Jira, search for &#39;timesheet&#39;, see &#39;Timesheet Reports and Gadgets for Jira&#39; and click install.</p>
+
+<h3><a id="Usage" class="anchor" href="/wiki/Overview.html#Usage"><span></span></a>Usage</h3>
+
+<p>When installed Timesheet Reports and Gadgets add-On adds Timesheet dashboard item and project report with the same name.</p>
+
+<p>Report is accessible via menu Projects - some project - Reports tab - Other category. See also <a href="https://confluence.atlassian.com/jiracorecloud/reporting-765593792.html">Jira Documentation</a> for more information.</p>
+
+<p>Dashboard item can be added to Jira Dashboard, see <a href="https://confluence.atlassian.com/adminjiracloud/configuring-the-default-dashboard-776636251.html">Jira Documentation</a> for more information.</p>
+
+<p>Timesheet underlying data (worklog) can also be exported to Excel on the report page.</p>
 
     </main>
   </div>
