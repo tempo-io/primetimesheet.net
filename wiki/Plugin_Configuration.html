@@ -161,21 +161,21 @@
       <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b202">2.4</a> it&#39;s possible to change following plugin configuration options without Jira restart needed. 
 Timesheet Plugin Configuration is available in Administration, Plugins menu in Jira 5, or Add-ons tab in Jira 6. Note, those options that were previously advanced configuration options are still backed up with jira-config.properties for backward compatibility.</p>
 
-<h3><a id="Timesheet_Auditors_Group" class="anchor" href="wiki/Plugin_Configuration.html#Timesheet_Auditors_Group"><span></span></a>Timesheet Auditors Group</h3>
+<h3><a id="Timesheet_Auditors_Group" class="anchor" href="Plugin_Configuration.html#Timesheet_Auditors_Group"><span></span></a>Timesheet Auditors Group</h3>
 
 <p>This option is intended to restrict access to Timesheet and Project Pivot to users group. When specified, only users of the group will be allowed to view Timesheet and Pivot assets for other users.</p>
 
-<h3><a id="Timesheet_Restricted_Groups" class="anchor" href="wiki/Plugin_Configuration.html#Timesheet_Restricted_Groups"><span></span></a>Timesheet Restricted Groups</h3>
+<h3><a id="Timesheet_Restricted_Groups" class="anchor" href="Plugin_Configuration.html#Timesheet_Restricted_Groups"><span></span></a>Timesheet Restricted Groups</h3>
 
 <p>This options allows to restrict visibility of other users worked hours to same group members. Users in the selected groups will see worked hours of other users in the same group only.</p>
 
-<h3><a id="Timesheet_Auditors_Role" class="anchor" href="wiki/Plugin_Configuration.html#Timesheet_Auditors_Role"><span></span></a>Timesheet Auditors Role</h3>
+<h3><a id="Timesheet_Auditors_Role" class="anchor" href="Plugin_Configuration.html#Timesheet_Auditors_Role"><span></span></a>Timesheet Auditors Role</h3>
 
 <p>This option provides more granular restrictions access to Timesheet and Project Pivot for other users. If specified, only issues that match specified role will be shown to user in Timesheet and Pivot assets for other users.</p>
 
 <p>Please see <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/453">Issue#453</a> and <a href="https://docs.google.com/spreadsheet/ccc?key=0Ai6BFV79vBqqdFpNbGs2cHlvVlF0bVFYXzJDOWI2LVE">specification</a> for rules for all these three options.</p>
 
-<h3><a id="Composition_Issue_Link" class="anchor" href="wiki/Plugin_Configuration.html#Composition_Issue_Link"><span></span></a>Composition Issue Link</h3>
+<h3><a id="Composition_Issue_Link" class="anchor" href="Plugin_Configuration.html#Composition_Issue_Link"><span></span></a>Composition Issue Link</h3>
 
 <p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses Jira built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from Jira Software, since version 2.7, if <code>Parrent Issue Field</code> option is configured, see below.</p>
 
@@ -187,11 +187,11 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/301/time-301-ability-to-aggregate-time">#301</a></p>
 
-<h3><a id="Parent_Issue_Field" class="anchor" href="wiki/Plugin_Configuration.html#Parent_Issue_Field"><span></span></a>Parent Issue Field</h3>
+<h3><a id="Parent_Issue_Field" class="anchor" href="Plugin_Configuration.html#Parent_Issue_Field"><span></span></a>Parent Issue Field</h3>
 
 <p>Allows to aggregate hours into Jira Software Epic issue, when using <code>Sum subtasks</code> report or gadget configuration option. </p>
 
-<h3><a id="In_Progress_issues" class="anchor" href="wiki/Plugin_Configuration.html#In_Progress_issues"><span></span></a>In Progress issues</h3>
+<h3><a id="In_Progress_issues" class="anchor" href="Plugin_Configuration.html#In_Progress_issues"><span></span></a>In Progress issues</h3>
 
 <p>To quickly add worklog for the issues currently in work, see this option to make Timesheet gadget for yourself show <code>In Progress</code> issues in current week. It is necessary to specify JQL query, e.g. <code>assignee = currentUser() and status = &#39;In Progress&#39;</code>.</p>
 
@@ -213,7 +213,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/317">#317</a>.</p>
 
-<h3><a id="Maximum_Period_Limit" class="anchor" href="wiki/Plugin_Configuration.html#Maximum_Period_Limit"><span></span></a>Maximum Period Limit</h3>
+<h3><a id="Maximum_Period_Limit" class="anchor" href="Plugin_Configuration.html#Maximum_Period_Limit"><span></span></a>Maximum Period Limit</h3>
 
 <p>Use this option to increase limit of maximum days in Timesheet Report or gadget.</p>
 
@@ -223,11 +223,11 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <pre><code>jira.timesheet.plugin.maxDays=360</code></pre>
 
-<h3><a id="Pretty_Duration_format" class="anchor" href="wiki/Plugin_Configuration.html#Pretty_Duration_format"><span></span></a>Pretty Duration format</h3>
+<h3><a id="Pretty_Duration_format" class="anchor" href="Plugin_Configuration.html#Pretty_Duration_format"><span></span></a>Pretty Duration format</h3>
 
 <p>Obsolete since <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1630">2.9.8</a>, please see <code>Duration Format</code> instead.</p>
 
-<h3><a id="Duration_Format" class="anchor" href="wiki/Plugin_Configuration.html#Duration_Format"><span></span></a>Duration Format</h3>
+<h3><a id="Duration_Format" class="anchor" href="Plugin_Configuration.html#Duration_Format"><span></span></a>Duration Format</h3>
 
 <p>Duration format to display hours. E.g. &#39;1d 2h 30m&#39; in case of Pretty Duration, 1.2d in case of Days, or 10.5h by default.</p>
 
@@ -241,13 +241,13 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>Before version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1630">2.9.8</a> option is just <code>Pretty Duration Format</code>.</p>
 
-<h3><a id="Show_Total_In_Front" class="anchor" href="wiki/Plugin_Configuration.html#Show_Total_In_Front"><span></span></a>Show Total In Front</h3>
+<h3><a id="Show_Total_In_Front" class="anchor" href="Plugin_Configuration.html#Show_Total_In_Front"><span></span></a>Show Total In Front</h3>
 
 <p>Check this option to make plugin show <code>Total</code> column in front also in all gadgets and reports. It is also possible to set this option per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
 
 <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1330">2.9.4</a>.</p>
 
-<h3><a id="Highlight_Hours" class="anchor" href="wiki/Plugin_Configuration.html#Highlight_Hours"><span></span></a>Highlight Hours</h3>
+<h3><a id="Highlight_Hours" class="anchor" href="Plugin_Configuration.html#Highlight_Hours"><span></span></a>Highlight Hours</h3>
 
 <p> If set, the value is used to highlight hours in Time Sheet Report under/over the threshold.</p>
 
@@ -255,11 +255,11 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1355">2.9.5</a> it is possible to set <code>Highlight Hours</code> option per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
 
-<h3><a id="Favorite_filters" class="anchor" href="wiki/Plugin_Configuration.html#Favorite_filters"><span></span></a>Favorite filters</h3>
+<h3><a id="Favorite_filters" class="anchor" href="Plugin_Configuration.html#Favorite_filters"><span></span></a>Favorite filters</h3>
 
 <p>It may be not possible or convenient to show all filters, especially in case of too many filters in Jira. So <code>Favorite filters</code> option allows to restrict Filter option in gadgets and reports to current user favorite filters.</p>
 
-<h3><a id="Restrict_Group_by_Field_and_Additional_fields_selectors" class="anchor" href="wiki/Plugin_Configuration.html#Restrict_Group_by_Field_and_Additional_fields_selectors"><span></span></a>Restrict Group by Field and Additional fields selectors</h3>
+<h3><a id="Restrict_Group_by_Field_and_Additional_fields_selectors" class="anchor" href="Plugin_Configuration.html#Restrict_Group_by_Field_and_Additional_fields_selectors"><span></span></a>Restrict Group by Field and Additional fields selectors</h3>
 
 <p>This options restricts contents of <code>Group By Field</code> and <code>Additional field</code> selectors in Timesheet Report configuration to the selected fields. </p>
 
@@ -267,19 +267,19 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <pre><code>jira.plugin.timesheet.groupbyfields = Environment,Reporter</code></pre>
 
-<h3><a id="Restrict_Project_selector" class="anchor" href="wiki/Plugin_Configuration.html#Restrict_Project_selector"><span></span></a>Restrict Project selector</h3>
+<h3><a id="Restrict_Project_selector" class="anchor" href="Plugin_Configuration.html#Restrict_Project_selector"><span></span></a>Restrict Project selector</h3>
 
 <p>This options excludes selected projects from <code>Project</code> selectors in plugin reports and gadgets configurations.</p>
 
 <p>Available from version 2.5.</p>
 
-<h3><a id="Weekends" class="anchor" href="wiki/Plugin_Configuration.html#Weekends"><span></span></a>Weekends</h3>
+<h3><a id="Weekends" class="anchor" href="Plugin_Configuration.html#Weekends"><span></span></a>Weekends</h3>
 
 <p>It is possible to define weekends style in Administration - Add-Ons - Timesheet Plugin Configuration, see <code>Weekends</code> configuration option. It supports standard (Sat-Sun), Islamic (Fri-Sat), Indian (Sun) and Solar (Fri) weekend types.</p>
 
 <p>Available from version 2.6.</p>
 
-<h3><a id="Time_Sheet_header_Day_Format" class="anchor" href="wiki/Plugin_Configuration.html#Time_Sheet_header_Day_Format"><span></span></a>Time Sheet header Day Format</h3>
+<h3><a id="Time_Sheet_header_Day_Format" class="anchor" href="Plugin_Configuration.html#Time_Sheet_header_Day_Format"><span></span></a>Time Sheet header Day Format</h3>
 
 <p>Changing &quot;Date/Time Formats&quot; in Jira (Administration-&gt;Look and Feel) influences format in tooltips (when you mouse over timesheet header). However if you&#39;d like to change date format in the timesheet header itself, you need to set <code>Day Format 1</code> and/or <code>Day Format 2</code> configuration options.</p>
 
@@ -287,7 +287,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>Note, these options are backed up with <code>jira.timesheet.plugin.dayFormat1=E</code> and <code>jira.timesheet.plugin.dayFormat2=dd/MMM</code> (default values are shown) in <code>jira-config.properties</code>.</p>
 
-<h3><a id="Decimal_separator_for_hours" class="anchor" href="wiki/Plugin_Configuration.html#Decimal_separator_for_hours"><span></span></a>Decimal separator for hours</h3>
+<h3><a id="Decimal_separator_for_hours" class="anchor" href="Plugin_Configuration.html#Decimal_separator_for_hours"><span></span></a>Decimal separator for hours</h3>
 
 <p>Decimal separator is determined by (your) locale settings. However, you may change it for all users. I.e. it affects whole plugin - all gadgets and both html and excel views for all reports.</p>
 
@@ -299,19 +299,19 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/123">#123</a> for reference.</p>
 
-<h3><a id="Round_Hours" class="anchor" href="wiki/Plugin_Configuration.html#Round_Hours"><span></span></a>Round Hours</h3>
+<h3><a id="Round_Hours" class="anchor" href="Plugin_Configuration.html#Round_Hours"><span></span></a>Round Hours</h3>
 
 <p>Round to hour, half an hour, quarter of an hour, or just to 2 or 1 fraction digits, e.g. 1.33h. Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1466">2.9.5.9</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1467">3.0.5.3</a> Obsoletes Maximum Fraction Digits option below.</p>
 
-<h3><a id="Obsolete_Maximum_Fraction_Digits" class="anchor" href="wiki/Plugin_Configuration.html#Obsolete_Maximum_Fraction_Digits"><span></span></a>(Obsolete) Maximum Fraction Digits</h3>
+<h3><a id="Obsolete_Maximum_Fraction_Digits" class="anchor" href="Plugin_Configuration.html#Obsolete_Maximum_Fraction_Digits"><span></span></a>(Obsolete) Maximum Fraction Digits</h3>
 
 <p>Maximum number of decimals to display after decimal point in hours, e.g. 1.33h.</p>
 
-<h3><a id="Worklog_Limit" class="anchor" href="wiki/Plugin_Configuration.html#Worklog_Limit"><span></span></a>Worklog Limit</h3>
+<h3><a id="Worklog_Limit" class="anchor" href="Plugin_Configuration.html#Worklog_Limit"><span></span></a>Worklog Limit</h3>
 
 <p>This option is designed to workaround OutOfMemory problem caused by huge detailed Time Sheet Report. So if specified, no details will show if worklog count is greater then a specified value.</p>
 
-<h3><a id="Custom_days_off_and_holidays" class="anchor" href="wiki/Plugin_Configuration.html#Custom_days_off_and_holidays"><span></span></a>Custom days off and holidays</h3>
+<h3><a id="Custom_days_off_and_holidays" class="anchor" href="Plugin_Configuration.html#Custom_days_off_and_holidays"><span></span></a>Custom days off and holidays</h3>
 
 <p>Since version 2.6 it&#39;s possible to configure custom holidays in separate Add-On Administration screen - <code>Timesheet Holidays</code>.</p>
 
@@ -329,7 +329,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/257">#257</a> for reference, and issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/297">#297</a> for implemented enhancement.</p>
 
-<h3><a id="Backing_properties" class="anchor" href="wiki/Plugin_Configuration.html#Backing_properties"><span></span></a>Backing properties</h3>
+<h3><a id="Backing_properties" class="anchor" href="Plugin_Configuration.html#Backing_properties"><span></span></a>Backing properties</h3>
 
 <p>For more information about setting corresponding property in <code>jira-config.properties</code>, please see <a href="https://confluence.atlassian.com/display/JIRA050/Advanced+JIRA+Configuration">Advanced Jira Configuration</a>.</p>
 

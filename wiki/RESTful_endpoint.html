@@ -247,7 +247,7 @@
 
 <p>Note, alternatively you can see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/worklog">/api/2/worklog</a> for massive loading worklog without issues data.</p>
 
-<h3><a id="Before_Jira_64" class="anchor" href="wiki/RESTful_endpoint.html#Before_Jira_64"><span></span></a>Before Jira 6.4</h3>
+<h3><a id="Before_Jira_64" class="anchor" href="RESTful_endpoint.html#Before_Jira_64"><span></span></a>Before Jira 6.4</h3>
 
 <p>Since plugin version 2.6 you can use the same <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">JQL search REST api</a> but with <code>workedIssues()</code> JQL function provided by the plugin, e.g. &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, to limit result set to issues with relevant worklogs only.</p>
 
@@ -255,7 +255,7 @@
 
 <p>Caution, as above, worklog returned contains only first 20 worklogs per issue, and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries.</p>
 
-<h3><a id="Plugin_REST_endpoint" class="anchor" href="wiki/RESTful_endpoint.html#Plugin_REST_endpoint"><span></span></a>Plugin REST endpoint</h3>
+<h3><a id="Plugin_REST_endpoint" class="anchor" href="RESTful_endpoint.html#Plugin_REST_endpoint"><span></span></a>Plugin REST endpoint</h3>
 
 <p>Since plugin version 2.3.10, with timesheet plugin installed, it is possible to get worklogs in json format including minimum issue data.</p>
 
@@ -303,7 +303,7 @@
 
 <p>See also <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">issue#269</a></p>
 
-<h4><a id="Export_to_CSV" class="anchor" href="wiki/RESTful_endpoint.html#Export_to_CSV"><span></span></a>Export to CSV</h4>
+<h4><a id="Export_to_CSV" class="anchor" href="RESTful_endpoint.html#Export_to_CSV"><span></span></a>Export to CSV</h4>
 
 <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1670">2.9.8.3</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1675">3.0.8.3</a> it is possible to export raw worklogs in CSV format, similarly to Excel view, by using export link from Timesheet gadget, and replacing htmlExport url parameter with csvExport, e.g.:</p>
 
