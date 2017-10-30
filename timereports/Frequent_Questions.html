@@ -160,6 +160,14 @@ or Czech language at your convenience.</p>
 
 <p>And there is <code>Edit All Worklogs</code> Jira permission, to restrict who can edit time logs of others, please see <a href="https://confluence.atlassian.com/adminjiraserver071/managing-project-permissions-802592442.html">Jira documentation</a> for more details.</p>
 
+<h3><a id="Total_number_does_not_match" class="anchor" href="/wiki/Frequent_Questions.html#Total_number_does_not_match"><span></span></a>Total number does not match?</h3>
+
+<p>Because of <code>Maximum Fraction Digits</code> configured in add-on configuration, total number of hours shown on report page may not match total calculated by applying SUM formula to exported worklog in Excel.</p>
+
+<p>When <code>Maximum Fraction Digits</code> configured, hours are displayed as individually rounded values, but total in the report is calculated on exact values, and then rounded. In Excel, every entry is rounded, so if you apply SUM you get incorrect result. There is Total row for exported worklog, to avoid this confusion.</p>
+
+<p>See also related issues <a href="https://bitbucket.org/azhdanov/jiratimesheet/issues/1173/pivot-by-user-report-total-number-does-not">1173</a> and <a href="https://bitbucket.org/azhdanov/timereports/issues/937/common-sum-of-times-is-wrong">937</a></p>
+
 <h3><a id="Unexpected_error" class="anchor" href="/wiki/Frequent_Questions.html#Unexpected_error"><span></span></a>Unexpected error?</h3>
 
 <p><em>Worklog must not be null</em></p>
