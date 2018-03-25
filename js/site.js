@@ -1,4 +1,4 @@
-if (window.location.host.indexOf("jiratimesheet.com") >= 0 && window.location.protocol != "https:") {
+if (window.location.host.indexOf("primetimesheet.net") >= 0 && window.location.protocol != "https:") {
   window.location.protocol = "https:"
 }
 $(function() {
