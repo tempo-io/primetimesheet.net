@@ -120,7 +120,7 @@
 
 <h3><a id="Data_Security" class="anchor" href="Security_Statement.html#Data_Security"><span></span></a>Data Security</h3>
 
-<p>The Add-On reads Jira data (specifically Time Tracking data) from Jira Cloud instance and processes it server side. Worklog is  additionally stored in Cloudant DBaaS as for persistent cache.</p>
+<p>The Add-On reads Jira data (specifically Time Tracking data) from Jira Cloud instance and processes it client side (in end user Browser), unless add-on REST API is used. In the latter case data is processed server side, instantly, i.e. data is not cached or stored anywhere.</p>
 
 <p>Here is the list of Jira REST API used:</p>
 
@@ -142,7 +142,7 @@
 
 <h3><a id="Refernces" class="anchor" href="Security_Statement.html#Refernces"><span></span></a>Refernces</h3>
 
-<ul><li><a href="https://console.bluemix.net/docs/services/Cloudant/offerings/security.html#security">IBM Cloudant DBaaS Security</a></li><li><a href="https://papertrailapp.com/info/terms">Papertrail Software Services Agreement</a></li><li><a href="https://www.atlassian.com/trust/security/security-practices">Atlassian Cloud Security</a></li><li><a href="https://www.heroku.com/policy/privacy">Heroku Privacy Statement</a></li></ul>
+<ul><li><a href="https://papertrailapp.com/info/terms">Papertrail Software Services Agreement</a></li><li><a href="https://www.atlassian.com/trust/security/security-practices">Atlassian Cloud Security</a></li><li><a href="https://www.heroku.com/policy/privacy">Heroku Privacy Statement</a></li></ul>
 
     </main>
   </div>
