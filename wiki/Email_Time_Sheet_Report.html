@@ -178,6 +178,8 @@
 
 <p>Additionally, it allows to remind User Group or Project Role members, if there is incomplete day in the timesheet. See <code>Remind Users in Group</code> option, and <code>Remind Users with Roles</code> option. Note, the latter option appears only if Project option is specified in report parameters. Reminder email will have a notice in report body, if any working day has 0 reported hours, or less than value specified in <code>Highlight Hours</code> configuration option in <a href="Plugin_Configuration.html">Plugin Configuration</a>.</p>
 
+<p>Note, it&#39;s possible to make email be always sent in case of Remind Users, not only when timesheet is incomplete, use Remind Always option for this. Thus it&#39;s possible to automate sending of Timesheet report to each member of a Jira Group and to CC manager, just making it the other way - as a manager Subscribe yourself to Group Timesheet, and configure Remind Users in Group, with Remind Always option enabled.</p>
+
 <p>It is also possible to include Excel export as an attachment in email, by enabling Excel attachment option in the subscription Schedule dialog.</p>
 
 <h3><a id="Administration" class="anchor" href="Email_Time_Sheet_Report.html#Administration"><span></span></a>Administration</h3>
