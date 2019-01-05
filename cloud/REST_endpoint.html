@@ -217,17 +217,17 @@ https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2
 
 <p>Examples:</p>
 
-<p>Apikey query parameter in URL:</p>
-
-<pre><code>https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01&amp;Apikey=T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL</code></pre>
+<p>Apikey query parameter in URL: <code>https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01&amp;Apikey=T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL</code></p>
 
 <p>Basic authentication (with curl):</p>
 
-<pre><code>curl -u Apikey:T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
+<pre><code>$ curl -u Apikey:T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL \
+    https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
 
 <p>Apikey Authorization header (with curl):</p>
 
-<pre><code>curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot; https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
+<pre><code>$ curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot;  \
+    https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
 
     </main>
   </div>
