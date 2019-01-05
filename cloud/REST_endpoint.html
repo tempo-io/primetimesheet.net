@@ -215,6 +215,20 @@ https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2
 
 <p>It is also possible to pull report in XLS format or raw data in CSV format with a link, like https://timesheet-plugin.herokuapp.com/api/1/exportView.xls?start=2018-10-01 or https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01 with HTTP header &quot;Authorization: Apikey KEY&quot; or with query parameter &quot;Apikey=KEY&quot;, or with Basic authentication as Apikey:KEY for username:password. Note, KEY has to be obtained from add-on configuration for REST option, using <code>Get Key</code> button in the very bottom.</p>
 
+<p>Examples:</p>
+
+<p>Apikey query parameter in URL:</p>
+
+<pre><code>https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01&amp;Apikey=T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL</code></pre>
+
+<p>Basic authentication (with curl):</p>
+
+<pre><code>curl -u Apikey:T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
+
+<p>Apikey Authorization header (with curl):</p>
+
+<pre><code>curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot; https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
+
     </main>
   </div>
 </div>
