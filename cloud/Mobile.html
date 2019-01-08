@@ -10,11 +10,11 @@
         timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Overview | Prime Timesheet for Jira</title>
+    <title>Mobile | Prime Timesheet for Jira</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1509287158000.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 
     <!--[if lt IE 9]>
@@ -26,7 +26,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-    <script src="/js/all-1521991528351.js"></script>
+    <script src="/js/site.js"></script>
 
     <script src="/js/searchApp.js"></script>
     <script>
@@ -59,13 +59,13 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link active" href="/cloud/Overview.html">Overview</a>
+        <a class="nav-link " href="/cloud/Overview.html">Overview</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="/cloud/Frequent_Questions.html">Frequent Questions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="/cloud/Mobile.html">Mobile Version</a>
+        <a class="nav-link active" href="/cloud/Mobile.html">Mobile Version</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="/cloud/REST_endpoint.html">REST endpoint</a>
@@ -96,13 +96,13 @@
 
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="/cloud/Overview.html">Overview</a>
+          <a class="nav-link " href="/cloud/Overview.html">Overview</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="/cloud/Frequent_Questions.html">Frequent Questions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/cloud/Mobile.html">Mobile Version</a>
+          <a class="nav-link active" href="/cloud/Mobile.html">Mobile Version</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="/cloud/REST_endpoint.html">REST endpoint</a>
@@ -121,50 +121,81 @@
     </nav>
 
     <main class="col-lg-8 offset-lg-3 pt-3">
-      <h2>Overview</h2>
-      <p><a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/cloud/overview">Timesheet Reports and Gadgets for Jira Cloud</a> add-on is non-static version of <a href="https://marketplace.atlassian.com/plugins/timereports/cloud/overview">Time Reports add-on for Jira Cloud</a>, designed to cover features missing in Time Reports add-on because of static nature. Namely, to provide reports by email, REST API and Confluence macro.</p>
+      <h2>Mobile</h2>
+      <p>For the convenience of users, we have created a mobile version of the Timesheet Reports and Gadgets plugin. Now you can use plugin from phone.</p>
 
-<p>Add-on provides the following reports (similarly to Time Reports add-on):</p>
+<h3><a id="Install" class="anchor" href="Mobile.html#Install"><span></span></a>Install</h3>
 
-<p><img alt="Timeentry" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-timeentry.png"/></p>
+<p>Below is the installation guide for the mobile version (available on any mobile device, since it is Progressive Web Application, see link for information about supported platforms):</p>
 
-<p>Time Entry - provides convenient way to record working time, i.e. start, stop, resume timer, log worked done or edit previous records.</p>
+<p> Visit report page https://your_company.atlassian.net/plugins/servlet/ac/jira-timesheet-plugin/timereports</p>
 
-<p><img alt="Timesheet" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-timesheet.png"/></p>
+<p> Click User Preferences at the top of the page (Gear icon - User Preferences).</p>
 
-<p>Timesheet - provides the most extensive means to analyze users&#39; workload. It has classical sheet view by day. Also with numerous report Options it is possible to get few variants of the report.</p>
+<p><img alt="Configure" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/config.jpg"/></p>
 
-<p><img alt="Pivot by User" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-pivot.png"/></p>
+<p> At the bottom of the popup-page, find “Link For Mobile Devices” and click “Send” button.</p>
 
-<p>Pivot by Users - displays a summary of worked hours for project for certain period, where columns are project users (resources) and rows are project issues (tasks).</p>
+<p><img alt="Send" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/sendlink.jpg"/></p>
 
-<p><img alt="Pivot by Status" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-pivot-status.png"/></p>
+<p> You will see a message in the upper right corner of the screen ... So the letter has been sent to your address.</p>
 
-<p>Pivot by Status - displays time worked on issues in each issue status. This report spreads worked hours across statuses issue had starting from work started time. It may be changed not to spread worked hours, but use only work started time, by enabling Use Work Started option in add-on configuration.</p>
+<p><img alt="Success mail" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/successmail.jpg"/></p>
 
-<p><img alt="Time Tracking" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-timetracking.png"/></p>
+<p> You will receive an email with a link to the mobile version.</p>
 
-<p>Time Tracking - displays Estimated Time vs Actual Time Spent per issue (no worklog).</p>
+<p> Open the mail on your phone or tablet and click “open the link”.</p>
 
-<p><img alt="Pie Chart" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Overview/timereports-piechart.png"/></p>
+<p> You will be forwarded to the Timesheet Reports and Gadgets mobile app.</p>
 
-<p>Pie Chart - displays a summary of worked hours for project for certain period in Pie Chart.</p>
+<p> Click Settings in the upper right corner of the screen.</p>
 
-<p>All report types have various configurable parameters.</p>
+<p><img alt="Setting" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/settings.jpg"/></p>
 
-<h3><a id="Install" class="anchor" href="Overview.html#Install"><span></span></a>Install</h3>
+<p> Select Add to Home screen.</p>
 
-<p>Just go to Administration - Plugins - Install in your Jira, search for &#39;timesheet&#39;, see &#39;Timesheet Reports and Gadgets for Jira&#39; and click install.</p>
+<p><img alt="Home screen" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/addhomescreen.jpg"/></p>
 
-<h3><a id="Usage" class="anchor" href="Overview.html#Usage"><span></span></a>Usage</h3>
+<p> Add a shortcut to the main screen of the phone.</p>
 
-<p>When installed Timesheet Reports and Gadgets add-On adds Timesheet dashboard item and project report with the same name.</p>
+<p><img alt="Shortcut" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/shortcut.jpg"/></p>
 
-<p>Report is accessible via menu Projects - some project - Reports tab - Other category. See also <a href="https://confluence.atlassian.com/jiracorecloud/reporting-765593792.html">Jira Documentation</a> for more information.</p>
+<p> To start the application, tap the shortcut on the phone screen.</p>
 
-<p>Dashboard item can be added to Jira Dashboard, see <a href="https://confluence.atlassian.com/adminjiracloud/configuring-the-default-dashboard-776636251.html">Jira Documentation</a> for more information.</p>
+<p><img alt="Shortcut on screen" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/resulthomescreen.jpg"/></p>
 
-<p>Timesheet underlying data (worklog) can also be exported to Excel on the report page.</p>
+<h3><a id="Usage" class="anchor" href="Mobile.html#Usage"><span></span></a>Usage</h3>
+
+<p>In mobile version there are Time Entry and Time Reports views available.
+Time Entry - single day view, provides convenient way to record working time, i.e. start, stop, resume timer, log work done or edit previous records.</p>
+
+<p><img alt="Time Entry" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/timeentry.jpg"/></p>
+
+<p>Time Reports - displays issues time spent by days:</p>
+
+<p><img alt="Time Reports view days" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/days_view.jpg"/></p>
+
+<p>or weeks:</p>
+
+<p><img alt="Time Reports view weeks" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/weeks_view.jpg"/></p>
+
+<p>or months:</p>
+
+<p><img alt="Time Reports view months" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/months_view.jpg"/></p>
+
+<p>You can use filter at the top left of the screen.</p>
+
+<p><img alt="Time Reports filter" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/choisefilter.jpg"/></p>
+
+<p><img alt="Time Reports filter" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/filter.jpg"/></p>
+
+<p>You can choose detailed display.</p>
+
+<p><img alt="Time Reports detailed" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/detailed.jpg"/></p>
+
+<p>You can choose group by worked user view</p>
+
+<p><img alt="Time Reports group by worked" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/cloud/Mobile/groupuser.jpg"/></p>
 
     </main>
   </div>
