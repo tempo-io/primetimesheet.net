@@ -126,12 +126,14 @@
 
 <p>Supported parameters:</p>
 
-<ul><li>start - <strong>required</strong> start date in YYYY-MM-DD format</li><li>end - <strong>required</strong> end date in YYYY-MM-DD format</li><li>user - optional user key,</li><li>groups - optional coma separated group names</li><li>projectid - optional, e.g. 10001 (not project key!),</li><li>moreFields - optional coma separated list of fields to include in issue details</li></ul>
+<ul><li>start (or startDate) - <strong>required</strong> start date in YYYY-MM-DD format</li><li>end (or endDate) - <strong>required</strong> end date in YYYY-MM-DD format</li><li>user - optional user account id,</li><li>groups - optional group names</li><li>filterOrProjectId - optional, e.g. filterOrProjectId=project<em>TIMES&amp;filterOrProjectId=filter</em>10010</li><li>moreFields - optional list of fields to include in issue details</li></ul>
+
+<p>Note, it might be possible to use url from report page after the hash-bang( #!) delimiter in REST also.</p>
 
 <p>E.g. request and response:</p>
 
 <pre><code>$ curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot; \
-https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2017-08-31\\&amp;user=admin\&amp;groups=administrators
+https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2017-08-31\&amp;groups=administrators\&amp;filterOrProjectId=project_DEMO
 
 [
   {
