@@ -130,6 +130,8 @@
 
 <p>Note, it might be possible to use url from report page after the hash-bang( #!) delimiter in REST also.</p>
 
+<p>Note, in case of long polling request response will contain status 202 and content-type omitted, also several empty lines will be added before first relevant row. Please parse it accordingly e.g. skip empty lines for csv parsing.</p>
+
 <p>E.g. request and response:</p>
 
 <pre><code>$ curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot; \
