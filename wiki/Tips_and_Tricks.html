@@ -204,6 +204,18 @@
 
 <p>Note, the easiest way to compose correct report url is to click <em>Details</em> link in corresponding gadget, when it shows variable time window you&#39;d like to get in the report.</p>
 
+<h3><a id="Cost_report_based_on_the_timesheet_information" class="anchor" href="Tips_and_Tricks.html#Cost_report_based_on_the_timesheet_information"><span></span></a>Cost report, based on the timesheet information</h3>
+
+<p>It is possible to see actual costs in reports using Worklog Cost Additional Field, basing on user &quot;hourly rate&quot; defined in User Properties.</p>
+
+<p>To have <code>Worklog Cost</code> to be listed in report configuration Additional Fields options, Timesheet Auditors Groups must be configured in Administration - Add-ons - Timesheet Configuration. So that only members of groups selected in Timesheet Auditors Groups option will be able to see costs.</p>
+
+<p>Then, it is necessary to specify the hourly rate for each resource/user, by creating a property for that user called <code>hourly rate</code> with a numeric value which is specific to each user in <code>Edit User Properties</code> page, see Administration - User Management - select user - Actions - Edit Properties.</p>
+
+<p><code>Worklog Cost</code> will be calculated and displayed in timesheet report as an additional column, and it can be exported to Excel or CSV, to calculate project costs for a period.</p>
+
+<p><img alt="WorklogCost" class="markdown" src="https://bitbucket.org/azhdanov/jiratimesheet/wiki/Tips%20and%20Tricks/WorklogCost.png"/></p>
+
 <h3><a id="Billable_vs_nonbillable_time" class="anchor" href="Tips_and_Tricks.html#Billable_vs_nonbillable_time"><span></span></a>Billable vs. non-billable time</h3>
 
 <p>If you have custom field, you can use filter with <code>&#39;your_custom_field is not null&#39;</code> or <code>&#39;your_custom_field = BILL&#39;</code> clause for example, then use the filter in a report or gadget to get only paid hours. Also if you&#39;d like to show both billable and non-billable hours, you can select your field in Additional fields&#39; and do manual processing in excel view. Or, select your field in <code>Group by</code> option, to immediately see aggregated billable and non-billable hours.</p>
