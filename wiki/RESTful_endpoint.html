@@ -1,1 +1,321 @@
-null
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
+    <meta name="author" content="Andriy Zhdanov">
+    <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
+        timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RESTful endpoint | Prime Timesheet for Jira</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1509287158000.css">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="/js/all-1521991528351.js"></script>
+
+    <script src="/js/searchApp.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-30916140-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script data-jsd-embedded data-key="cdd6759b-4070-475a-9e5a-f1b7fc2af463"
+        data-base-url="https://embedded-jsd.atlassian.io"
+        src="https://embedded-jsd.atlassian.io/assets/embed.js">
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary hidden-lg-up">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Server</a>
+  <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
+    <a class="dropdown-item" href="/cloud/Overview.html">Timesheet Reports and Gadgets for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+    <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Overview.html">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Frequent_Questions.html">Frequent Questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Plugin_Configuration.html">Plugin Configuration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/wiki/RESTful_endpoint.html">RESTful endpoint</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Unified_Plugin_Views">Unified plugin views</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Commercial.html">Commercial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column dropdown">
+        <li class="nav-item" id="dropdownMenu">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Server <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/cloud/Overview.html">Timesheet Reports and Gadgets for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+            <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Overview.html">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Frequent_Questions.html">Frequent Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Plugin_Configuration.html">Plugin Configuration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/wiki/RESTful_endpoint.html">RESTful endpoint</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Unified_Plugin_Views">Unified plugin views</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Commercial.html">Commercial</a>
+        </li>
+        <li class="nav-item"  ng-app="searchApp" ng-controller="SearchWikiCtrl">
+          <form class="form-inline mt-2 nav-link">
+            <input class="form-control search" type="text" placeholder="Search" ng-model="query">
+          </form>
+          <ul class="search">
+            <li ng-repeat="content in contents | matchesQuery:query">
+              <a ng-href="{[{content.href}]}.html" ng-bind="content.title"></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+        </li>
+      </ul>
+      <span class="footer text-muted">by <a href="mailto:support@primetimesheet.net">Prime Timesheet</a></span>
+    </nav>
+
+    <main class="col-lg-8 offset-lg-3 pt-3">
+      <h2>RESTful endpoint</h2>
+      <p>Jira has native support for loading worklogs via REST, e.g. by searching for issues using JQL and including <code>worklog</code> field in <code>fields</code> request param, see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/search">/api/2/search</a>.</p>
+
+<p>Since Jira 6.4 there are three JQL clauses to limit result set to issues that have relevant worklogs: <code>worklogAuthor</code>, <code>worklogComment</code> and <code>worlkogDate</code>. See <a href="https://confluence.atlassian.com/jira/advanced-searching-fields-reference-433395081.html#Advancedsearching-fieldsreference-WorkLogAuthorworklogAuthorWorklogauthor">Advanced Searching - Fields reference</a>.</p>
+
+<p>For <code>worklogDate</code> valid formats include: <code>&#39;YYYY/MM/DD&#39;</code>, <code>&#39;YYYY-MM-DD&#39;</code>, or a period format e.g. <code>&#39;-5d&#39;</code>, <code>&#39;4w 2d&#39;</code>, or date function, e.g. <code>endOfDay()</code> for <code>Today</code>.</p>
+
+<p>For <code>worklogAuthor</code> username or <code>membersOf()</code> can be used.</p>
+
+<p>So, request can look like the following:</p>
+
+<pre><code>GET /rest/api/2/search?fields=*all&amp;jql=filter=10001 and worklogDate &gt; &#39;2016-03-01&#39; and worklogDate &lt; endOfDay() and worklogAuthor in membersOf(&quot;jira-developers&quot;)</code></pre>
+
+<p>Then response JSON can look like:</p>
+
+<pre><code>{ &quot;expand&quot; : &quot;schema,names&quot;,
+  &quot;issues&quot; : [{ &quot;expand&quot; : &quot;editmeta,renderedFields,transitions,changelog,operations&quot;,
+        &quot;fields&quot; : { &quot;worklog&quot; : { &quot;maxResults&quot; : 2,
+                &quot;startAt&quot; : 0,
+                &quot;total&quot; : 2,
+                &quot;worklogs&quot; : [ { &quot;author&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;comment&quot; : &quot;test&quot;,
+                      &quot;created&quot; : &quot;2013-10-16T17:56:32.887+0200&quot;,
+                      &quot;id&quot; : &quot;10012&quot;,
+                      &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/issue/10001/worklog/10012&quot;,
+                      &quot;started&quot; : &quot;2013-10-19T00:00:00.000+0200&quot;,
+                      &quot;timeSpent&quot; : &quot;1h&quot;,
+                      &quot;timeSpentSeconds&quot; : 3600,
+                      &quot;updateAuthor&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;updated&quot; : &quot;2013-10-16T17:56:32.887+0200&quot;
+                    },
+                    { &quot;author&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;comment&quot; : &quot;test&quot;,
+                      &quot;created&quot; : &quot;2013-10-16T17:56:33.075+0200&quot;,
+                      &quot;id&quot; : &quot;10013&quot;,
+                      &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/issue/10001/worklog/10013&quot;,
+                      &quot;started&quot; : &quot;2013-10-14T00:00:00.000+0200&quot;,
+                      &quot;timeSpent&quot; : &quot;4h&quot;,
+                      &quot;timeSpentSeconds&quot; : 14400,
+                      &quot;updateAuthor&quot; : { &quot;active&quot; : true,
+                          &quot;avatarUrls&quot; : { &quot;16x16&quot; : &quot;http://localhost:2990/jira/secure/useravatar?size=small&amp;avatarId=10142&quot;,
+                              &quot;48x48&quot; : &quot;http://localhost:2990/jira/secure/useravatar?avatarId=10142&quot;
+                            },
+                          &quot;displayName&quot; : &quot;admin&quot;,
+                          &quot;emailAddress&quot; : &quot;admin@example.com&quot;,
+                          &quot;name&quot; : &quot;admin&quot;,
+                          &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/user?username=admin&quot;
+                        },
+                      &quot;updated&quot; : &quot;2013-10-16T17:56:33.075+0200&quot;
+                    }
+                  ]
+              } },
+        &quot;id&quot; : &quot;10001&quot;,
+        &quot;key&quot; : &quot;TIME-2&quot;,
+        &quot;self&quot; : &quot;http://localhost:2990/jira/rest/api/2/issue/10001&quot;
+      }
+    ],
+  &quot;maxResults&quot; : 50,
+  &quot;startAt&quot; : 0,
+  &quot;total&quot; : 1
+}</code></pre>
+
+<p>Caution, worklog returned contains only first 20 worklogs per issue (see <a href="https://jira.atlassian.com/browse/JRA-34746">JRA-34746</a>), and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries. It is your responsibility to load all worklogs per issue, using <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/issue-getIssueWorklog">/rest/api/2/issue/{issueIdOrKey}/worklog</a> endpoint, and filter out worklogs that do not match your criteria, see <a href="https://answers.atlassian.com/questions/205807/rest-api-is-returning-only-20-worklogs-per-issue">answers</a> for help.</p>
+
+<p>Note, alternatively you can see <a href="https://docs.atlassian.com/jira/REST/7.1.2/#api/2/worklog">/api/2/worklog</a> for massive loading worklog without issues data.</p>
+
+<h3><a id="Before_Jira_64" class="anchor" href="RESTful_endpoint.html#Before_Jira_64"><span></span></a>Before Jira 6.4</h3>
+
+<p>Since plugin version 2.6 you can use the same <a href="https://developer.atlassian.com/static/rest/jira/6.1.html#d2e4071">JQL search REST api</a> but with <code>workedIssues()</code> JQL function provided by the plugin, e.g. &quot;key in workedIssues(fromDate, toDate, userOrGroup)&quot; clause, to limit result set to issues with relevant worklogs only.</p>
+
+<p>E.g. <code>http://localhost:2990/jira/rest/api/2/search?jql=key in workedIssues(&quot;2013/10/14&quot;,&quot;2013/10/14&quot;,&quot;jira-developers&quot;)&amp;fields=worklog</code></p>
+
+<p>Caution, as above, worklog returned contains only first 20 worklogs per issue, and is not filtered according to specified <code>worklogDate</code> and <code>worklogAuthor</code> queries.</p>
+
+<h3><a id="Plugin_REST_endpoint" class="anchor" href="RESTful_endpoint.html#Plugin_REST_endpoint"><span></span></a>Plugin REST endpoint</h3>
+
+<p>Since plugin version 2.3.10, with timesheet plugin installed, it is possible to get worklogs in json format including minimum issue data.</p>
+
+<p>E.g. with the url /rest/timesheet-gadget/1.0/raw-timesheet.json?moreFields=creator&amp;moreFields=created, it will return:</p>
+
+<pre><code>{
+  &quot;worklog&quot;: [
+    {
+      &quot;key&quot;: &quot;TIME-1&quot;,
+      &quot;summary&quot;: &quot;Hocus Focus Problem&quot;,
+      &quot;entries&quot;: [
+        {
+          &quot;id&quot;: 10014,
+          &quot;comment&quot;: &quot;test&quot;,
+          &quot;timeSpent&quot;: 21600,
+          &quot;author&quot;: &quot;admin&quot;,
+          &quot;authorFullName&quot;: &quot;admin&quot;,
+          &quot;created&quot;: 1458477642089,
+          &quot;startDate&quot;: 1457910000000,
+          &quot;updateAuthor&quot;: &quot;admin&quot;,
+          &quot;updateAuthorFullName&quot;: &quot;admin&quot;,
+          &quot;updated&quot;: 1458477642089
+        }
+      ],
+      &quot;fields&quot;: [
+        {
+          &quot;label&quot;: &quot;2013-03-12T09:45:35+0100&quot;,
+          &quot;value&quot;: &quot;created&quot;
+        },
+        {
+          &quot;label&quot;: &quot;admin&quot;,
+          &quot;value&quot;: &quot;creator&quot;
+        }
+      ]
+    }
+}</code></pre>
+
+<p>It accepts the following parameters</p>
+
+<ul><li><code>targetUser</code> - optional username,</li><li><code>targetGroup</code> - optional group name, e.g. jira-users,</li><li><code>startDate</code> - optional begin date in Jira date picker format, e.g. <code>01/Jun/2012</code>, or in ISO date format, e.g. <code>2012-06-01</code>,</li><li><code>endDate</code> - optional end date, format is the same,</li><li><code>projectid</code> - optional, e.g. 10001 (not project key!),</li><li><code>filterid</code> - optional,</li><li><code>moreFields</code> - optional.</li></ul>
+
+<p>If nothing is specified it behaves like report, displays data a week before current day for currently logged in user.</p>
+
+<p>Dates in response are UNIX time - milliseconds since <code>01/01/1970</code>; timesSpent is in seconds.</p>
+
+<p>See also <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/269/time-269-restful-timesheet-endpoint">issue#269</a></p>
+
+<h3><a id="Export_to_CSV" class="anchor" href="RESTful_endpoint.html#Export_to_CSV"><span></span></a>Export to CSV</h3>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1670">2.9.8.3</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1675">3.0.8.3</a> it is possible to export raw worklogs in CSV format, similarly to Excel view, by using CSV View link in Time Sheet report or composing link basing on export link from Timesheet gadget, and replacing htmlExport url parameter with csvExport, e.g.:</p>
+
+<pre><code>http://localhost:2990/jira/rest/timesheet-gadget/1.0/timesheet.json?csvExport=true&amp;weekends=true&amp;targetUser=admin&amp;showDetails=true&amp;reportingDay=2&amp;groupByField=customfield_group&amp;moreFields=reporter&amp;moreFields=status&amp;moreFields=timespent&amp;moreFields=timetracking&amp;numOfWeeks=1&amp;offset=0&amp;sum=day</code></pre>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

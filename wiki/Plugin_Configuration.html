@@ -1,1 +1,359 @@
-null
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
+    <meta name="author" content="Andriy Zhdanov">
+    <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
+        timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plugin Configuration | Prime Timesheet for Jira</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1509287158000.css">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="/js/all-1521991528351.js"></script>
+
+    <script src="/js/searchApp.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-30916140-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script data-jsd-embedded data-key="cdd6759b-4070-475a-9e5a-f1b7fc2af463"
+        data-base-url="https://embedded-jsd.atlassian.io"
+        src="https://embedded-jsd.atlassian.io/assets/embed.js">
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary hidden-lg-up">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Server</a>
+  <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
+    <a class="dropdown-item" href="/cloud/Overview.html">Timesheet Reports and Gadgets for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+    <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Overview.html">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Frequent_Questions.html">Frequent Questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/wiki/Plugin_Configuration.html">Plugin Configuration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/RESTful_endpoint.html">RESTful endpoint</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Unified_Plugin_Views">Unified plugin views</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Commercial.html">Commercial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column dropdown">
+        <li class="nav-item" id="dropdownMenu">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Server <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/cloud/Overview.html">Timesheet Reports and Gadgets for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+            <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Overview.html">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Frequent_Questions.html">Frequent Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/wiki/Plugin_Configuration.html">Plugin Configuration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/RESTful_endpoint.html">RESTful endpoint</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Unified_Plugin_Views">Unified plugin views</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Commercial.html">Commercial</a>
+        </li>
+        <li class="nav-item"  ng-app="searchApp" ng-controller="SearchWikiCtrl">
+          <form class="form-inline mt-2 nav-link">
+            <input class="form-control search" type="text" placeholder="Search" ng-model="query">
+          </form>
+          <ul class="search">
+            <li ng-repeat="content in contents | matchesQuery:query">
+              <a ng-href="{[{content.href}]}.html" ng-bind="content.title"></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+        </li>
+      </ul>
+      <span class="footer text-muted">by <a href="mailto:support@primetimesheet.net">Prime Timesheet</a></span>
+    </nav>
+
+    <main class="col-lg-8 offset-lg-3 pt-3">
+      <h2>Plugin Configuration</h2>
+      <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b202">2.4</a> it&#39;s possible to change following plugin configuration options without Jira restart needed. 
+Timesheet Plugin Configuration is available in Administration, Plugins menu in Jira 5, or Add-ons tab in Jira 6. Note, those options that were previously advanced configuration options are still backed up with jira-config.properties for backward compatibility.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1355)/[3.0.5](https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1450">2.9.5</a> it is also possible to set <a href="Plugin_Configuration.html#Duration_Format"><code>Pretty Duration</code></a>, <a href="Plugin_Configuration.html#Show_Total_In_Front"><code>Show Total In Front</code></a>, <a href="Plugin_Configuration.html#Highlight_Hours"><code>Highlight Hours</code></a> options per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
+
+<h3><a id="Timesheet_Auditors_Group" class="anchor" href="Plugin_Configuration.html#Timesheet_Auditors_Group"><span></span></a>Timesheet Auditors Group</h3>
+
+<p>This option is intended to restrict access to Timesheet and Project Pivot to users group. When specified, only users of the group will be allowed to view Timesheet and Pivot assets for other users.</p>
+
+<h3><a id="Timesheet_Restricted_Groups" class="anchor" href="Plugin_Configuration.html#Timesheet_Restricted_Groups"><span></span></a>Timesheet Restricted Groups</h3>
+
+<p>This options allows to restrict visibility of other users worked hours to same group members. Users in the selected groups will see worked hours of other users in the same group only.</p>
+
+<h3><a id="Timesheet_Auditors_Role" class="anchor" href="Plugin_Configuration.html#Timesheet_Auditors_Role"><span></span></a>Timesheet Auditors Role</h3>
+
+<p>This option provides more granular restrictions access to Timesheet and Project Pivot for other users. If specified, only issues that match specified role will be shown to user in Timesheet and Pivot assets for other users.</p>
+
+<p>Please see <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/453">Issue#453</a> and <a href="https://docs.google.com/spreadsheet/ccc?key=0Ai6BFV79vBqqdFpNbGs2cHlvVlF0bVFYXzJDOWI2LVE">specification</a> for rules for all these three options.</p>
+
+<h3><a id="Composition_Issue_Link" class="anchor" href="Plugin_Configuration.html#Composition_Issue_Link"><span></span></a>Composition Issue Link</h3>
+
+<p>&quot;Sum Subtasks&quot; reports and gadgets configuration option by default uses Jira built in sub-tasks, which have one level hierarchy. But using &#39;is composed of&#39; issue link for sub tasks, Timesheet and Pivot reports can aggregate hours, into parent task. Note, hours are aggregated into root task, transitively via Sub-tasks, Compose Issue Link and also Epic Link from Jira Software, since version 2.7, if <code>Parrent Issue Field</code> option is configured, see below.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1670">2.9.8.3</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1675">3.0.8.3</a> it is possible to switch link direction using <code>Reverse Composition</code> option for relation like Gathers/Is Gathered By.</p>
+
+<p>Note, this option is backed up with the following property in jira-config.properties. Sample usage:</p>
+
+<pre><code>jira.timesheet.plugin.composeIssueLink = Compose</code></pre>
+
+<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/301/time-301-ability-to-aggregate-time">#301</a></p>
+
+<h3><a id="Parent_Issue_Field" class="anchor" href="Plugin_Configuration.html#Parent_Issue_Field"><span></span></a>Parent Issue Field</h3>
+
+<p>Allows to aggregate hours into Jira Software Epic issue, when using <code>Sum subtasks</code> report or gadget configuration option. </p>
+
+<h3><a id="In_Progress_issues" class="anchor" href="Plugin_Configuration.html#In_Progress_issues"><span></span></a>In Progress issues</h3>
+
+<p>To quickly add worklog for the issues currently in work, see this option to make Timesheet gadget for yourself show <code>In Progress</code> issues in current week. It is necessary to specify JQL query, e.g. <code>assignee = currentUser() and status = &#39;In Progress&#39;</code>.</p>
+
+<p>If you want more flexibility, consider using labels for this, e.g. JQL: <code>labels in (stick_in_timesheet)</code>. So if you want to make some issue appear in timesheet regardless previous worklogs, just add <code>stick_in_timesheet</code> label to it.</p>
+
+<p>Or there is super flexible trick, e.g. JQL: <code>filter = &quot;Sticky Issues for Timesheet&quot;</code>. So everyone can create a filter with this name, to whatever he or she wants. If filter does not exist for a user, nothing happens. Also you can share filters with certain users or groups to simplify their lives.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1200">2.9.3</a> there is Show Empty Rows option in Time Sheet Gadget configuration, that works in combination with Filter gadget configuration option, so that issues matching the Filter selected are shown with or without work logged yet.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b886">2.8.2.3</a> till <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1200">2.9.3</a> it is possible to use Timesheet gaget filter option instead of global JQL query.</p>
+
+<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/475/show-issues-without-a-current-worklog">#475</a>, and issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/537/allow-issues-to-be-displayed-regardless-of">#537</a>.</p>
+
+<p>Note before version <code>2.7.6</code>, option uses JQL Clause, e.g. <code>status = &#39;In Progress&#39;</code>. The clause is prepended with <code>assignee = currentUser() and</code>.</p>
+
+<p>Note, this option is backed up with <code>jira.timesheet.plugin.inProgressClause</code> property from jira-config.properties. E.g.</p>
+
+<pre><code>jira.timesheet.plugin.inProgressClause=status=&#39;In Progress&#39;</code></pre>
+
+<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/317">#317</a>.</p>
+
+<h3><a id="Maximum_Period_Limit" class="anchor" href="Plugin_Configuration.html#Maximum_Period_Limit"><span></span></a>Maximum Period Limit</h3>
+
+<p>Use this option to increase limit of maximum days in Timesheet Report or gadget.</p>
+
+<p>Note, before version <a href="https://marketplace.atlassian.com/apps/294/timesheet-reports-and-gadgets/version-history#b1900">3.3.0</a> there is risk of running Out Of Memory, see Issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/169/time-169-unbounded-report-size-means-large">#169</a>. </p>
+
+<p>Note, this option is backed up with <code>jira.timesheet.plugin.maxDays</code> property from jira-config.properties. E.g.</p>
+
+<pre><code>jira.timesheet.plugin.maxDays=360</code></pre>
+
+<h3><a id="Pretty_Duration_format" class="anchor" href="Plugin_Configuration.html#Pretty_Duration_format"><span></span></a>Pretty Duration format</h3>
+
+<p>Obsolete since <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1630">2.9.8</a>, please see <code>Duration Format</code> instead.</p>
+
+<h3><a id="Duration_Format" class="anchor" href="Plugin_Configuration.html#Duration_Format"><span></span></a>Duration Format</h3>
+
+<p>Duration format to display hours. E.g. &#39;1d 2h 30m&#39; in case of Pretty Duration, 1.2d in case of Days, or 10.5h by default.</p>
+
+<p>Note, this option is backed up with <code>jira.timesheet.plugin.prettyDuration</code> property from jira-config.properties. E.g.</p>
+
+<pre><code>jira.timesheet.plugin.prettyDuration = true</code></pre>
+
+<p>See also issue<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/202">#202</a> and issue#e<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/1051">#1051</a>.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1330">2.9.4</a> it is possible to set <code>Pretty Duration</code> option per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
+
+<p>Before version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1630">2.9.8</a> option is just <code>Pretty Duration Format</code>.</p>
+
+<h3><a id="Show_Total_In_Front" class="anchor" href="Plugin_Configuration.html#Show_Total_In_Front"><span></span></a>Show Total In Front</h3>
+
+<p>Check this option to make plugin show <code>Total</code> column in front also in all gadgets and reports. It is also possible to set this option per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1330">2.9.4</a>.</p>
+
+<h3><a id="Highlight_Hours" class="anchor" href="Plugin_Configuration.html#Highlight_Hours"><span></span></a>Highlight Hours</h3>
+
+<p> If set, the value is used to highlight hours in Time Sheet Report under/over the threshold.</p>
+
+<p> Additionally, if using <code>Remind Users</code> in <code>Groups</code> option of <a href="Email_Time_Sheet_Report.html">Timesheet Email Subscriptions</a>, there will be a notice in users&#39; report email if there is incomplete day, i.e. day total is lower than the value specified in the Highlight Hours plugin configuration option.</p>
+
+<p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1355">2.9.5</a> it is possible to set <code>Highlight Hours</code> option per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
+
+<h3><a id="Favorite_filters" class="anchor" href="Plugin_Configuration.html#Favorite_filters"><span></span></a>Favorite filters</h3>
+
+<p>It may be not possible or convenient to show all filters, especially in case of too many filters in Jira. So <code>Favorite filters</code> option allows to restrict Filter option in gadgets and reports to current user favorite filters.</p>
+
+<h3><a id="Restrict_Group_by_Field_and_Additional_fields_selectors" class="anchor" href="Plugin_Configuration.html#Restrict_Group_by_Field_and_Additional_fields_selectors"><span></span></a>Restrict Group by Field and Additional fields selectors</h3>
+
+<p>This options restricts contents of <code>Group By Field</code> and <code>Additional field</code> selectors in Timesheet Report configuration to the selected fields. </p>
+
+<p>Note, this option is backed up with <code>jira.plugin.timesheet.groupbyfields</code> property in <code>jira-config.properties</code>. E.g.</p>
+
+<pre><code>jira.plugin.timesheet.groupbyfields = Environment,Reporter</code></pre>
+
+<h3><a id="Restrict_Project_selector" class="anchor" href="Plugin_Configuration.html#Restrict_Project_selector"><span></span></a>Restrict Project selector</h3>
+
+<p>This options excludes selected projects from <code>Project</code> selectors in plugin reports and gadgets configurations.</p>
+
+<p>Available from version 2.5.</p>
+
+<h3><a id="Weekends" class="anchor" href="Plugin_Configuration.html#Weekends"><span></span></a>Weekends</h3>
+
+<p>It is possible to define weekends style in Administration - Add-Ons - Timesheet Plugin Configuration, see <code>Weekends</code> configuration option. It supports standard (Sat-Sun), Islamic (Fri-Sat), Indian (Sun) and Solar (Fri) weekend types.</p>
+
+<p>Available from version 2.6.</p>
+
+<h3><a id="Time_Sheet_header_Day_Format" class="anchor" href="Plugin_Configuration.html#Time_Sheet_header_Day_Format"><span></span></a>Time Sheet header Day Format</h3>
+
+<p>Changing &quot;Date/Time Formats&quot; in Jira (Administration-&gt;Look and Feel) influences format in tooltips (when you mouse over timesheet header). However if you&#39;d like to change date format in the timesheet header itself, you need to set <code>Day Format 1</code> and/or <code>Day Format 2</code> configuration options.</p>
+
+<p>Available from version 2.6.3.</p>
+
+<p>Note, these options are backed up with <code>jira.timesheet.plugin.dayFormat1=E</code> and <code>jira.timesheet.plugin.dayFormat2=dd/MMM</code> (default values are shown) in <code>jira-config.properties</code>.</p>
+
+<h3><a id="Decimal_separator_for_hours" class="anchor" href="Plugin_Configuration.html#Decimal_separator_for_hours"><span></span></a>Decimal separator for hours</h3>
+
+<p>Decimal separator is determined by (your) locale settings. However, you may change it for all users. I.e. it affects whole plugin - all gadgets and both html and excel views for all reports.</p>
+
+<p>Available from version 2.6.3.</p>
+
+<p>Note, this option is backed up in <code>jira-config.properties</code>. E.g. to use coma instead of period (7,5h  instead of 7.5h):</p>
+
+<pre><code>jira.timesheet.plugin.decimalSeparator = ,</code></pre>
+
+<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/123">#123</a> for reference.</p>
+
+<h3><a id="Round_Hours" class="anchor" href="Plugin_Configuration.html#Round_Hours"><span></span></a>Round Hours</h3>
+
+<p>Round to hour, half an hour, quarter of an hour, or just to 2 or 1 fraction digits, e.g. 1.33h. Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1466">2.9.5.9</a> and <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1467">3.0.5.3</a> Obsoletes Maximum Fraction Digits option below.</p>
+
+<h3><a id="Obsolete_Maximum_Fraction_Digits" class="anchor" href="Plugin_Configuration.html#Obsolete_Maximum_Fraction_Digits"><span></span></a>(Obsolete) Maximum Fraction Digits</h3>
+
+<p>Maximum number of decimals to display after decimal point in hours, e.g. 1.33h.</p>
+
+<h3><a id="Worklog_Limit" class="anchor" href="Plugin_Configuration.html#Worklog_Limit"><span></span></a>Worklog Limit</h3>
+
+<p>This option is designed to workaround OutOfMemory problem caused by huge detailed Time Sheet Report. So if specified, no details will show if worklog count is greater then a specified value.</p>
+
+<h3><a id="Disable_Logging_Work" class="anchor" href="Plugin_Configuration.html#Disable_Logging_Work"><span></span></a>Disable Logging Work</h3>
+
+<p>This option allows to disable Logging work from dashboard gadget for everyone.</p>
+
+<h3><a id="Disable_Timesheet_Subscriptions" class="anchor" href="Plugin_Configuration.html#Disable_Timesheet_Subscriptions"><span></span></a>Disable Timesheet Subscriptions</h3>
+
+<p>This option allows to disable subscribing to Time Sheet Report by email. If enabled all existing subscriptions will be ignored, i.e. no emails will be sent.</p>
+
+<h3><a id="Columns_For_Export" class="anchor" href="Plugin_Configuration.html#Columns_For_Export"><span></span></a>Columns For Export</h3>
+
+<p>Configure columns for export suing Excel View in Time Sheet and Project Pivot reports.</p>
+
+<h3><a id="Custom_days_off_and_holidays" class="anchor" href="Plugin_Configuration.html#Custom_days_off_and_holidays"><span></span></a>Custom days off and holidays</h3>
+
+<p>Since version 2.6 it&#39;s possible to configure custom holidays in separate Add-On Administration screen - <code>Timesheet Holidays</code>.</p>
+
+<p>Note, this is backed up in <code>jira-config.properties</code>. E.g.</p>
+
+<pre><code>jira.timesheet.plugin.holidays=\
+1/May/2012 - Labor Day,\
+9/May/2012 - Victory Day</code></pre>
+
+<p>Or just:</p>
+
+<pre><code>jira.timesheet.plugin.holidays=1/May/2012, 9/May/2012</code></pre>
+
+<p>Dates must be specified in jira default locale and long date format, which are usually <code>en_US</code> and <code>dd/MMM/YYYY</code>.</p>
+
+<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/257">#257</a> for reference, and issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/297">#297</a> for implemented enhancement.</p>
+
+<h3><a id="Backing_properties" class="anchor" href="Plugin_Configuration.html#Backing_properties"><span></span></a>Backing properties</h3>
+
+<p>For more information about setting corresponding property in <code>jira-config.properties</code>, please see <a href="https://confluence.atlassian.com/display/JIRA050/Advanced+JIRA+Configuration">Advanced Jira Configuration</a>.</p>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

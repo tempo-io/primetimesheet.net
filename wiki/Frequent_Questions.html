@@ -1,1 +1,267 @@
-null
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Timesheet Plugin for Atlassian Jira extends time tracking means with pivot and timesheet reports
+     and gadgets for Jira dashboard or confluence. ">
+    <meta name="author" content="Andriy Zhdanov">
+    <meta name="keywords" content="time, timesheet, time sheet, timesheet gadget, work log,
+        timetraking, time tracking, time report, time reporting, dashboard gadget, timesheet system, project management">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frequent Questions | Prime Timesheet for Jira</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/all-1509287158000.css">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="/js/all-1521991528351.js"></script>
+
+    <script src="/js/searchApp.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-30916140-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script data-jsd-embedded data-key="cdd6759b-4070-475a-9e5a-f1b7fc2af463"
+        data-base-url="https://embedded-jsd.atlassian.io"
+        src="https://embedded-jsd.atlassian.io/assets/embed.js">
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary hidden-lg-up">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand dropdown-toggle" href="#" id="dropdownNavbarMenuLink" data-toggle="dropdown">Timesheet Reports and Gadgets for Jira Server</a>
+  <div class="dropdown-menu" aria-labelledby="dropdownNavbarMenuLink">
+    <a class="dropdown-item" href="/cloud/Overview.html">Timesheet Reports and Gadgets for Jira Cloud</a>
+    <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+    <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Overview.html">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/wiki/Frequent_Questions.html">Frequent Questions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Plugin_Configuration.html">Plugin Configuration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/RESTful_endpoint.html">RESTful endpoint</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Unified_Plugin_Views">Unified plugin views</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/wiki/Commercial.html">Commercial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-lg-2 hidden-md-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column dropdown">
+        <li class="nav-item" id="dropdownMenu">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Timesheet Reports and Gadgets for Jira Server <span class="sr-only">(current)</span></a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/cloud/Overview.html">Timesheet Reports and Gadgets for Jira Cloud</a>
+            <a class="dropdown-item" href="/timereports/server">Time Reports for Jira Server</a>
+            <a class="dropdown-item" href="/timereports/Overview.html">Time Reports for Jira Cloud</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Overview.html">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/wiki/Frequent_Questions.html">Frequent Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Plugin_Configuration.html">Plugin Configuration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Tips_and_Tricks.html">Tips and Tricks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Email_Time_Sheet_Report.html">Email Time Sheet Report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Timesheet_Holidays.html">Timesheet Holidays</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Multiple_Time_Zones.html">Multiple time zones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/RESTful_endpoint.html">RESTful endpoint</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Unified_Plugin_Views">Unified plugin views</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/wiki/Commercial.html">Commercial</a>
+        </li>
+        <li class="nav-item"  ng-app="searchApp" ng-controller="SearchWikiCtrl">
+          <form class="form-inline mt-2 nav-link">
+            <input class="form-control search" type="text" placeholder="Search" ng-model="query">
+          </form>
+          <ul class="search">
+            <li ng-repeat="content in contents | matchesQuery:query">
+              <a ng-href="{[{content.href}]}.html" ng-bind="content.title"></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="/support.html"><i class="icon-question-sign pl-0" aria-hidden="true"></i>Support</a>
+        </li>
+      </ul>
+      <span class="footer text-muted">by <a href="mailto:support@primetimesheet.net">Prime Timesheet</a></span>
+    </nav>
+
+    <main class="col-lg-8 offset-lg-3 pt-3">
+      <h2>Frequent Questions</h2>
+      <p>If you have not found your answer here or in <a href="https://community.atlassian.com/t5/tag/addon-jira-timesheet-plugin/tg-p">Atlassian Answers</a>, do not hesitate to write me an <a href="mailto:azhdanov@gmail.com">email</a> in English, Russian or Czech language at your convenience.</p>
+
+<h3><a id="What_license_do_we_need_for_the_addon_on_Jira_Server_onpremise" class="anchor" href="Frequent_Questions.html#What_license_do_we_need_for_the_addon_on_Jira_Server_onpremise"><span></span></a>What license do we need for the add-on on Jira Server (on-premise)?</h3>
+
+<p>You need the same license type as your Jira has, particularly number of users in add-on license must match the number of users in Jira license. See also <a href="https://www.atlassian.com/licensing/marketplace#licensingandpricing-1">Licensing and Pricing</a>.</p>
+
+<h3><a id="Do_we_need_license_for_our_TEST_instance_to_keep_plugin_active" class="anchor" href="Frequent_Questions.html#Do_we_need_license_for_our_TEST_instance_to_keep_plugin_active"><span></span></a>Do we need license for our TEST instance to keep plugin active?</h3>
+
+<p>Yes, you need another license, if you plan to install plugin to on another server (see also <a href="http://www.atlassian.com/licensing/marketplace#licensingandpricing-3">Licensing and Pricing</a>, but for TEST server you may use developer license, see how to create developer licenses <a href="https://www.atlassian.com/licensing/purchase-licensing#licensing-7">here</a>.</p>
+
+<h3><a id="How_long_does_the_free_evaluationtrial_last_for" class="anchor" href="Frequent_Questions.html#How_long_does_the_free_evaluationtrial_last_for"><span></span></a>How long does the free evaluation/trial last for?</h3>
+
+<p>Trial is 1 month and can be extended up to 6 months. Please see <a href="https://www.atlassian.com/licensing/purchase-licensing#evaluations-1">Purchasing &amp; Licensing FAQ</a> also.</p>
+
+<h3><a id="Is_it_possible_to_extend_evaluation_license" class="anchor" href="Frequent_Questions.html#Is_it_possible_to_extend_evaluation_license"><span></span></a>Is it possible to extend evaluation license?</h3>
+
+<p>You can generate month evaluation licenses up to 6 times for an add-on, i.e. you can evaluate for half a year in total.  These evaluations were accommodated for long purchasing cycles in some organizations. Please do not abuse it.</p>
+
+<p>You should be able to generate these licensing manually on <a href="https://my.atlassian.com/addon/try/jira-timesheet-plugin">Add-on page</a>.</p>
+
+<p>See also <a href="https://www.atlassian.com/licensing/purchase-licensing#evaluations-2">Purchasing &amp; Licensing FAQ</a>.</p>
+
+<h3><a id="Can_I_request_a_quote_for_purchase" class="anchor" href="Frequent_Questions.html#Can_I_request_a_quote_for_purchase"><span></span></a>Can I request a quote for purchase?</h3>
+
+<p>Yes, please go through <a href="https://my.atlassian.com/purchase/buyaddon?key=jira-timesheet-plugin">Buy License Now</a> at plugin page on <a href="https://plugins.atlassian.com/plugins/jira-timesheet-plugin">Atlassian Marketplace</a>, click <code>Add to Cart</code> and then <code>Save this Quote</code>, which you can pay later when you are ready.</p>
+
+<h3><a id="How_much_does_the_license_upgrade_cost" class="anchor" href="Frequent_Questions.html#How_much_does_the_license_upgrade_cost"><span></span></a>How much does the license upgrade cost?</h3>
+
+<p>See <a href="https://www.atlassian.com/purchase/addon/jira-timesheet-plugin">order form</a>, which should tell you your actual price when you click on the &quot;Upgrade&quot; tab and Enter the license SEN and email address for a current license contact.</p>
+
+<h3><a id="How_to_see_plugin_in_action_after_install" class="anchor" href="Frequent_Questions.html#How_to_see_plugin_in_action_after_install"><span></span></a>How to see plugin in action after install?</h3>
+
+<p>It is necessary to add timesheet gadget to your dashboard at Jira Administration - System Dashboard. See also video for more details on <a href="http://www.youtube.com/watch?v=ofocpgsf-AY#t=00m51s">YouTube</a>. Also reports are available in Projects menu, for selected project, see Timesheet Report and Project Pivot Report in the most bottom.</p>
+
+<p>Note, you may need to enable Time Tracking also at <code>Jira Administration</code> - <code>Time Tracking</code>.</p>
+
+<h3><a id="How_to_make_gadgets_and_reports_show_larger_time_period_than_2_months" class="anchor" href="Frequent_Questions.html#How_to_make_gadgets_and_reports_show_larger_time_period_than_2_months"><span></span></a>How to make gadgets and reports show larger time period than 2 months?</h3>
+
+<p>Since version 2.4 there is <code>Maximum Period Limit</code> <a href="Plugin_Configuration.html">Plugin Configuration</a> property.</p>
+
+<p>Before version 2.4 you need to add the following property to <code>jira-home/jira-config.properties</code> and restart Jira, e.g. for year:</p>
+
+<pre><code>jira.timesheet.plugin.maxDays = 360</code></pre>
+
+<p>Please see issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/169">#169</a> for reference, and also <a href="https://confluence.atlassian.com/display/JIRA050/Advanced+JIRA+Configuration">Advanced Jira Configuration</a>.</p>
+
+<h3><a id="Problem_Timesheet_always_shows_the_current_week" class="anchor" href="Frequent_Questions.html#Problem_Timesheet_always_shows_the_current_week"><span></span></a>Problem? Timesheet always shows the current week</h3>
+
+<p>For some reason the timesheet always shows the current week, regardless what has been selected in report configuration page. Report displays current week start and end dates.</p>
+
+<p>This might be because of misconfigured UI and backend date format, please check <a href="https://confluence.atlassian.com/display/JIRA/Customizing+the+Look+and+Feel#CustomizingtheLookandFeel-Date/TimeFormats">Customising the Look and Feel</a> and make sure your settings are correct.</p>
+
+<h3><a id="Problem_Group_Timesheet_does_not_show_data" class="anchor" href="Frequent_Questions.html#Problem_Group_Timesheet_does_not_show_data"><span></span></a>Problem? Group Timesheet does not show data</h3>
+
+<p>This might be because does not have required permission. Timesheet by user group checks for <code>Browse Users</code> permission, for security reasons, see issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/125#comment-2780210">#125</a> for more details.</p>
+
+<p>Please see <a href="http://www.atlassian.com/software/jira/docs/v3.0/permissions.html#global_permissions">Global Permissions</a> for information about Browse Users permission</p>
+
+<p>Also since version 2.3.15, there may be no data displayed, even if permissions are there, but project specified in report or gadget configuration. In this case it&#39;s necessary to update your project roles to include relevant groups. If project and group are specified, plugin displays worked hours for project members only. And membership is determined by all project roles beside Users. Adding needed groups to Developers role should be sufficient, but you may want to elaborate project roles. Then you may use project roles without groups to get project timesheet.</p>
+
+<h3><a id="Problem_Timesheet_does_not_show_anything" class="anchor" href="Frequent_Questions.html#Problem_Timesheet_does_not_show_anything"><span></span></a>Problem? Timesheet does not show anything</h3>
+
+<p>There might be unexpected issues within worked time collecting algorithms, which may be easier to solve with debug logging enabled for plugin. You may edit &lt;JIRA_HOME&gt;/WEB-INF/classes/log4j.properties or use temporary logging as described <a href="https://confluence.atlassian.com/display/JIRA/Logging+and+Profiling#LoggingandProfiling-logging_temp">here</a>. Add the following categories, just omit <code>log4.logger.</code> prefix, if you use temporary logging, or restart Jira if you edit log4.properties; perform relevant scenario, retrieve logs and send them with your email request for help or attach to bug you create:</p>
+
+<pre><code>log4j.logger.com.fdu.jira.plugin = DEBUG, console, filelog
+log4j.additivity.com.fdu.jira.plugin = false
+
+log4j.logger.jira.plugin = DEBUG, console, filelog
+log4j.additivity.jira.plugin = false
+
+log4j.logger.jira.timesheet.plugin = DEBUG, console, filelog
+log4j.additivity.jira.timesheet.plugin = false</code></pre>
+
+<h3><a id="We_are_getting_excessive_warnings_in_the_log_how_is_it_possible_to_prevent_this_to_spam_our_Log" class="anchor" href="Frequent_Questions.html#We_are_getting_excessive_warnings_in_the_log_how_is_it_possible_to_prevent_this_to_spam_our_Log"><span></span></a>We are getting excessive warnings in the log, how is it possible to prevent this to spam our Log?</h3>
+
+<p>It was caused by implementation specifics in previous versions, and did not influence plugin functionality, however is fixed since 2.3.13.</p>
+
+<p>Prior 2.3.13, please see issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/37#comment-2779866">#37</a> for the information on how to suppress warnings in log</p>
+
+<h3><a id="How_to_purchase_from_countries_unsupported_by_Atlassian_Marketplace" class="anchor" href="Frequent_Questions.html#How_to_purchase_from_countries_unsupported_by_Atlassian_Marketplace"><span></span></a>How to purchase from countries unsupported by Atlassian Marketplace?</h3>
+
+<p>Now customers from almost all countries can buy directly from Atlassian Markplace.</p>
+
+<p>Though, if you&#39;re from country from <a href="http://www.atlassian.com/licensing/marketplace#generalmarketplacequestions-13">the exception list</a>, please contact any Altlassian Expert at your preference or from <a href="https://confluence.atlassian.com/display/CUST/Marketplace+-+How+to+Purchase">the list on this page</a>. Someone can help you facilitate the purchase. It should be enough to ask for quote for <code>Timesheet Reports and Gadgets Plugin For Jira</code> to initiate the process.</p>
+
+<p>I may recommend the following Atlassian Experts who help often to purchase Timesheet plugin:</p>
+
+<ul><li><a href="http://www.k15t.com/">K15t Software GmbH</a>, located in Germany, contact <a href="http://www.k15t.com/company/contact">here</a></li><li>Pix Software, located in Germany and Netherlands, contact <a href="mailto:arne.schirmacher@softwaretesting.de">Arne Schirmacher</a></li><li>Go2Group, located in Japan and Hong Kong, contact <a href="mailto:btaylor@go2group.com">Brett Taylor</a></li><li>Clearvision, located in Ireland and UK, contact <a href="mailto:sales@clearvision-cm.com">Neil Butler</a></li><li>Valiantys, located in Switzerland, contact <a href="mailto:orders.ch@valiantys.com">Francois Dussurget</a></li><li><a href="http://www.translucent.dk/">Translucent ApS</a>, located in Denmark and Norway, contact  <a href="mailto:jorne@mesan.no">Jørn Eriksen</a></li></ul>
+
+<h3><a id="Is_there_a_reseller_program" class="anchor" href="Frequent_Questions.html#Is_there_a_reseller_program"><span></span></a>Is there a reseller program?</h3>
+
+<p>Plugin is sold only via <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin">Atlassian Marketplace</a>. There is 20% discount for Atlassian Experts resellers. For non Atlassian Experts there is no  official reseller program. Resellers can purchase license for their customers at regular basis. See also <a href="http://www.atlassian.com/licensing/marketplace">Atlassian Marketplace FAQ</a> for more details about Atlassian Marketplace.</p>
+
+<h3><a id="End_User_License_Agreement_EULA" class="anchor" href="Frequent_Questions.html#End_User_License_Agreement_EULA"><span></span></a>End User License Agreement (&quot;EULA&quot;)</h3>
+
+<p>Timesheet Reports and Gadgets for Jira is provided under the terms of <a href="/eula.html">Prime Timesheet End User License Agreement</a>.</p>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
