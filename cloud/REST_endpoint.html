@@ -227,7 +227,7 @@ https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2
 
 <p>Examples:</p>
 
-<p>Apikey query parameter in URL: <code>https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01&amp;Apikey=T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL</code></p>
+<p>Apikey query parameter in URL: <code>https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01&amp;Apikey=T%2F6r47%2FKrnOPGqrtyI3aP%2FKAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL</code>. Note, Apikey needs to be urlencoded (/, + and = replaced with %2F, %2B a %3D).</p>
 
 <p>Basic authentication (with curl):</p>
 
