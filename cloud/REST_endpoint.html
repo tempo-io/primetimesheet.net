@@ -135,7 +135,7 @@
 <p>E.g. request and response:</p>
 
 <pre><code>$ curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot; \
-https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2017-08-31\&amp;groups=administrators\&amp;filterOrProjectId=project_DEMO
+https://timesheet-plugin.herokuapp.com/api/1/worklog\?start=2017-08-21\&amp;end=2017-08-31\&amp;groups=administrators\&amp;filterOrProjectId=project_DEMO
 
 [
   {
@@ -232,12 +232,12 @@ https://timesheet-plugin.herokuapp.com/api/1/worklog?start=2017-08-21\&amp;end=2
 <p>Basic authentication (with curl):</p>
 
 <pre><code>$ curl -u Apikey:T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL \
-    https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
+    https://timesheet-plugin.herokuapp.com/api/1/exportData.csv\?start=2018-10-01</code></pre>
 
 <p>Apikey Authorization header (with curl):</p>
 
 <pre><code>$ curl -H &quot;Authorization: Apikey T/6r47/KrnOPGqrtyI3aP/KAxnUsJBj7PzdkAqpvl6ijegFscT3pPqWf2pVRWSmL&quot;  \
-    https://timesheet-plugin.herokuapp.com/api/1/exportData.csv?start=2018-10-01</code></pre>
+    https://timesheet-plugin.herokuapp.com/api/1/exportData.csv\?start=2018-10-01</code></pre>
 
     </main>
   </div>
