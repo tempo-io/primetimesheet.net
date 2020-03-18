@@ -46,7 +46,7 @@ angular.module('searchApp',[]).filter('matchesQuery', function(){
         var query = Object.keys(params).map(function(key) {
           return key + '=' + encodeURIComponent(params[key]);
         }).join('&');
-        $scope.loading = true;
+        $scope.loading = false;
         /* FIXME: tags/topics query param is ignored
         var resource = 'https://answers.atlassian.com/rest/questions/1.0/search/?' + query;
         $http.jsonp('http://localhost:5000?callback=JSON_CALLBACK&resource=' + encodeURIComponent(resource)).success(function(data) {
@@ -55,13 +55,14 @@ angular.module('searchApp',[]).filter('matchesQuery', function(){
         }).error(function() {
           $scope.loading = false
         });
-        */
 
+        // FIXME: api gone
         $http.jsonp('https://bitbucket.org/api/1.0/repositories/azhdanov/jiratimesheet/issues?callback=JSON_CALLBACK&search='
             + encodeURIComponent($scope.query)).success(function(data) {
           $scope.issues = data.issues;
           $scope.loading = false
         });
+        */
 
     }
   }
