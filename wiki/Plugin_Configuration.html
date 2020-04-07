@@ -179,7 +179,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>This option provides more granular restrictions access to Timesheet and Project Pivot for other users. If specified, only issues that match specified role will be shown to user in Timesheet and Pivot assets for other users.</p>
 
-<p>Please see <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/453">Issue#453</a> and <a href="https://docs.google.com/spreadsheet/ccc?key=0Ai6BFV79vBqqdFpNbGs2cHlvVlF0bVFYXzJDOWI2LVE">specification</a> for rules for all these three options.</p>
+<p>Please see <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/453">Issue#453</a> and <a href="https://docs.google.com/spreadsheet/ccc?key=0Ai6BFV79vBqqdFpNbGs2cHlvVlF0bVFYXzJDOWI2LVE">specification</a> for rules for all these three options.</p>
 
 <h3><a id="Composition_Issue_Link" class="anchor" href="Plugin_Configuration.html#Composition_Issue_Link"><span></span></a>Composition Issue Link</h3>
 
@@ -191,7 +191,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <pre><code>jira.timesheet.plugin.composeIssueLink = Compose</code></pre>
 
-<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/301/time-301-ability-to-aggregate-time">#301</a></p>
+<p>See also issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/301/time-301-ability-to-aggregate-time">#301</a></p>
 
 <h3><a id="Parent_Issue_Field" class="anchor" href="Plugin_Configuration.html#Parent_Issue_Field"><span></span></a>Parent Issue Field</h3>
 
@@ -209,7 +209,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b886">2.8.2.3</a> till <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1200">2.9.3</a> it is possible to use Timesheet gaget filter option instead of global JQL query.</p>
 
-<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/475/show-issues-without-a-current-worklog">#475</a>, and issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/537/allow-issues-to-be-displayed-regardless-of">#537</a>.</p>
+<p>See also issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/475/show-issues-without-a-current-worklog">#475</a>, and issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/537/allow-issues-to-be-displayed-regardless-of">#537</a>.</p>
 
 <p>Note before version <code>2.7.6</code>, option uses JQL Clause, e.g. <code>status = &#39;In Progress&#39;</code>. The clause is prepended with <code>assignee = currentUser() and</code>.</p>
 
@@ -217,13 +217,13 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <pre><code>jira.timesheet.plugin.inProgressClause=status=&#39;In Progress&#39;</code></pre>
 
-<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/317">#317</a>.</p>
+<p>See also issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/317">#317</a>.</p>
 
 <h3><a id="Maximum_Period_Limit" class="anchor" href="Plugin_Configuration.html#Maximum_Period_Limit"><span></span></a>Maximum Period Limit</h3>
 
 <p>Use this option to increase limit of maximum days in Timesheet Report or gadget.</p>
 
-<p>Note, before version <a href="https://marketplace.atlassian.com/apps/294/timesheet-reports-and-gadgets/version-history#b1900">3.3.0</a> there is risk of running Out Of Memory, see Issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/169/time-169-unbounded-report-size-means-large">#169</a>. </p>
+<p>Note, before version <a href="https://marketplace.atlassian.com/apps/294/timesheet-reports-and-gadgets/version-history#b1900">3.3.0</a> there is risk of running Out Of Memory, see Issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/169/time-169-unbounded-report-size-means-large">#169</a>. </p>
 
 <p>Note, this option is backed up with <code>jira.timesheet.plugin.maxDays</code> property from jira-config.properties. E.g.</p>
 
@@ -241,7 +241,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <pre><code>jira.timesheet.plugin.prettyDuration = true</code></pre>
 
-<p>See also issue<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/202">#202</a> and issue#e<a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/1051">#1051</a>.</p>
+<p>See also issue<a href="https://bitbucket.org/tempo-io/servertimesheet/issue/202">#202</a> and issue#e<a href="https://bitbucket.org/tempo-io/servertimesheet/issue/1051">#1051</a>.</p>
 
 <p>Since version <a href="https://marketplace.atlassian.com/plugins/jira-timesheet-plugin/versions#b1330">2.9.4</a> it is possible to set <code>Pretty Duration</code> option per user in <code>Timesheet Preferences</code> in <code>User Profile</code>.</p>
 
@@ -303,7 +303,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <pre><code>jira.timesheet.plugin.decimalSeparator = ,</code></pre>
 
-<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/123">#123</a> for reference.</p>
+<p>See also issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/123">#123</a> for reference.</p>
 
 <h3><a id="Round_Hours" class="anchor" href="Plugin_Configuration.html#Round_Hours"><span></span></a>Round Hours</h3>
 
@@ -345,7 +345,7 @@ Timesheet Plugin Configuration is available in Administration, Plugins menu in J
 
 <p>Dates must be specified in jira default locale and long date format, which are usually <code>en_US</code> and <code>dd/MMM/YYYY</code>.</p>
 
-<p>See also issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/257">#257</a> for reference, and issue <a href="https://bitbucket.org/azhdanov/jiratimesheet/issue/297">#297</a> for implemented enhancement.</p>
+<p>See also issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/257">#257</a> for reference, and issue <a href="https://bitbucket.org/tempo-io/servertimesheet/issue/297">#297</a> for implemented enhancement.</p>
 
 <h3><a id="Backing_properties" class="anchor" href="Plugin_Configuration.html#Backing_properties"><span></span></a>Backing properties</h3>
 
