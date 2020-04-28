@@ -110,33 +110,21 @@
 
     <main class="col-lg-8 offset-lg-3 pt-3">
       <h2>Security Statement</h2>
-      <p>Time Reports for Jira Cloud is <a href="https://developer.atlassian.com/cloud/jira/platform/integrating-with-jira-cloud/#atlassian-connect">Atlassian Connect Add-On</a> (Add-On) Software as a Service (SaaS). </p>
+      <p>Effective as of April 24, 2020.</p>
+
+<p>Prime Timesheet s.r.o. cares about the protection of your data.  </p>
+
+<p>Our <a href="https://developer.atlassian.com/cloud/jira/platform/integrating-with-jira-cloud/#atlassian-connect">Atlassian Connect Add On</a> (Prime Timesheet) processes your data by (1) uploading your time tracking data from an Atlassian Jira Cloud instance, processing it on the client side (in an end-user’s internet browser), and sending it back to the Cloud instance; or (2) instructing the Jira Cloud instance to process it.</p>
 
 <h3><a id="Data_Security" class="anchor" href="Security_Statement.html#Data_Security"><span></span></a>Data Security</h3>
 
-<p>The Add-On is static, i.e. all data (specifically Time Tracking data) is requested from Jira Cloud and processed by add-on client side in End User Browser and is not passed anywhere else.</p>
+<p>Atlassian is responsible for protecting your data in the Atlassian Jira Cloud.  For information on how Atlassian protects your data, see <a href="https://www.atlassian.com/trust">Atlassian’s Trust page</a>.</p>
 
-<p>Here is the list of Jira REST API used client side:</p>
-
-<ul><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2438">/rest/api/2/search</a> - issues and time tracking data.</li><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1698">/rest/api/2/issue/{issueIdOrKey}</a> - to load complete issue for Sum Sub-Tasks.</li><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e2176">/rest/api/2/issue/{issueIdOrKey}/worklog</a> - to load complete issue worklog.</li><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e3764">/rest/api/2/user</a> - to get details (display name, groups, timezone) of logged in user or user selected in menu.</li><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1283">/rest/api/2/filter/favourite</a> - filters for Filter reports&#39; option.</li><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e131">/rest/api/2/field</a> - fields for Field reports&#39; option.</li><li><a href="https://docs.atlassian.com/jira/REST/6.2/#d2e1368">/rest/api/2/mypermissions</a> - to check whether current user has Administrator priveleges to configure add-on</li><li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e3922">/rest/api/2/user/picker</a> - users search for User reports&#39; option.</li><li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e4866">/rest/api/2/groups/picker</a> - groups search for Timesheet Auditors Groups configuration</li><li><a href="https://docs.atlassian.com/software/jira/docs/api/REST/6.2/#d2e284">/rest/api/2/issueLinkType</a> - issue link types for Composition Issue Link configuraiton</li></ul>
-
-<p>Add-on persists add-on configuration (group names, link or field names selected in add-on configuration) in Jira Cloud itself using <a href="https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/">Hosted Data Storage</a> service.</p>
-
-<p>Add-On declares READ <a href="https://developer.atlassian.com/cloud/jira/platform/scopes/">scope</a> to access data as just described.</p>
-
-<p>Add-On also declares WRITE and DELETE scopes to manage (create/update/delete) worklog records from add-on report or dashboard item in Jira Cloud.</p>
-
-<h3><a id="Privacy_Policy" class="anchor" href="Security_Statement.html#Privacy_Policy"><span></span></a>Privacy Policy</h3>
-
-<p>There is no usage data collected by the add-on. There is only diagnostic logging in case of error. Add-on uses <a href="https://papertrailapp.com">Papertrail</a> logging service via <a href="https://www.heroku.com/">Heroku</a> to log execution stack trace and error cause details, including information, provided by Atlassian Connect Framework, e.g. <code>https://timereports.primetimesheet.net/timereports.html?v=2&amp;xdm_e=https%3A%2F%2Fbexample.atlassian.net&amp;xdm_c=channel-timereports__timereports-gadget7016469871150166606&amp;cp=&amp;xdm_deprecated_addon_key_do_not_use=timereports&amp;lic=active&amp;cv=1.525.0&quot; &quot;Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko&quot; </code>.</p>
+<p>Our Add On protects your data during transit by implementing HTTPS using TLS. <br/>Prime Timesheet s.r.o. is certified as a Cloud Security Compliant vendor with Atlassian, see <a href="https://developer.atlassian.com/platform/marketplace/cloud-security-program/">here</a>.</p>
 
 <h3><a id="Managing_Security_Vulnerabilities" class="anchor" href="Security_Statement.html#Managing_Security_Vulnerabilities"><span></span></a>Managing Security Vulnerabilities</h3>
 
 <p>Security vulnerability bugs, when found, get highest priority and are fixed in 2 days and rolled out immediately, without any notification.</p>
-
-<h3><a id="Refernces" class="anchor" href="Security_Statement.html#Refernces"><span></span></a>Refernces</h3>
-
-<ul><li><a href="https://papertrailapp.com/info/terms">Papertrail Software Services Agreement</a></li><li><a href="https://www.atlassian.com/trust/security/security-practices">Atlassian Cloud Security</a></li><li><a href="https://www.heroku.com/policy/privacy">Heroku Privacy Statement</a></li></ul>
 
     </main>
   </div>
