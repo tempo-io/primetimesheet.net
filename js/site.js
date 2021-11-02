@@ -1,5 +1,5 @@
-if (window.location.host.indexOf("primetimesheet.net") >= 0 && window.location.protocol != "https:") {
-  window.location.protocol = "https:"
+if (window.location.host.indexOf("primetimesheet.net") >= 0) {
+  window.location = "https://help.tempo.io/timesheet-reports-and-gadgets/?lang=en"
 }
 $(function() {
   $('#dropdownMenu').on('show.bs.dropdown', function () {
